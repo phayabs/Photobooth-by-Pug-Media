@@ -237,6 +237,290 @@ tailwind.config = {
     color: white; opacity: 0; transition: opacity 0.3s;
   }
   .ig-item:hover .ig-overlay { opacity: 1; }
+  /* ========== BUTTON EFFECTS ========== */
+
+/* Base Button Styles */
+.btn-gold {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+}
+
+/* Shimmer Effect */
+.btn-gold::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: left 0.5s;
+}
+
+.btn-gold:hover::before {
+  left: 100%;
+}
+
+/* Hover Scale & Glow */
+.btn-gold:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.5), 
+              0 0 20px rgba(212, 175, 55, 0.3);
+}
+
+.btn-gold:active {
+  transform: translateY(-1px) scale(0.98);
+}
+
+/* Ripple Effect */
+.btn-gold {
+  position: relative;
+}
+
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.6);
+  transform: scale(0);
+  animation: ripple-animation 0.6s ease-out;
+  pointer-events: none;
+}
+
+@keyframes ripple-animation {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+/* Social Icons Buttons */
+.social-icon {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.social-icon::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.3s, height 0.3s;
+}
+
+.social-icon:hover::after {
+  width: 100%;
+  height: 100%;
+}
+
+.social-icon:hover {
+  transform: translateY(-5px) scale(1.15) rotate(5deg);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Floating Button (LINE) */
+a[href*="line.me"] {
+  position: relative;
+  animation: floating-btn 3s ease-in-out infinite;
+}
+
+@keyframes floating-btn {
+  0%, 100% {
+    transform: translateY(0);
+    box-shadow: 0 4px 15px rgba(6, 199, 85, 0.4);
+  }
+  50% {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(6, 199, 85, 0.6), 
+                0 0 20px rgba(6, 199, 85, 0.4);
+  }
+}
+
+a[href*="line.me"]:hover {
+  animation: none;
+  transform: scale(1.15);
+  box-shadow: 0 10px 30px rgba(6, 199, 85, 0.6), 
+              0 0 30px rgba(6, 199, 85, 0.4);
+}
+
+/* Package Buttons */
+#packages a[href="#contact"] {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#packages a[href="#contact"]::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.5s, height 0.5s;
+}
+
+#packages a[href="#contact"]:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+#packages a[href="#contact"]:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
+}
+
+/* Add-on Buttons */
+#addon a[href="#contact"] {
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#addon a[href="#contact"]:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+}
+
+/* Form Submit Button */
+#submitBtn {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#submitBtn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  transition: left 0.6s;
+}
+
+#submitBtn:hover::before {
+  left: 100%;
+}
+
+#submitBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.5), 
+              0 0 20px rgba(212, 175, 55, 0.3);
+}
+
+#submitBtn:active {
+  transform: translateY(0);
+}
+
+/* Loading State */
+#submitBtn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+/* Mobile Menu Buttons */
+#mobileMenuBtn {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#mobileMenuBtn:hover {
+  transform: scale(1.1);
+  color: #D4AF37;
+}
+
+#mobileMenuBtn:active {
+  transform: scale(0.95);
+}
+
+/* Fallback Button */
+#fallbackBtn {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#fallbackBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+#fallbackBtn:active {
+  transform: translateY(0);
+}
+
+/* Icon Animations */
+.btn-gold i,
+#submitBtn i,
+#fallbackBtn i {
+  transition: transform 0.3s;
+}
+
+.btn-gold:hover i,
+#submitBtn:hover i,
+#fallbackBtn:hover i {
+  transform: scale(1.2) rotate(5deg);
+}
+
+/* Pulse Effect for Important Buttons */
+@keyframes pulse-gold {
+  0%, 100% {
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+  }
+  50% {
+    box-shadow: 0 4px 25px rgba(212, 175, 55, 0.6), 
+                0 0 15px rgba(212, 175, 55, 0.4);
+  }
+}
+
+.btn-gold {
+  animation: pulse-gold 2s ease-in-out infinite;
+}
+
+.btn-gold:hover {
+  animation: none;
+}
+
+/* Gradient Shift Effect */
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Apply to social icons */
+.social-ig {
+  background-size: 200% 200%;
+  animation: gradient-shift 3s ease infinite;
+}
 </style>
 </head>
 
@@ -967,6 +1251,30 @@ if (menuBtn && mobileMenu) {
     });
   });
 }
+  // Ripple Effect สำหรับปุ่มทั้งหมด
+document.querySelectorAll('.btn-gold, #submitBtn, #fallbackBtn').forEach(button => {
+  button.addEventListener('click', function(e) {
+    const rect = this.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    
+    const ripple = document.createElement('span');
+    ripple.classList.add('ripple');
+    ripple.style.left = x + 'px';
+    ripple.style.top = y + 'px';
+    ripple.style.width = '20px';
+    ripple.style.height = '20px';
+    ripple.style.margin-left = '-10px';
+    ripple.style.margin-top = '-10px';
+    
+    this.appendChild(ripple);
+    
+    setTimeout(() => {
+      ripple.remove();
+    }, 600);
+  });
+});
 </script>
+  
 </body>
 </html>
