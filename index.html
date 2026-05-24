@@ -299,15 +299,15 @@ tailwind.config = {
 
 <!-- ========== NAVBAR ========== -->
 <nav class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md shadow-sm">
-  <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between flex-nowrap">
+  <div class="max-w-7xl mx-auto px-3 py-2 md:px-4 md:py-3 flex items-center justify-between flex-nowrap gap-2">
     
     <a href="/" class="flex items-center gap-2 shrink-0">
       <img src="images/logo.png" alt="PUG MEDIA Logo" class="h-8 w-auto md:h-10">
-      <span class="font-bold text-xs leading-tight md:hidden">PhotoBooth by<br><span class="text-gold-dark text-sm">PUG MEDIA</span></span>
+      <span class="font-bold text-[11px] leading-tight md:hidden">PhotoBooth by<br><span class="text-gold-dark text-sm">PUG MEDIA</span></span>
       <span class="font-bold text-lg hidden md:block">PhotoBooth by <span class="text-gold-dark">PUG MEDIA</span></span>
     </a>
     
-    <div class="hidden md:flex gap-6 text-sm font-medium">
+    <div class="hidden md:flex gap-6 text-sm font-medium items-center">
       <a href="#features" class="hover:text-gold-dark transition">จุดเด่น</a>
       <a href="#packages" class="hover:text-gold-dark transition">แพ็กเกจ</a>
       <a href="#addon" class="hover:text-gold-dark transition">Add-on</a>
@@ -316,14 +316,17 @@ tailwind.config = {
       <a href="#contact" class="hover:text-gold-dark transition">ติดต่อ</a>
     </div>
 
-    <div class="flex items-center gap-3 shrink-0">
-      <a href="#contact" class="btn-gold px-3 py-1.5 text-xs font-semibold rounded-full md:px-5 md:py-2 md:text-sm whitespace-nowrap hidden md:inline-block" onclick="trackContact('booking_button')">สอบถามคิว</a>
-      <button id="mobileMenuBtn" class="md:hidden text-gold-dark text-2xl focus:outline-none p-1" aria-label="เปิดเมนู">
+    <div class="flex items-center gap-2 shrink-0">
+      <!-- ✅ แสดงปุ่มทั้งมือถือและ Desktop แต่ย่อขนาดอัตโนมัติบนมือถือ -->
+      <a href="#contact" class="btn-gold px-2 py-1 text-xs font-semibold rounded-full md:px-5 md:py-2 md:text-sm whitespace-nowrap" onclick="trackContact('booking_button')">สอบถามคิว</a>
+      
+      <button id="mobileMenuBtn" class="md:hidden text-gold-dark text-xl focus:outline-none p-1" aria-label="เปิดเมนู">
         <i class="fas fa-bars"></i>
       </button>
     </div>
   </div>
 
+  <!-- เมนู Dropdown สำหรับมือถือ -->
   <div id="mobileMenu" class="hidden md:hidden bg-white border-t border-gray-100 shadow-lg absolute w-full left-0 top-full z-40">
     <div class="px-4 py-3 space-y-1">
       <a href="#features" class="block py-3 px-2 rounded-lg text-gray-700 hover:bg-rose-light hover:text-gold-dark font-medium transition">จุดเด่น</a>
@@ -883,8 +886,8 @@ tailwind.config = {
   </div>
 </footer>
 
-<!-- Floating LINE Button (ตำแหน่งแก้แล้ว: ลอยสูงขึ้นบนมือถือ) -->
-<a href="https://line.me/R/ti/p/@PUGMEDIA" target="_blank" rel="noopener" class="fixed bottom-24 md:bottom-8 right-4 md:right-8 z-50 w-14 h-14 md:w-16 md:h-16 bg-green-500 rounded-full flex items-center justify-center text-white text-2xl md:text-3xl shadow-2xl hover:scale-110 transition" onclick="trackContact('floating_line')">
+<!-- Floating LINE Button (ปรับตำแหน่งมือถือให้ลอยสูงขึ้น ไม่ทับ Footer) -->
+<a href="https://line.me/R/ti/p/@PUGMEDIA" target="_blank" rel="noopener" class="fixed bottom-20 md:bottom-8 right-4 md:right-8 z-50 w-14 h-14 md:w-16 md:h-16 bg-green-500 rounded-full flex items-center justify-center text-white text-2xl md:text-3xl shadow-2xl hover:scale-110 transition" onclick="trackContact('floating_line')">
   <i class="fab fa-line"></i>
 </a>
 
