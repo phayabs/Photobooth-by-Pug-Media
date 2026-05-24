@@ -733,109 +733,45 @@ tailwind.config = {
         <div class="bg-gold-dark text-white p-6 rounded-2xl shadow-lg">
            <h3 class="font-bold text-xl mb-4"><i class="fas fa-map-marker-alt mr-2"></i>พื้นที่ให้บริการ</h3>
            <div class="space-y-3 text-sm md:text-base">
-             <div class="flex items-start gap-2">
-               <i class="fas fa-check-circle text-green-300 mt-1"></i>
-               <span>กรุงเทพฯ และปริมณฑล (ฟรีค่าเดินทาง)</span>
-             </div>
-             <div class="flex items-start gap-2">
-               <i class="fas fa-car text-yellow-300 mt-1"></i>
-               <span>ต่างจังหวัด: คิดค่าเดินทางตามระยะทาง</span>
-             </div>
+             <div class="flex items-start gap-2"><i class="fas fa-check-circle text-green-300 mt-1"></i><span>กรุงเทพฯ และปริมณฑล (ฟรีค่าเดินทาง)</span></div>
+             <div class="flex items-start gap-2"><i class="fas fa-car text-yellow-300 mt-1"></i><span>ต่างจังหวัด: คิดค่าเดินทางตามระยะทาง</span></div>
            </div>
         </div>
-
-        <a href="tel:0922590736" class="flex items-center gap-4 bg-white p-5 rounded-2xl shadow-md card-hover">
-          <div class="w-14 h-14 bg-gold rounded-2xl flex items-center justify-center text-white text-2xl"><i class="fas fa-phone"></i></div>
-          <div>
-            <div class="text-sm text-gray-500">โทร (สาย 1)</div>
-            <div class="text-lg font-bold">092-259-0736</div>
-          </div>
-        </a>
-        <a href="tel:0837415338" class="flex items-center gap-4 bg-white p-5 rounded-2xl shadow-md card-hover">
-          <div class="w-14 h-14 bg-gold rounded-2xl flex items-center justify-center text-white text-2xl"><i class="fas fa-phone"></i></div>
-          <div>
-            <div class="text-sm text-gray-500">โทร (สาย 2)</div>
-            <div class="text-lg font-bold">083-741-5338</div>
-          </div>
-        </a>
-        <a href="https://line.me/R/ti/p/@PUGMEDIA" target="_blank" rel="noopener" class="flex items-center gap-4 bg-white p-5 rounded-2xl shadow-md card-hover">
-          <div class="w-14 h-14 bg-green-500 rounded-2xl flex items-center justify-center text-white text-2xl"><i class="fab fa-line"></i></div>
-          <div>
-            <div class="text-sm text-gray-500">LINE Official</div>
-            <div class="text-lg font-bold">@PUGMEDIA</div>
-          </div>
-        </a>
-        <div class="bg-white p-5 rounded-2xl shadow-md">
-          <div class="text-sm text-gray-500 mb-3">ติดตามผลงาน</div>
-          <div class="flex gap-3">
-            <a href="https://www.facebook.com/PhotoboothbyPugMedia" target="_blank" rel="noopener" class="social-icon social-fb !w-12 !h-12 !text-xl"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://www.instagram.com/photobooth_by_pugmedia" target="_blank" rel="noopener" class="social-icon social-ig !w-12 !h-12 !text-xl"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.tiktok.com/@photoboothbypugmedia" target="_blank" rel="noopener" class="social-icon social-tiktok !w-12 !h-12 !text-xl"><i class="fab fa-tiktok"></i></a>
-          </div>
-        </div>
+        <a href="tel:0922590736" class="flex items-center gap-4 bg-white p-5 rounded-2xl shadow-md card-hover"><div class="w-14 h-14 bg-gold rounded-2xl flex items-center justify-center text-white text-2xl"><i class="fas fa-phone"></i></div><div><div class="text-sm text-gray-500">โทร (สาย 1)</div><div class="text-lg font-bold">092-259-0736</div></div></a>
+        <a href="tel:0837415338" class="flex items-center gap-4 bg-white p-5 rounded-2xl shadow-md card-hover"><div class="w-14 h-14 bg-gold rounded-2xl flex items-center justify-center text-white text-2xl"><i class="fas fa-phone"></i></div><div><div class="text-sm text-gray-500">โทร (สาย 2)</div><div class="text-lg font-bold">083-741-5338</div></div></a>
+        <a href="https://line.me/R/ti/p/@PUGMEDIA" target="_blank" rel="noopener" class="flex items-center gap-4 bg-white p-5 rounded-2xl shadow-md card-hover"><div class="w-14 h-14 bg-green-500 rounded-2xl flex items-center justify-center text-white text-2xl"><i class="fab fa-line"></i></div><div><div class="text-sm text-gray-500">LINE Official</div><div class="text-lg font-bold">@PUGMEDIA</div></div></a>
       </div>
 
       <div class="bg-white p-6 md:p-8 rounded-3xl shadow-xl border border-gray-100">
         <h3 class="font-bold text-xl mb-6 text-gray-800">ฟอร์มสอบถามคิวงาน</h3>
         <form id="bookingForm" class="space-y-4">
-          
-          <div>
-            <label class="text-sm text-gray-600 font-medium">ชื่อ-นามสกุล *</label>
-            <input type="text" id="f_name" required placeholder="เช่น สมชาย ใจดี" class="w-full p-3 border border-gray-200 rounded-xl focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold transition">
-          </div>
-          
-          <div>
-            <label class="text-sm text-gray-600 font-medium">เบอร์โทรศัพท์ *</label>
-            <input type="tel" id="f_phone" required placeholder="09x-xxx-xxxx" class="w-full p-3 border border-gray-200 rounded-xl focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold transition">
-          </div>
-          
-          <div>
-            <label class="text-sm text-gray-600 font-medium">วันและเวลางาน *</label>
-            <input type="datetime-local" id="f_date" required class="w-full p-3 border border-gray-200 rounded-xl focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold transition">
-          </div>
-          
-          <div>
-            <label class="text-sm text-gray-600 font-medium">แพ็กเกจ *</label>
-            <select id="f_package" required class="w-full p-3 border border-gray-200 rounded-xl focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold transition bg-white">
+          <div><label class="text-sm text-gray-600 font-medium">ชื่อ-นามสกุล *</label><input type="text" id="f_name" required placeholder="เช่น สมชาย ใจดี" class="w-full p-3 border border-gray-200 rounded-xl focus:border-gold focus:outline-none mt-1"></div>
+          <div><label class="text-sm text-gray-600 font-medium">เบอร์โทรศัพท์ *</label><input type="tel" id="f_phone" required placeholder="09x-xxx-xxxx" class="w-full p-3 border border-gray-200 rounded-xl focus:border-gold focus:outline-none mt-1"></div>
+          <div><label class="text-sm text-gray-600 font-medium">วันและเวลางาน *</label><input type="datetime-local" id="f_date" required class="w-full p-3 border border-gray-200 rounded-xl focus:border-gold focus:outline-none mt-1"></div>
+          <div><label class="text-sm text-gray-600 font-medium">แพ็กเกจ *</label>
+            <select id="f_package" required class="w-full p-3 border border-gray-200 rounded-xl focus:border-gold focus:outline-none mt-1 bg-white">
               <option value="">-- เลือกแพ็กเกจ --</option>
-              <option>2 ชั่วโมง - Size 2x6 (6,900฿)</option>
-              <option>2 ชั่วโมง - Size 3x4 (7,900฿)</option>
-              <option>2 ชั่วโมง - Size 2x6,4x6 (8,900฿)</option>
-              <option>3 ชั่วโมง - Size 2x6 (8,900฿)</option>
-              <option>3 ชั่วโมง - Size 3x4 (9,900฿)</option>
-              <option>3 ชั่วโมง - Size 2x6,4x6 (10,900฿)</option>
-              <option>4 ชั่วโมง - Size 2x6 (9,900฿) ⭐ Best Seller</option>
-              <option>4 ชั่วโมง - Size 3x4 (10,900฿) ⭐ Best Seller</option>
-              <option>4 ชั่วโมง - Size 2x6,4x6 (12,900฿) ⭐ Best Seller</option>
+              <option>2 ชั่วโมง - Size 2x6 (6,900฿)</option><option>2 ชั่วโมง - Size 3x4 (7,900฿)</option><option>2 ชั่วโมง - Size 2x6,4x6 (8,900฿)</option>
+              <option>3 ชั่วโมง - Size 2x6 (8,900฿)</option><option>3 ชั่วโมง - Size 3x4 (9,900฿)</option><option>3 ชั่วโมง - Size 2x6,4x6 (10,900฿)</option>
+              <option>4 ชั่วโมง - Size 2x6 (9,900฿) ⭐</option><option>4 ชั่วโมง - Size 3x4 (10,900฿) ⭐</option><option>4 ชั่วโมง - Size 2x6,4x6 (12,900฿) ⭐</option>
             </select>
           </div>
-          
-          <div>
-            <label class="text-sm text-gray-600 font-medium">Add-on (ถ้ามี)</label>
-            <select id="f_addon" class="w-full p-3 border border-gray-200 rounded-xl focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold transition bg-white">
-              <option value="-">ไม่ต้องการ</option>
-              <option>Video Guestbook 3 ชม. (+2,500฿)</option>
-              <option>Video Guestbook 4 ชม. (+3,500฿)</option>
-              <option>การ์ดเชิญอวยพร (+1,500฿)</option>
+          <div><label class="text-sm text-gray-600 font-medium">Add-on (ถ้ามี)</label>
+            <select id="f_addon" class="w-full p-3 border border-gray-200 rounded-xl focus:border-gold focus:outline-none mt-1 bg-white">
+              <option value="-">ไม่ต้องการ</option><option>Video Guestbook 3 ชม. (+2,500฿)</option><option>Video Guestbook 4 ชม. (+3,500฿)</option><option>การ์ดเชิญอวยพร (+1,500฿)</option>
             </select>
           </div>
+          <div><label class="text-sm text-gray-600 font-medium">สถานที่จัดงาน / รายละเอียด</label><textarea id="f_detail" rows="2" placeholder="เช่น โรงแรมxxx ย่านสุขุมวิท" class="w-full p-3 border border-gray-200 rounded-xl focus:border-gold focus:outline-none mt-1"></textarea></div>
           
-          <div>
-            <label class="text-sm text-gray-600 font-medium">สถานที่จัดงาน / รายละเอียดเพิ่มเติม</label>
-            <textarea id="f_detail" rows="2" placeholder="เช่น โรงแรมxxx ย่านสุขุมวิท" class="w-full p-3 border border-gray-200 rounded-xl focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold transition"></textarea>
-          </div>
-
-          <div class="pt-2">
+          <div class="pt-2 space-y-3">
             <button type="submit" id="submitBtn" class="w-full btn-gold py-4 rounded-xl text-white font-bold shadow-md hover:shadow-lg transition flex items-center justify-center gap-2">
-              <i class="fab fa-line text-xl"></i>
-              <span>ส่งข้อมูลผ่าน LINE</span>
+              <i class="fab fa-line text-xl"></i><span>ส่งข้อมูลผ่าน LINE</span>
+            </button>
+            <button type="button" id="fallbackBtn" onclick="fallbackSend()" class="w-full bg-gray-100 hover:bg-gray-200 text-gray-700 py-3 rounded-xl font-medium transition flex items-center justify-center gap-2 border border-gray-200">
+              <i class="fas fa-copy"></i><span>คัดลอก & เปิดแชทสำรอง</span>
             </button>
           </div>
-
           <div id="formMessage" class="hidden text-center p-3 rounded-xl text-sm"></div>
-          <p class="text-xs text-gray-400 text-center mt-2">
-            🔒 ระบบจะเปิด LINE และคัดลอกข้อความให้โดยอัตโนมัติ
-          </p>
         </form>
       </div>
     </div>
@@ -881,93 +817,83 @@ tailwind.config = {
 </a>
 
 <script>
-// ฟังก์ชันสร้างข้อความสำหรับ LINE
+// เก็บข้อความล่าสุดไว้ใช้ร่วมกัน
+let currentMessage = '';
+
 function buildMessage() {
-  const name = document.getElementById('f_name')?.value || '';
-  const phone = document.getElementById('f_phone')?.value || '';
-  const dateRaw = document.getElementById('f_date')?.value || '';
+  const name = document.getElementById('f_name')?.value?.trim() || '';
+  const phone = document.getElementById('f_phone')?.value?.trim() || '';
+  const dateVal = document.getElementById('f_date')?.value || '';
   const pkg = document.getElementById('f_package')?.value || '';
   const addon = document.getElementById('f_addon')?.value || '-';
-  const detail = document.getElementById('f_detail')?.value || '-';
+  const detail = document.getElementById('f_detail')?.value?.trim() || '-';
 
-  if(!name || !phone || !dateRaw || !pkg) return null;
+  if (!name || !phone || !dateVal || !pkg) return null;
 
-  const dateObj = new Date(dateRaw);
-  const thaiDate = dateObj.toLocaleString('th-TH', { 
-    year: 'numeric', month: 'long', day: 'numeric',
-    hour: '2-digit', minute: '2-digit'
-  });
+  const dateObj = new Date(dateVal);
+  const thaiDate = dateObj.toLocaleString('th-TH', { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' });
 
-  return `🎉 *สอบถามคิว Photo Booth*
-━━━━━━━━━━━━━━━
-👤 ชื่อ: ${name}
-📞 โทร: ${phone}
-📅 วันงาน: ${thaiDate}
-📦 แพ็กเกจ: ${pkg}
-➕ Add-on: ${addon}
-📍 สถานที่: ${detail}
-━━━━━━━━━━━━━━━
-จากเว็บไซต์ PUG MEDIA`;
+  currentMessage = `🎉 สอบถามคิว Photo Booth\n━━━━━━━━━━━━━━━\n👤 ชื่อ: ${name}\n📞 โทร: ${phone}\n📅 วันงาน: ${thaiDate}\n📦 แพ็กเกจ: ${pkg}\n➕ Add-on: ${addon}\n📍 สถานที่: ${detail}\n━━━━━━━━━━━━━━━\nจากเว็บไซต์ PUG MEDIA`;
+  return currentMessage;
 }
 
-// จัดการการส่งฟอร์ม
+// 1. ปุ่มหลัก: พยายามเปิด LINE อัตโนมัติ
 document.getElementById('bookingForm')?.addEventListener('submit', function(e) {
   e.preventDefault();
   const msg = buildMessage();
-  
-  if (!msg) {
-    alert('กรุณากรอกข้อมูลให้ครบถ้วนครับ');
-    return;
-  }
+  if (!msg) { alert('กรุณากรอกข้อมูลให้ครบถ้วนครับ'); return; }
 
+  const btn = document.getElementById('submitBtn');
+  const msgBox = document.getElementById('formMessage');
+  btn.disabled = true;
+  btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> กำลังเปิด LINE...';
+  
   const encoded = encodeURIComponent(msg);
-  // URL Scheme ทางการสำหรับเปิดแชท OA และวางข้อความอัตโนมัติ
   const lineURL = `https://line.me/R/msg/text/?@PUGMEDIA%20${encoded}`;
   
-  // เปิดแอป LINE
+  // พยายามเปิดแอป
   window.location.href = lineURL;
+  
+  msgBox.className = 'text-center p-3 rounded-xl bg-blue-100 text-blue-800 text-sm mt-3';
+  msgBox.innerHTML = '✅ กำลังสลับไปแอป LINE...\nหากไม่เด้งไปแอป ให้กดปุ่ม <strong>"คัดลอก & เปิดแชทสำรอง"</strong> ด้านล่าง';
+  msgBox.classList.remove('hidden');
 
-  // แสดงสถานะบนเว็บ
-  const formMessage = document.getElementById('formMessage');
-  if(formMessage) {
-    formMessage.className = 'text-center p-3 rounded-xl bg-green-100 text-green-800 text-sm';
-    formMessage.innerHTML = '✅ เปิด LINE และวางข้อความให้แล้ว<br>กรุณากดปุ่ม <strong>"ส่ง"</strong> ในแอป LINE';
-    formMessage.classList.remove('hidden');
-  }
-
-  // Tracking (Facebook Pixel & GA4)
-  if (typeof fbq !== 'undefined') fbq('track', 'Contact', { content_category: 'line_form' });
-  if (typeof gtag !== 'undefined') gtag('event', 'contact', { event_category: 'Contact', event_label: 'line_form' });
+  setTimeout(() => { btn.disabled = false; btn.innerHTML = '<i class="fab fa-line text-xl"></i><span>ส่งข้อมูลผ่าน LINE</span>'; }, 2500);
 });
 
-// Tab เปลี่ยนแพ็กเกจ
-function showPkg(n) {
-  document.querySelectorAll('.pkg-content').forEach(el => el.classList.add('hidden'));
-  document.querySelectorAll('.pkg-tab').forEach(el => {
-    el.classList.remove('bg-gold','text-white');
-    el.classList.add('text-gray-600');
+// 2. ปุ่มสำรอง: คัดลอกข้อความ + เปิดแชท OA (ทำงาน 100% ทุกเครื่อง)
+function fallbackSend() {
+  const msg = buildMessage();
+  if (!msg) { alert('กรุณากรอกข้อมูลให้ครบถ้วนครับ'); return; }
+
+  navigator.clipboard.writeText(msg).then(() => {
+    const btn = document.getElementById('fallbackBtn');
+    btn.innerHTML = '<i class="fas fa-check"></i><span>คัดลอกแล้ว! กำลังเปิด LINE...</span>';
+    btn.classList.add('bg-green-100', 'text-green-800', 'border-green-300');
+    
+    setTimeout(() => {
+      window.location.href = 'https://line.me/R/ti/p/@PUGMEDIA';
+      setTimeout(() => {
+        btn.innerHTML = '<i class="fas fa-copy"></i><span>คัดลอก & เปิดแชทสำรอง</span>';
+        btn.classList.remove('bg-green-100', 'text-green-800', 'border-green-300');
+      }, 3000);
+    }, 500);
+  }).catch(() => {
+    alert('เบราว์เซอร์ไม่อนุญาตให้คัดลอกอัตโนมัติ กรุณากดเลือกข้อความแล้ว Copy เองครับ');
   });
-  document.getElementById('pkg'+n)?.classList.remove('hidden');
-  const tab = document.getElementById('tab'+n);
-  if (tab) {
-    tab.classList.add('bg-gold','text-white');
-    tab.classList.remove('text-gray-600');
-  }
 }
 
-// Tracking Functions
-function trackLead(packageName, value) {
-  if (typeof fbq !== 'undefined') fbq('track', 'Lead', {content_name: packageName, value: value, currency: 'THB'});
-  if (typeof gtag !== 'undefined') gtag('event', 'generate_lead', {event_category: 'Booking', event_label: packageName, value: value, currency: 'THB'});
+// Tab แพ็กเกจ & Tracking (คงไว้เหมือนเดิม)
+function showPkg(n) {
+  document.querySelectorAll('.pkg-content').forEach(el => el.classList.add('hidden'));
+  document.querySelectorAll('.pkg-tab').forEach(el => { el.classList.remove('bg-gold','text-white'); el.classList.add('text-gray-600'); });
+  document.getElementById('pkg'+n)?.classList.remove('hidden');
+  const tab = document.getElementById('tab'+n);
+  if(tab) { tab.classList.add('bg-gold','text-white'); tab.classList.remove('text-gray-600'); }
 }
-function trackContact(method) {
-  if (typeof fbq !== 'undefined') fbq('track', 'Contact', {content_category: method});
-  if (typeof gtag !== 'undefined') gtag('event', 'contact', {event_category: 'Contact', event_label: method});
-}
-function trackViewContent(packageName) {
-  if (typeof fbq !== 'undefined') fbq('track', 'ViewContent', {content_name: packageName});
-  if (typeof gtag !== 'undefined') gtag('event', 'view_item', {event_category: 'Package', event_label: packageName});
-}
+function trackLead(n,v){if(typeof fbq!=='undefined')fbq('track','Lead',{content_name:n,value:v,currency:'THB'});if(typeof gtag!=='undefined')gtag('event','generate_lead',{event_category:'Booking',event_label:n,value:v,currency:'THB'});}
+function trackContact(m){if(typeof fbq!=='undefined')fbq('track','Contact',{content_category:m});if(typeof gtag!=='undefined')gtag('event','contact',{event_category:'Contact',event_label:m});}
+function trackViewContent(n){if(typeof fbq!=='undefined')fbq('track','ViewContent',{content_name:n});if(typeof gtag!=='undefined')gtag('event','view_item',{event_category:'Package',event_label:n});}
 </script>
 
 </body>
