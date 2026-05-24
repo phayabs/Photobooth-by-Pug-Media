@@ -675,40 +675,99 @@ footer {
 </section>
   
 <!-- ========== ADD-ON ========== -->
+<!-- ========== ADD-ON ========== -->
 <section id="addon" class="py-24 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white">
   <div class="max-w-7xl mx-auto px-4">
     <div class="text-center mb-16">
       <span class="text-gold-light font-semibold tracking-widest text-sm">PREMIUM ADD-ON</span>
       <h2 class="font-display text-4xl md:text-5xl font-bold mt-3 mb-4">บริการเสริมพิเศษ</h2>
     </div>
-    <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-      <article class="bg-white/5 backdrop-blur border border-white/10 p-8 rounded-3xl card-hover">
-        <div class="text-5xl mb-4">🎬</div>
-        <h3 class="text-2xl font-bold mb-2 text-gold-light">Video Guestbook</h3>
-        <p class="text-gray-300 mb-6">ให้แขกอัดวิดีโออวยพรสุดพิเศษ เก็บไว้เป็นความทรงจำ ส่งไฟล์หลังจบงาน</p>
-        <div class="space-y-3 mb-6">
-          <div class="flex justify-between bg-white/5 p-3 rounded-xl">
-            <span>3 ชั่วโมง</span>
-            <span><span class="line-through text-gray-500 mr-2">4,000฿</span><strong class="text-gold-light">2,500฿</strong></span>
-          </div>
-          <div class="flex justify-between bg-white/5 p-3 rounded-xl">
-            <span>4 ชั่วโมง</span>
-            <span><span class="line-through text-gray-500 mr-2">5,000฿</span><strong class="text-gold-light">3,500฿</strong></span>
+    
+    <div class="space-y-12">
+      
+      <!-- Video Guestbook (รูปซ้าย ข้อความขวา) -->
+      <div class="grid md:grid-cols-2 gap-8 items-center">
+        <!-- รูปด้านซ้าย -->
+        <div class="order-2 md:order-1">
+          <div class="relative rounded-3xl overflow-hidden shadow-2xl">
+            <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=800" 
+                 alt="Video Guestbook" 
+                 class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-r from-gold/20 to-transparent"></div>
           </div>
         </div>
-        <a href="#contact" class="block text-center btn-gold py-3 rounded-full text-white font-semibold" onclick="trackViewContent('video_guestbook')">เพิ่ม Video Guestbook</a>
-      </article>
-      <article class="bg-white/5 backdrop-blur border border-white/10 p-8 rounded-3xl card-hover">
-        <div class="text-5xl mb-4">💌</div>
-        <h3 class="text-2xl font-bold mb-2 text-gold-light">การ์ดเชิญอวยพร</h3>
-        <p class="text-gray-300 mb-6">ให้แขกเขียนข้อความอวยพรบนการ์ด พร้อมกรอบและปากกา ทางร้านเตรียมให้ครบ</p>
-        <div class="bg-white/5 p-4 rounded-xl mb-6 text-center">
-          <div class="text-4xl font-bold text-gold-light">1,500<span class="text-lg">฿</span></div>
-          <div class="text-sm text-gray-400 mt-1">รวมกรอบและปากกา</div>
-          <div class="text-xs text-gold-light mt-2">🎁 ฟรี! เมื่อจอง 4 ชั่วโมงขึ้นไป</div>
+        
+        <!-- เนื้อหาด้านขวา -->
+        <div class="order-1 md:order-2 bg-white/5 backdrop-blur border border-white/10 p-8 rounded-3xl card-hover">
+          <div class="text-5xl mb-4">🎬</div>
+          <h3 class="text-3xl font-bold mb-4 text-gold-light">Video Guestbook</h3>
+          <p class="text-gray-300 mb-6 text-lg">ให้แขกอัดวิดีโออวยพรสุดพิเศษ เก็บไว้เป็นความทรงจำ ส่งไฟล์หลังจบงาน</p>
+          
+          <div class="space-y-3 mb-6">
+            <div class="flex justify-between items-center bg-white/5 p-4 rounded-xl">
+              <span class="font-medium">3 ชั่วโมง</span>
+              <div class="text-right">
+                <span class="line-through text-gray-500 text-sm mr-2">4,000฿</span>
+                <strong class="text-gold-light text-xl">2,500฿</strong>
+              </div>
+            </div>
+            <div class="flex justify-between items-center bg-white/5 p-4 rounded-xl">
+              <span class="font-medium">4 ชั่วโมง</span>
+              <div class="text-right">
+                <span class="line-through text-gray-500 text-sm mr-2">5,000฿</span>
+                <strong class="text-gold-light text-xl">3,500฿</strong>
+              </div>
+            </div>
+          </div>
+          
+          <ul class="text-sm text-gray-300 space-y-2 mb-6">
+            <li><i class="fas fa-check text-gold mr-2"></i>ส่งไฟล์วิดีโอหลังจบงาน</li>
+            <li><i class="fas fa-check text-gold mr-2"></i>ความทรงจำที่จับต้องได้</li>
+            <li><i class="fas fa-check text-gold mr-2"></i>แขกทุกคนมีส่วนร่วม</li>
+          </ul>
+          
+          <a href="#contact" class="block text-center btn-gold py-3 rounded-full text-white font-semibold" onclick="trackViewContent('video_guestbook')">
+            เพิ่ม Video Guestbook
+          </a>
         </div>
-        <a href="#contact" class="block text-center btn-gold py-3 rounded-full text-white font-semibold" onclick="trackViewContent('greeting_card')">เพิ่มการ์ดอวยพร</a>
-      </article>
+      </div>
+
+      <!-- การ์ดเชิญอวยพร (รูปขวา ข้อความซ้าย) -->
+      <div class="grid md:grid-cols-2 gap-8 items-center">
+        <!-- เนื้อหาด้านซ้าย -->
+        <div class="bg-white/5 backdrop-blur border border-white/10 p-8 rounded-3xl card-hover">
+          <div class="text-5xl mb-4">💌</div>
+          <h3 class="text-3xl font-bold mb-4 text-gold-light">การ์ดเชิญอวยพร</h3>
+          <p class="text-gray-300 mb-6 text-lg">ให้แขกเขียนข้อความอวยพรบนการ์ด พร้อมกรอบและปากกา ทางร้านเตรียมให้ครบ</p>
+          
+          <div class="bg-white/5 p-6 rounded-xl mb-6 text-center">
+            <div class="text-4xl font-bold text-gold-light mb-2">1,500<span class="text-lg">฿</span></div>
+            <div class="text-sm text-gray-400 mb-3">รวมกรอบและปากกา</div>
+            <div class="text-xs text-gold-light bg-gold/10 py-2 px-4 rounded-full inline-block">
+              🎁 ฟรี! เมื่อจอง 4 ชั่วโมงขึ้นไป
+            </div>
+          </div>
+          
+          <ul class="text-sm text-gray-300 space-y-2 mb-6">
+            <li><i class="fas fa-check text-gold mr-2"></i>กรอบการ์ดสวยงาม</li>
+            <li><i class="fas fa-check text-gold mr-2"></i>ปากกาคุณภาพ</li>
+            <li><i class="fas fa-check text-gold mr-2"></i>ความทรงจำที่จับต้องได้</li>
+          </ul>
+          
+          <a href="#contact" class="block text-center btn-gold py-3 rounded-full text-white font-semibold" onclick="trackViewContent('greeting_card')">
+            เพิ่มการ์ดอวยพร
+          </a>
+        </div>
+        
+        <!-- รูปด้านขวา -->
+        <div class="relative rounded-3xl overflow-hidden shadow-2xl">
+          <img src="https://images.unsplash.com/photo-1522673607200-1645062cd495?w=800" 
+               alt="การ์ดเชิญอวยพร" 
+               class="w-full h-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-l from-gold/20 to-transparent"></div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
