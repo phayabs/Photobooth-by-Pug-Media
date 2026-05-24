@@ -244,18 +244,17 @@ tailwind.config = {
 
 <!-- ========== NAVBAR ========== -->
 <nav class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md shadow-sm">
-  <div class="max-w-7xl mx-auto px-3 py-2 md:px-4 md:py-3 flex items-center justify-between flex-nowrap">
+  <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between flex-nowrap">
     
+    <!-- โลโก้ -->
     <a href="/" class="flex items-center gap-2 shrink-0">
       <img src="images/logo.png" alt="PUG MEDIA Logo" class="h-8 w-auto md:h-10">
-      <!-- Desktop: แสดงบรรทัดเดียว -->
-      <span class="font-bold text-sm md:text-lg hidden md:block">PhotoBooth by <span class="text-gold-dark">PUG MEDIA</span></span>
-      <!-- Mobile: แสดง 2 บรรทัด ขนาดเล็กพอดีจอ -->
       <span class="font-bold text-xs leading-tight md:hidden">PhotoBooth by<br><span class="text-gold-dark text-sm">PUG MEDIA</span></span>
+      <span class="font-bold text-lg hidden md:block">PhotoBooth by <span class="text-gold-dark">PUG MEDIA</span></span>
     </a>
-    
-    <!-- เมนูจะซ่อนบนมือถือ แสดงเฉพาะ Desktop -->
-    <div class="hidden md:flex gap-6 text-sm font-medium">
+
+    <!-- เมนู Desktop (ซ่อนบนมือถือ) -->
+    <div class="hidden md:flex gap-6 text-sm font-medium items-center">
       <a href="#features" class="hover:text-gold-dark transition">จุดเด่น</a>
       <a href="#packages" class="hover:text-gold-dark transition">แพ็กเกจ</a>
       <a href="#addon" class="hover:text-gold-dark transition">Add-on</a>
@@ -264,14 +263,29 @@ tailwind.config = {
       <a href="#contact" class="hover:text-gold-dark transition">ติดต่อ</a>
     </div>
 
-    <!-- ปุ่มสอบถามคิว: แสดงทุกหน้าจอ แต่ย่อขนาดอัตโนมัติบนมือถือ -->
-    <a href="#contact" class="btn-gold px-3 py-1.5 text-xs font-semibold rounded-full md:px-5 md:py-2 md:text-sm whitespace-nowrap shrink-0" onclick="trackContact('booking_button')">
-      สอบถามคิว
-    </a>
-    
+    <!-- ด้านขวา: ปุ่ม CTA + ปุ่มเมนูมือถือ -->
+    <div class="flex items-center gap-3 shrink-0">
+      <a href="#contact" class="btn-gold px-3 py-1.5 text-xs font-semibold rounded-full md:px-5 md:py-2 md:text-sm whitespace-nowrap" onclick="trackContact('booking_button')">สอบถามคิว</a>
+      
+      <!-- ปุ่ม Hamburger (แสดงเฉพาะมือถือ) -->
+      <button id="mobileMenuBtn" class="md:hidden text-gold-dark text-2xl focus:outline-none p-1" aria-label="เปิดเมนู">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- เมนู Dropdown สำหรับมือถือ -->
+  <div id="mobileMenu" class="hidden md:hidden bg-white border-t border-gray-100 shadow-lg absolute w-full left-0 top-full z-40">
+    <div class="px-4 py-3 space-y-1">
+      <a href="#features" class="block py-3 px-2 rounded-lg text-gray-700 hover:bg-rose-light hover:text-gold-dark font-medium transition">จุดเด่น</a>
+      <a href="#packages" class="block py-3 px-2 rounded-lg text-gray-700 hover:bg-rose-light hover:text-gold-dark font-medium transition">แพ็กเกจ</a>
+      <a href="#addon" class="block py-3 px-2 rounded-lg text-gray-700 hover:bg-rose-light hover:text-gold-dark font-medium transition">Add-on</a>
+      <a href="#gallery" class="block py-3 px-2 rounded-lg text-gray-700 hover:bg-rose-light hover:text-gold-dark font-medium transition">แกลเลอรี</a>
+      <a href="#social" class="block py-3 px-2 rounded-lg text-gray-700 hover:bg-rose-light hover:text-gold-dark font-medium transition">โซเชียลฯ</a>
+      <a href="#contact" class="block py-3 px-2 rounded-lg text-gray-700 hover:bg-rose-light hover:text-gold-dark font-medium transition">ติดต่อ</a>
+    </div>
   </div>
 </nav>
-
 <main>
 
 <!-- ========== HERO ========== -->
@@ -926,6 +940,33 @@ function trackLead(n,v){if(typeof fbq!=='undefined')fbq('track','Lead',{content_
 function trackContact(m){if(typeof fbq!=='undefined')fbq('track','Contact',{content_category:m});if(typeof gtag!=='undefined')gtag('event','contact',{event_category:'Contact',event_label:m});}
 function trackViewContent(n){if(typeof fbq!=='undefined')fbq('track','ViewContent',{content_name:n});if(typeof gtag!=='undefined')gtag('event','view_item',{event_category:'Package',event_label:n});}
 </script>
+<script>
+// จัดการเมนูมือถือ
+const menuBtn = document.getElementById('mobileMenuBtn');
+const mobileMenu = document.getElementById('mobileMenu');
 
+if (menuBtn && mobileMenu) {
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+    const icon = menuBtn.querySelector('i');
+    if (mobileMenu.classList.contains('hidden')) {
+      icon.classList.remove('fa-times');
+      icon.classList.add('fa-bars');
+    } else {
+      icon.classList.remove('fa-bars');
+      icon.classList.add('fa-times');
+    }
+  });
+
+  // ปิดเมนูเมื่อกดลิงก์
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
+      menuBtn.querySelector('i').classList.remove('fa-times');
+      menuBtn.querySelector('i').classList.add('fa-bars');
+    });
+  });
+}
+</script>
 </body>
 </html>
