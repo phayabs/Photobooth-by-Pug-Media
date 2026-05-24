@@ -244,12 +244,17 @@ tailwind.config = {
 
 <!-- ========== NAVBAR ========== -->
 <nav class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md shadow-sm">
-  <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
-    <a href="/" class="flex items-center gap-2">
-      <img src="images/logo.png" alt="PUG MEDIA Logo" class="h-10 w-auto">
-      <span class="font-bold text-lg hidden md:block">PhotoBooth by <span class="text-gold-dark">PUG MEDIA</span></span>
-      <span class="font-bold text-sm md:hidden leading-tight">PhotoBooth by<br><span class="text-gold-dark text-base">PUG MEDIA</span></span>
+  <div class="max-w-7xl mx-auto px-3 py-2 md:px-4 md:py-3 flex items-center justify-between flex-nowrap">
+    
+    <a href="/" class="flex items-center gap-2 shrink-0">
+      <img src="images/logo.png" alt="PUG MEDIA Logo" class="h-8 w-auto md:h-10">
+      <!-- Desktop: แสดงบรรทัดเดียว -->
+      <span class="font-bold text-sm md:text-lg hidden md:block">PhotoBooth by <span class="text-gold-dark">PUG MEDIA</span></span>
+      <!-- Mobile: แสดง 2 บรรทัด ขนาดเล็กพอดีจอ -->
+      <span class="font-bold text-xs leading-tight md:hidden">PhotoBooth by<br><span class="text-gold-dark text-sm">PUG MEDIA</span></span>
     </a>
+    
+    <!-- เมนูจะซ่อนบนมือถือ แสดงเฉพาะ Desktop -->
     <div class="hidden md:flex gap-6 text-sm font-medium">
       <a href="#features" class="hover:text-gold-dark transition">จุดเด่น</a>
       <a href="#packages" class="hover:text-gold-dark transition">แพ็กเกจ</a>
@@ -258,7 +263,12 @@ tailwind.config = {
       <a href="#social" class="hover:text-gold-dark transition">โซเชียลฯ</a>
       <a href="#contact" class="hover:text-gold-dark transition">ติดต่อ</a>
     </div>
-    <a href="#contact" class="btn-gold px-5 py-2 rounded-full text-white text-sm font-semibold hidden md:inline-block" onclick="trackContact('booking_button')">สอบถามคิว</a>
+
+    <!-- ปุ่มสอบถามคิว: แสดงทุกหน้าจอ แต่ย่อขนาดอัตโนมัติบนมือถือ -->
+    <a href="#contact" class="btn-gold px-3 py-1.5 text-xs font-semibold rounded-full md:px-5 md:py-2 md:text-sm whitespace-nowrap shrink-0" onclick="trackContact('booking_button')">
+      สอบถามคิว
+    </a>
+    
   </div>
 </nav>
 
