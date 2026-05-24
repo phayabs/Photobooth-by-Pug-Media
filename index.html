@@ -775,54 +775,70 @@ tailwind.config = {
         </div>
       </div>
 
-      <form id="bookingForm" class="bg-white p-8 rounded-3xl shadow-xl space-y-4">
-        <h3 class="font-bold text-xl mb-2">ฟอร์มสอบถามคิวงาน</h3>
-        <div>
-          <label class="text-sm text-gray-600" for="f_name">ชื่อ-นามสกุล *</label>
-          <input type="text" id="f_name" required placeholder="เช่น สมชาย ใจดี" class="w-full p-3 border border-gray-200 rounded-xl focus:border-gold focus:outline-none mt-1">
-        </div>
-        <div>
-          <label class="text-sm text-gray-600" for="f_phone">เบอร์โทรศัพท์ *</label>
-          <input type="tel" id="f_phone" required placeholder="09x-xxx-xxxx" class="w-full p-3 border border-gray-200 rounded-xl focus:border-gold focus:outline-none mt-1">
-        </div>
-        <div>
-          <label class="text-sm text-gray-600" for="f_date">วันและเวลางาน *</label>
-          <input type="datetime-local" id="f_date" required class="w-full p-3 border border-gray-200 rounded-xl focus:border-gold focus:outline-none mt-1">
-        </div>
-        <div>
-          <label class="text-sm text-gray-600" for="f_package">แพ็กเกจ *</label>
-          <select id="f_package" required class="w-full p-3 border border-gray-200 rounded-xl focus:border-gold focus:outline-none mt-1">
-            <option value="">-- เลือกแพ็กเกจ --</option>
-            <option>2 ชั่วโมง - Size 2x6 (6,900฿)</option>
-            <option>2 ชั่วโมง - Size 3x4 (7,900฿)</option>
-            <option>2 ชั่วโมง - Size 2x6,4x6 (8,900฿)</option>
-            <option>3 ชั่วโมง - Size 2x6 (8,900฿)</option>
-            <option>3 ชั่วโมง - Size 3x4 (9,900฿)</option>
-            <option>3 ชั่วโมง - Size 2x6,4x6 (10,900฿)</option>
-            <option>4 ชั่วโมง - Size 2x6 (9,900฿) ⭐ Best Seller</option>
-            <option>4 ชั่วโมง - Size 3x4 (10,900฿) ⭐ Best Seller</option>
-            <option>4 ชั่วโมง - Size 2x6,4x6 (12,900฿) ⭐ Best Seller</option>
-          </select>
-        </div>
-        <div>
-          <label class="text-sm text-gray-600" for="f_addon">Add-on (ถ้ามี)</label>
-          <select id="f_addon" class="w-full p-3 border border-gray-200 rounded-xl focus:border-gold focus:outline-none mt-1">
-            <option value="-">ไม่ต้องการ</option>
-            <option>Video Guestbook 3 ชม. (+2,500฿)</option>
-            <option>Video Guestbook 4 ชม. (+3,500฿)</option>
-            <option>การ์ดเชิญอวยพร (+1,500฿)</option>
-          </select>
-        </div>
-        <div>
-          <label class="text-sm text-gray-600" for="f_detail">สถานที่จัดงาน / รายละเอียดเพิ่มเติม</label>
-          <textarea id="f_detail" rows="3" placeholder="เช่น โรงแรมxxx ย่านสุขุมวิท" class="w-full p-3 border border-gray-200 rounded-xl focus:border-gold focus:outline-none mt-1"></textarea>
-        </div>
-        <button type="submit" id="submitBtn" class="w-full btn-gold py-4 rounded-xl text-white font-semibold">
-          <i class="fas fa-paper-plane mr-2"></i>ส่งข้อมูลสอบถาม
-        </button>
-        <div id="formMessage" class="hidden text-center p-3 rounded-xl"></div>
-      </form>
-    </div>
+     <!-- ฟอร์มสอบถาม -->
+<form id="bookingForm" class="bg-white p-8 rounded-3xl shadow-xl space-y-4">
+  <h3 class="font-bold text-xl mb-2">ฟอร์มสอบถามคิวงาน</h3>
+  
+  <div>
+    <label class="text-sm text-gray-600" for="f_name">ชื่อ-นามสกุล *</label>
+    <input type="text" id="f_name" required placeholder="เช่น สมชาย ใจดี" 
+           class="w-full p-3 border border-gray-200 rounded-xl focus:border-gold focus:outline-none mt-1">
+  </div>
+  
+  <div>
+    <label class="text-sm text-gray-600" for="f_phone">เบอร์โทรศัพท์ *</label>
+    <input type="tel" id="f_phone" required placeholder="09x-xxx-xxxx" 
+           class="w-full p-3 border border-gray-200 rounded-xl focus:border-gold focus:outline-none mt-1">
+  </div>
+  
+  <div>
+    <label class="text-sm text-gray-600" for="f_date">วันและเวลางาน *</label>
+    <input type="datetime-local" id="f_date" required 
+           class="w-full p-3 border border-gray-200 rounded-xl focus:border-gold focus:outline-none mt-1">
+  </div>
+  
+  <div>
+    <label class="text-sm text-gray-600" for="f_package">แพ็กเกจ *</label>
+    <select id="f_package" required class="w-full p-3 border border-gray-200 rounded-xl focus:border-gold focus:outline-none mt-1">
+      <option value="">-- เลือกแพ็กเกจ --</option>
+      <option>2 ชั่วโมง - Size 2x6 (6,900฿)</option>
+      <option>2 ชั่วโมง - Size 3x4 (7,900฿)</option>
+      <option>2 ชั่วโมง - Size 2x6,4x6 (8,900฿)</option>
+      <option>3 ชั่วโมง - Size 2x6 (8,900฿)</option>
+      <option>3 ชั่วโมง - Size 3x4 (9,900฿)</option>
+      <option>3 ชั่วโมง - Size 2x6,4x6 (10,900฿)</option>
+      <option>4 ชั่วโมง - Size 2x6 (9,900฿) ⭐ Best Seller</option>
+      <option>4 ชั่วโมง - Size 3x4 (10,900฿) ⭐ Best Seller</option>
+      <option>4 ชั่วโมง - Size 2x6,4x6 (12,900฿) ⭐ Best Seller</option>
+    </select>
+  </div>
+  
+  <div>
+    <label class="text-sm text-gray-600" for="f_addon">Add-on (ถ้ามี)</label>
+    <select id="f_addon" class="w-full p-3 border border-gray-200 rounded-xl focus:border-gold focus:outline-none mt-1">
+      <option value="-">ไม่ต้องการ</option>
+      <option>Video Guestbook 3 ชม. (+2,500฿)</option>
+      <option>Video Guestbook 4 ชม. (+3,500฿)</option>
+      <option>การ์ดเชิญอวยพร (+1,500฿)</option>
+    </select>
+  </div>
+  
+  <div>
+    <label class="text-sm text-gray-600" for="f_detail">สถานที่จัดงาน / รายละเอียดเพิ่มเติม</label>
+    <textarea id="f_detail" rows="3" placeholder="เช่น โรงแรมxxx ย่านสุขุมวิท" 
+              class="w-full p-3 border border-gray-200 rounded-xl focus:border-gold focus:outline-none mt-1"></textarea>
+  </div>
+  
+  <button type="submit" id="submitBtn" class="w-full btn-gold py-4 rounded-xl text-white font-semibold flex items-center justify-center gap-2">
+    <i class="fab fa-line"></i>
+    <span>ส่งข้อมูลผ่าน LINE</span>
+  </button>
+  
+  <p class="text-xs text-gray-500 text-center">
+    📌 ระบบจะเปิดแอป LINE และเตรียมข้อความให้ → คุณแค่กดส่งให้ร้าน
+  </p>
+  <div id="formMessage" class="hidden text-center p-3 rounded-xl"></div>
+</form>    </div>
   </div>
 </section>
 
@@ -939,6 +955,81 @@ document.getElementById('bookingForm').addEventListener('submit', async function
   }
 });
 </script>
-
+<script>
+// ========== ฟอร์มสอบถาม ส่งไป LINE OA ==========
+document.getElementById('bookingForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  
+  const submitBtn = document.getElementById('submitBtn');
+  const formMessage = document.getElementById('formMessage');
+  
+  // รวบรวมข้อมูลจากฟอร์ม
+  const name = document.getElementById('f_name').value;
+  const phone = document.getElementById('f_phone').value;
+  const dateRaw = document.getElementById('f_date').value;
+  const pkg = document.getElementById('f_package').value;
+  const addon = document.getElementById('f_addon').value;
+  const detail = document.getElementById('f_detail').value;
+  
+  // แปลงวันที่เป็นภาษาไทยอ่านง่าย
+  const dateObj = new Date(dateRaw);
+  const thaiDate = dateObj.toLocaleString('th-TH', { 
+    year: 'numeric', month: 'long', day: 'numeric',
+    hour: '2-digit', minute: '2-digit'
+  });
+  
+  // สร้างข้อความที่จะส่ง (ตามรูปแบบที่ต้องการ)
+  const message = 
+`🎉 *สอบถามคิว Photo Booth*
+━━━━━━━━━━━━━━━
+👤 ชื่อ: ${name}
+📞 โทร: ${phone}
+📅 วันงาน: ${thaiDate}
+📦 แพ็กเกจ: ${pkg}
+➕ Add-on: ${addon}
+📍 สถานที่: ${detail || '-'}
+━━━━━━━━━━━━━━━
+จากเว็บไซต์ PUG MEDIA`;
+  
+  // เข้ารหัสข้อความเพื่อใช้ใน URL
+  const encoded = encodeURIComponent(message);
+  
+  // เปิด LINE OA พร้อมข้อความ
+  // รูปแบบ: https://line.me/R/msg/text/?@AccountID%20<message>
+  const lineURL = `https://line.me/R/msg/text/?@PUGMEDIA%20${encoded}`;
+  
+  // ปิดปุ่มและแสดงสถานะ
+  submitBtn.disabled = true;
+  submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> กำลังเปิด LINE...';
+  
+  // เปิด LINE ในแท็บใหม่
+  const newTab = window.open(lineURL, '_blank');
+  
+  // แสดงข้อความยืนยัน
+  setTimeout(() => {
+    formMessage.className = 'text-center p-3 rounded-xl bg-green-100 text-green-800';
+    formMessage.innerHTML = '✅ <strong>เปิด LINE ให้แล้ว!</strong><br>กรุณาตรวจสอบข้อความและกดส่งให้ร้านได้เลยค่ะ';
+    formMessage.classList.remove('hidden');
+    
+    // รีเซ็ตฟอร์ม
+    document.getElementById('bookingForm').reset();
+    
+    // เปิดปุ่มอีกครั้ง
+    submitBtn.disabled = false;
+    submitBtn.innerHTML = '<i class="fab fa-line"></i><span>ส่งข้อมูลผ่าน LINE</span>';
+  }, 1500);
+  
+  // Track event สำหรับ Facebook Pixel / GA4
+  if (typeof fbq !== 'undefined') {
+    fbq('track', 'Contact', { content_category: 'line_form_submit' });
+  }
+  if (typeof gtag !== 'undefined') {
+    gtag('event', 'contact', {
+      event_category: 'Contact',
+      event_label: 'line_form_submit'
+    });
+  }
+});
+</script>
 </body>
 </html>
