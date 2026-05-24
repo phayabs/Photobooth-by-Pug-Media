@@ -292,6 +292,17 @@ tailwind.config = {
     50% { transform: translateY(-8px); box-shadow: 0 8px 25px rgba(6, 199, 85, 0.6), 0 0 20px rgba(6, 199, 85, 0.4); }
   }
   a[href*="line.me"]:hover { animation: none; transform: scale(1.15); box-shadow: 0 10px 30px rgba(6, 199, 85, 0.6), 0 0 30px rgba(6, 199, 85, 0.4); }
+  /* ลบ padding เกินจาก body หรือ main */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* หรือปรับ footer */
+footer {
+  margin-bottom: 0;
+  padding-bottom: 40px; /* ลดจากเดิม */
+}
 </style>
 </head>
 
@@ -885,11 +896,6 @@ tailwind.config = {
     </div>
   </div>
 </footer>
-
-<!-- Floating LINE Button (ปรับตำแหน่งมือถือให้ลอยสูงขึ้น ไม่ทับ Footer) -->
-<a href="https://line.me/R/ti/p/@PUGMEDIA" target="_blank" rel="noopener" class="fixed bottom-20 md:bottom-8 right-4 md:right-8 z-50 w-14 h-14 md:w-16 md:h-16 bg-green-500 rounded-full flex items-center justify-center text-white text-2xl md:text-3xl shadow-2xl hover:scale-110 transition" onclick="trackContact('floating_line')">
-  <i class="fab fa-line"></i>
-</a>
 
 <div id="fb-root"></div>
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/th_TH/sdk.js#xfbml=1&version=v18.0"></script>
