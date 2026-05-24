@@ -42,7 +42,6 @@
 <link rel="dns-prefetch" href="https://connect.facebook.net">
 
 <!-- ========== FACEBOOK PIXEL ========== -->
-<!-- ⚠️ เปลี่ยน YOUR_PIXEL_ID เป็น Pixel ID ของคุณ -->
 <script>
   !function(f,b,e,v,n,t,s)
   {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -59,7 +58,6 @@
   src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"/></noscript>
 
 <!-- ========== GOOGLE ANALYTICS 4 ========== -->
-<!-- ⚠️ เปลี่ยน G-XXXXXXXXXX เป็น GA4 ID ของคุณ -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -214,7 +212,6 @@ tailwind.config = {
   }
   .animate-float { animation: float 6s ease-in-out infinite; }
 
-  /* Social Icons */
   .social-icon {
     width: 50px; height: 50px; border-radius: 50%;
     display: inline-flex; align-items: center; justify-content: center;
@@ -230,7 +227,6 @@ tailwind.config = {
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
   }
 
-  /* Instagram Grid */
   .ig-item { display: block; cursor: pointer; background: #f3f4f6; }
   .ig-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
   .ig-item:hover .ig-img { transform: scale(1.1); }
@@ -564,42 +560,27 @@ tailwind.config = {
     </div>
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
       
-      <!-- รูปที่ 1 -->
       <div class="gallery-item rounded-2xl aspect-square">
         <img src="images/ig-1.jpg" class="w-full h-full object-cover" alt="บรรยากาศงานแต่ง Photo Booth" loading="lazy">
       </div>
-
-      <!-- รูปที่ 2 -->
       <div class="gallery-item rounded-2xl aspect-square">
         <img src="images/ig-2.jpg" class="w-full h-full object-cover" alt="อุปกรณ์ Photo Booth" loading="lazy">
       </div>
-
-      <!-- รูปที่ 3 -->
       <div class="gallery-item rounded-2xl aspect-square">
         <img src="images/ig-3.jpg" class="w-full h-full object-cover" alt="พร็อพ Photo Booth" loading="lazy">
       </div>
-
-      <!-- รูปที่ 4 -->
       <div class="gallery-item rounded-2xl aspect-square">
         <img src="images/ig-4.jpg" class="w-full h-full object-cover" alt="บรรยากาศงานแต่งงาน" loading="lazy">
       </div>
-
-      <!-- รูปที่ 5 -->
       <div class="gallery-item rounded-2xl aspect-square">
         <img src="images/ig-5.jpg" class="w-full h-full object-cover" alt="บรรยากาศงานปาร์ตี้" loading="lazy">
       </div>
-
-      <!-- รูปที่ 6 -->
       <div class="gallery-item rounded-2xl aspect-square">
         <img src="images/ig-6.jpg" class="w-full h-full object-cover" alt="งานอีเวนต์" loading="lazy">
       </div>
-
-      <!-- รูปที่ 7 -->
       <div class="gallery-item rounded-2xl aspect-square">
         <img src="images/ig-7.jpg" class="w-full h-full object-cover" alt="ทีมช่างภาพ" loading="lazy">
       </div>
-
-      <!-- รูปที่ 8 -->
       <div class="gallery-item rounded-2xl aspect-square">
         <img src="images/ig-8.jpg" class="w-full h-full object-cover" alt="บริการคุณภาพ" loading="lazy">
       </div>
@@ -697,44 +678,43 @@ tailwind.config = {
     </div>
 
     <!-- Facebook Page Feed -->
-<div class="fb-feed-container">
-  <div class="flex items-center justify-between mb-4 flex-wrap gap-4">
-    <h3 class="font-bold text-2xl flex items-center gap-3">
-      <i class="fab fa-facebook text-blue-600"></i>Facebook
-      <span class="text-sm font-normal text-gray-500">Photobooth by Pug Media</span>
-    </h3>
-    <a href="https://www.facebook.com/PhotoboothbyPugMedia" target="_blank" rel="noopener" 
-       class="px-5 py-2 rounded-full font-semibold bg-blue-600 text-white text-sm hover:bg-blue-700 transition">
-      <i class="fab fa-facebook mr-2"></i>ติดตามเพจ
-    </a>
-  </div>
-  
-  <!-- Facebook Page Plugin -->
-  <div class="w-full bg-white rounded-2xl shadow-lg p-4" style="min-height: 600px;">
-    <div class="fb-page." 
-         data-href="https://www.facebook.com/PhotoboothbyPugMedia" 
-         data-tabs="timeline" 
-         data-width="500" 
-         data-height="600" 
-         data-small-header="false" 
-         data-adapt-container-width="true" 
-         data-hide-cover="false" 
-         data-show-facepile="true">
-      <blockquote cite="https://www.facebook.com/PhotoboothbyPugMedia" 
-                  class="fb-xfbml-parse-ignore">
-        <a href="https://www.facebook.com/PhotoboothbyPugMedia">
-          Photobooth by Pug Media
+    <div class="fb-feed-container">
+      <div class="flex items-center justify-between mb-4 flex-wrap gap-4">
+        <h3 class="font-bold text-2xl flex items-center gap-3">
+          <i class="fab fa-facebook text-blue-600"></i>Facebook
+          <span class="text-sm font-normal text-gray-500">Photobooth by Pug Media</span>
+        </h3>
+        <a href="https://www.facebook.com/PhotoboothbyPugMedia" target="_blank" rel="noopener" 
+           class="px-5 py-2 rounded-full font-semibold bg-blue-600 text-white text-sm hover:bg-blue-700 transition">
+          <i class="fab fa-facebook mr-2"></i>ติดตามเพจ
         </a>
-      </blockquote>
+      </div>
+      
+      <div class="w-full bg-white rounded-2xl shadow-lg p-4" style="min-height: 600px;">
+        <div class="fb-page" 
+             data-href="https://www.facebook.com/PhotoboothbyPugMedia" 
+             data-tabs="timeline" 
+             data-width="500" 
+             data-height="600" 
+             data-small-header="false" 
+             data-adapt-container-width="true" 
+             data-hide-cover="false" 
+             data-show-facepile="true">
+          <blockquote cite="https://www.facebook.com/PhotoboothbyPugMedia" 
+                      class="fb-xfbml-parse-ignore">
+            <a href="https://www.facebook.com/PhotoboothbyPugMedia">
+              Photobooth by Pug Media
+            </a>
+          </blockquote>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
 
-<!-- Facebook SDK (ต้องใส่เพื่อให้ Plugin ทำงาน) -->
-<div id="fb-root"></div>
-<script async defer crossorigin="anonymous" 
-        src="https://connect.facebook.net/th_TH/sdk.js#xfbml=1&version=v18.0">
-</script>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" 
+            src="https://connect.facebook.net/th_TH/sdk.js#xfbml=1&version=v18.0">
+    </script>
+  </div>
 </section>
 
 <!-- TikTok Embed Script -->
@@ -748,18 +728,42 @@ tailwind.config = {
       <h2 class="font-display text-4xl md:text-5xl font-bold mt-3 mb-4">ติดต่อ / สอบถามคิวงาน</h2>
     </div>
     <div class="grid md:grid-cols-2 gap-10">
+      
       <div class="space-y-5">
-        <a href="tel:0922590736" class="flex items-center gap-4 bg-white p-5 rounded-2xl shadow-md card-hover" onclick="trackContact('phone_1')">
+        <div class="bg-gold-dark text-white p-6 rounded-2xl shadow-lg">
+           <h3 class="font-bold text-xl mb-4"><i class="fas fa-map-marker-alt mr-2"></i>พื้นที่ให้บริการ</h3>
+           <div class="space-y-3 text-sm md:text-base">
+             <div class="flex items-start gap-2">
+               <i class="fas fa-check-circle text-green-300 mt-1"></i>
+               <span>กรุงเทพฯ และปริมณฑล (ฟรีค่าเดินทาง)</span>
+             </div>
+             <div class="flex items-start gap-2">
+               <i class="fas fa-car text-yellow-300 mt-1"></i>
+               <span>ต่างจังหวัด: คิดค่าเดินทางตามระยะทาง</span>
+             </div>
+           </div>
+        </div>
+
+        <a href="tel:0922590736" class="flex items-center gap-4 bg-white p-5 rounded-2xl shadow-md card-hover">
           <div class="w-14 h-14 bg-gold rounded-2xl flex items-center justify-center text-white text-2xl"><i class="fas fa-phone"></i></div>
-          <div><div class="text-sm text-gray-500">โทร (สาย 1)</div><div class="text-lg font-bold">092-259-0736</div></div>
+          <div>
+            <div class="text-sm text-gray-500">โทร (สาย 1)</div>
+            <div class="text-lg font-bold">092-259-0736</div>
+          </div>
         </a>
-        <a href="tel:0837415338" class="flex items-center gap-4 bg-white p-5 rounded-2xl shadow-md card-hover" onclick="trackContact('phone_2')">
+        <a href="tel:0837415338" class="flex items-center gap-4 bg-white p-5 rounded-2xl shadow-md card-hover">
           <div class="w-14 h-14 bg-gold rounded-2xl flex items-center justify-center text-white text-2xl"><i class="fas fa-phone"></i></div>
-          <div><div class="text-sm text-gray-500">โทร (สาย 2)</div><div class="text-lg font-bold">083-741-5338</div></div>
+          <div>
+            <div class="text-sm text-gray-500">โทร (สาย 2)</div>
+            <div class="text-lg font-bold">083-741-5338</div>
+          </div>
         </a>
-        <a href="https://line.me/R/ti/p/@PUGMEDIA" target="_blank" rel="noopener" class="flex items-center gap-4 bg-white p-5 rounded-2xl shadow-md card-hover" onclick="trackContact('line_official')">
+        <a href="https://line.me/R/ti/p/@PUGMEDIA" target="_blank" rel="noopener" class="flex items-center gap-4 bg-white p-5 rounded-2xl shadow-md card-hover">
           <div class="w-14 h-14 bg-green-500 rounded-2xl flex items-center justify-center text-white text-2xl"><i class="fab fa-line"></i></div>
-          <div><div class="text-sm text-gray-500">LINE Official</div><div class="text-lg font-bold">@PUGMEDIA</div></div>
+          <div>
+            <div class="text-sm text-gray-500">LINE Official</div>
+            <div class="text-lg font-bold">@PUGMEDIA</div>
+          </div>
         </a>
         <div class="bg-white p-5 rounded-2xl shadow-md">
           <div class="text-sm text-gray-500 mb-3">ติดตามผลงาน</div>
@@ -769,13 +773,81 @@ tailwind.config = {
             <a href="https://www.tiktok.com/@photoboothbypugmedia" target="_blank" rel="noopener" class="social-icon social-tiktok !w-12 !h-12 !text-xl"><i class="fab fa-tiktok"></i></a>
           </div>
         </div>
-        <div class="bg-gold-dark text-white p-6 rounded-2xl">
-          <h3 class="font-bold mb-3"><i class="fas fa-map-marker-alt mr-2"></i>พื้นที่ให้บริการ</h3>
-          <p class="text-sm">✅ กรุงเทพฯ และปริมณฑล (ฟรีค่าเดินทาง)<br>🚗 ต่างจังหวัด: คิดค่าเดินทางตามระยะทาง</p>
-        </div>
       </div>
 
+      <div class="bg-white p-6 md:p-8 rounded-3xl shadow-xl border border-gray-100">
+        <h3 class="font-bold text-xl mb-6 text-gray-800">ฟอร์มสอบถามคิวงาน</h3>
+        <form id="bookingForm" class="space-y-4">
+          
+          <div>
+            <label class="text-sm text-gray-600 font-medium">ชื่อ-นามสกุล *</label>
+            <input type="text" id="f_name" required placeholder="เช่น สมชาย ใจดี" class="w-full p-3 border border-gray-200 rounded-xl focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold transition">
+          </div>
+          
+          <div>
+            <label class="text-sm text-gray-600 font-medium">เบอร์โทรศัพท์ *</label>
+            <input type="tel" id="f_phone" required placeholder="09x-xxx-xxxx" class="w-full p-3 border border-gray-200 rounded-xl focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold transition">
+          </div>
+          
+          <div>
+            <label class="text-sm text-gray-600 font-medium">วันและเวลางาน *</label>
+            <input type="datetime-local" id="f_date" required class="w-full p-3 border border-gray-200 rounded-xl focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold transition">
+          </div>
+          
+          <div>
+            <label class="text-sm text-gray-600 font-medium">แพ็กเกจ *</label>
+            <select id="f_package" required class="w-full p-3 border border-gray-200 rounded-xl focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold transition bg-white">
+              <option value="">-- เลือกแพ็กเกจ --</option>
+              <option>2 ชั่วโมง - Size 2x6 (6,900฿)</option>
+              <option>2 ชั่วโมง - Size 3x4 (7,900฿)</option>
+              <option>2 ชั่วโมง - Size 2x6,4x6 (8,900฿)</option>
+              <option>3 ชั่วโมง - Size 2x6 (8,900฿)</option>
+              <option>3 ชั่วโมง - Size 3x4 (9,900฿)</option>
+              <option>3 ชั่วโมง - Size 2x6,4x6 (10,900฿)</option>
+              <option>4 ชั่วโมง - Size 2x6 (9,900฿) ⭐ Best Seller</option>
+              <option>4 ชั่วโมง - Size 3x4 (10,900฿) ⭐ Best Seller</option>
+              <option>4 ชั่วโมง - Size 2x6,4x6 (12,900฿) ⭐ Best Seller</option>
+            </select>
+          </div>
+          
+          <div>
+            <label class="text-sm text-gray-600 font-medium">Add-on (ถ้ามี)</label>
+            <select id="f_addon" class="w-full p-3 border border-gray-200 rounded-xl focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold transition bg-white">
+              <option value="-">ไม่ต้องการ</option>
+              <option>Video Guestbook 3 ชม. (+2,500฿)</option>
+              <option>Video Guestbook 4 ชม. (+3,500฿)</option>
+              <option>การ์ดเชิญอวยพร (+1,500฿)</option>
+            </select>
+          </div>
+          
+          <div>
+            <label class="text-sm text-gray-600 font-medium">สถานที่จัดงาน / รายละเอียดเพิ่มเติม</label>
+            <textarea id="f_detail" rows="2" placeholder="เช่น โรงแรมxxx ย่านสุขุมวิท" class="w-full p-3 border border-gray-200 rounded-xl focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold transition"></textarea>
+          </div>
 
+          <div class="pt-2 space-y-3">
+            <button type="submit" id="submitBtn" class="w-full btn-gold py-4 rounded-xl text-white font-bold shadow-md hover:shadow-lg transition flex items-center justify-center gap-2">
+              <i class="fab fa-line text-xl"></i>
+              <span>ส่งข้อมูลผ่าน LINE</span>
+            </button>
+            
+            <button type="button" onclick="copyMessage()" class="w-full bg-gray-100 hover:bg-gray-200 text-gray-600 py-3 rounded-xl font-medium transition flex items-center justify-center gap-2 border border-gray-200">
+              <i class="fas fa-copy"></i>
+              <span id="copyText">คัดลอกข้อความ (กรณีไม่มี LINE)</span>
+            </button>
+          </div>
+
+          <div id="formMessage" class="hidden text-center p-3 rounded-xl text-sm"></div>
+          <p class="text-xs text-gray-400 text-center mt-2">
+            🔒 ข้อมูลจะถูกส่งไปยัง LINE OA: @PUGMEDIA โดยตรง
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
 
 <!-- ========== FOOTER ========== -->
 <footer class="bg-gray-900 text-gray-400 py-10">
@@ -809,118 +881,18 @@ tailwind.config = {
   </div>
 </footer>
 
-<!-- Floating LINE Button -->
 <a href="https://line.me/R/ti/p/@PUGMEDIA" target="_blank" rel="noopener" class="fixed bottom-6 right-6 w-16 h-16 bg-green-500 rounded-full flex items-center justify-center text-white text-3xl shadow-2xl hover:scale-110 transition z-50" onclick="trackContact('floating_line')">
   <i class="fab fa-line"></i>
 </a>
 
 <script>
-// Tab เปลี่ยนแพ็กเกจ
-function showPkg(n) {
-  document.querySelectorAll('.pkg-content').forEach(el => el.classList.add('hidden'));
-  document.querySelectorAll('.pkg-tab').forEach(el => {
-    el.classList.remove('bg-gold','text-white');
-    el.classList.add('text-gray-600');
-  });
-  document.getElementById('pkg'+n).classList.remove('hidden');
-  const tab = document.getElementById('tab'+n);
-  tab.classList.add('bg-gold','text-white');
-  tab.classList.remove('text-gray-600');
-}
-
-// Tracking Functions
-function trackLead(packageName, value) {
-  if (typeof fbq !== 'undefined') fbq('track', 'Lead', {content_name: packageName, value: value, currency: 'THB'});
-  if (typeof gtag !== 'undefined') gtag('event', 'generate_lead', {event_category: 'Booking', event_label: packageName, value: value, currency: 'THB'});
-}
-function trackContact(method) {
-  if (typeof fbq !== 'undefined') fbq('track', 'Contact', {content_category: method});
-  if (typeof gtag !== 'undefined') gtag('event', 'contact', {event_category: 'Contact', event_label: method});
-}
-function trackViewContent(packageName) {
-  if (typeof fbq !== 'undefined') fbq('track', 'ViewContent', {content_name: packageName});
-  if (typeof gtag !== 'undefined') gtag('event', 'view_item', {event_category: 'Package', event_label: packageName});
-}
-
-// ฟอร์มสอบถาม ส่งไป Cloudflare Worker
-// ⚠️ เปลี่ยน URL นี้เป็น URL ของ Cloudflare Worker ของคุณ
-const WORKER_URL = 'https://pug-booking.your-subdomain.workers.dev';
-
-document.getElementById('bookingForm').addEventListener('submit', async function(e) {
-  e.preventDefault();
-  const submitBtn = document.getElementById('submitBtn');
-  const formMessage = document.getElementById('formMessage');
-  const packageName = document.getElementById('f_package').value;
-  const priceMatch = packageName.match(/(\d{4,5})฿/);
-  const value = priceMatch ? parseInt(priceMatch[1]) : 0;
-  trackLead(packageName, value);
-  
-  const formData = {
-    name: document.getElementById('f_name').value,
-    phone: document.getElementById('f_phone').value,
-    date: new Date(document.getElementById('f_date').value).toLocaleString('th-TH', {year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit'}),
-    package: packageName,
-    addon: document.getElementById('f_addon').value,
-    detail: document.getElementById('f_detail').value
-  };
-  
-  submitBtn.disabled = true;
-  submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>กำลังส่งข้อมูล...';
-  formMessage.classList.add('hidden');
-  
-  try {
-    const response = await fetch(WORKER_URL, {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(formData)});
-    const result = await response.json();
-    if (result.success) {
-      formMessage.className = 'text-center p-3 rounded-xl bg-green-100 text-green-800';
-      formMessage.innerHTML = '✅ <strong>ส่งข้อมูลสำเร็จ!</strong><br>ทีมงานจะติดต่อกลับโดยเร็วที่สุด';
-      formMessage.classList.remove('hidden');
-      this.reset();
-    } else throw new Error('ส่งข้อมูลไม่สำเร็จ');
-  } catch (error) {
-    formMessage.className = 'text-center p-3 rounded-xl bg-red-100 text-red-800';
-    formMessage.innerHTML = '❌ <strong>เกิดข้อผิดพลาด</strong><br>กรุณาลองใหม่ หรือติดต่อผ่าน LINE @PUGMEDIA';
-    formMessage.classList.remove('hidden');
-    console.error(error);
-  } finally {
-    submitBtn.disabled = false;
-    submitBtn.innerHTML = '<i class="fas fa-paper-plane mr-2"></i>ส่งข้อมูลสอบถาม';
-  }
-});
-</script>
-<script>
-// ========== ฟอร์มสอบถาม ส่งไป LINE OA ==========
-document.getElementById('bookingForm').addEventListener('submit', function(e) {
-  e.preventDefault();
-  
-  const submitBtn = document.getElementById('submitBtn');
-  const formMessage = document.getElementById('formMessage');
-  
-  // รวบรวมข้อมูลจากฟอร์ม
-  const name = document.getElementById('f_name').value;
-  const phone = document.getElementById('f_phone').value;
-  const dateRaw = document.getElementById('f_date').value;
-  const pkg = document.getElementById('f_package').value;
-  const addon = document.getElementById('f_addon').value;
-  const detail = document.getElementById('f_detail').value;
-  
-  // แปลงวันที่เป็นภาษาไทยอ่านง่าย
-  const dateObj = new Date(dateRaw);
-  const thaiDate = dateObj.toLocaleString('th-TH', { 
-    year: 'numeric', month: 'long', day: 'numeric',
-    hour: '2-digit', minute: '2-digit'
-  });
-  
-
-<script>
-// ฟังก์ชันสร้างข้อความ
 function buildMessage() {
-  const name = document.getElementById('f_name').value;
-  const phone = document.getElementById('f_phone').value;
-  const dateRaw = document.getElementById('f_date').value;
-  const pkg = document.getElementById('f_package').value;
-  const addon = document.getElementById('f_addon').value;
-  const detail = document.getElementById('f_detail').value;
+  const name = document.getElementById('f_name')?.value || '';
+  const phone = document.getElementById('f_phone')?.value || '';
+  const dateRaw = document.getElementById('f_date')?.value || '';
+  const pkg = document.getElementById('f_package')?.value || '';
+  const addon = document.getElementById('f_addon')?.value || '-';
+  const detail = document.getElementById('f_detail')?.value || '-';
 
   if(!name || !phone || !dateRaw || !pkg) return null;
 
@@ -937,13 +909,12 @@ function buildMessage() {
 📅 วันงาน: ${thaiDate}
 📦 แพ็กเกจ: ${pkg}
 ➕ Add-on: ${addon}
-📍 สถานที่: ${detail || '-'}
+📍 สถานที่: ${detail}
 ━━━━━━━━━━━━━━━
 จากเว็บไซต์ PUG MEDIA`;
 }
 
-// 1. ฟังก์ชันส่งเข้า LINE (แก้ URL ให้ถูกต้องที่สุด)
-document.getElementById('bookingForm').addEventListener('submit', function(e) {
+document.getElementById('bookingForm')?.addEventListener('submit', function(e) {
   e.preventDefault();
   const msg = buildMessage();
   
@@ -953,14 +924,13 @@ document.getElementById('bookingForm').addEventListener('submit', function(e) {
   }
 
   const encoded = encodeURIComponent(msg);
-  // ใช้รูปแบบทางการที่บังคับเปิดแอป LINE และหา OA เจอ
   const lineURL = `https://line.me/R/msg/text/?@PUGMEDIA%20${encoded}`;
-  
-  // เปลี่ยนเป็น window.location.href เพื่อ Trigger Deep Link ได้ดีกว่าบนมือถือ
   window.location.href = lineURL;
+  
+  if (typeof fbq !== 'undefined') fbq('track', 'Contact', { content_category: 'line_form' });
+  if (typeof gtag !== 'undefined') gtag('event', 'contact', { event_category: 'Contact', event_label: 'line_form' });
 });
 
-// 2. ฟังก์ชัน Copy (กรณีไม่มี LINE)
 function copyMessage() {
   const msg = buildMessage();
   if (!msg) {
@@ -970,22 +940,51 @@ function copyMessage() {
 
   navigator.clipboard.writeText(msg).then(() => {
     const btn = document.getElementById('copyText');
-    const originalText = btn.innerText;
-    
-    btn.innerText = '✅ คัดลอกเรียบร้อย!';
-    btn.parentElement.classList.remove('bg-gray-100');
-    btn.parentElement.classList.add('bg-green-100', 'text-green-700', 'border-green-200');
-    
-    setTimeout(() => {
-      btn.innerText = originalText;
-      btn.parentElement.classList.add('bg-gray-100');
-      btn.parentElement.classList.remove('bg-green-100', 'text-green-700', 'border-green-200');
-    }, 2000);
+    if (btn) {
+      const originalText = btn.innerText;
+      btn.innerText = '✅ คัดลอกเรียบร้อย!';
+      btn.closest('button')?.classList.add('bg-green-100', 'text-green-700', 'border-green-200');
+      btn.closest('button')?.classList.remove('bg-gray-100', 'text-gray-600');
+      
+      setTimeout(() => {
+        btn.innerText = originalText;
+        btn.closest('button')?.classList.remove('bg-green-100', 'text-green-700', 'border-green-200');
+        btn.closest('button')?.classList.add('bg-gray-100', 'text-gray-600');
+      }, 2000);
+    }
   }).catch(err => {
     console.error('Failed to copy: ', err);
     alert('เกิดข้อผิดพลาดในการคัดลอก');
   });
 }
+
+function showPkg(n) {
+  document.querySelectorAll('.pkg-content').forEach(el => el.classList.add('hidden'));
+  document.querySelectorAll('.pkg-tab').forEach(el => {
+    el.classList.remove('bg-gold','text-white');
+    el.classList.add('text-gray-600');
+  });
+  document.getElementById('pkg'+n)?.classList.remove('hidden');
+  const tab = document.getElementById('tab'+n);
+  if (tab) {
+    tab.classList.add('bg-gold','text-white');
+    tab.classList.remove('text-gray-600');
+  }
+}
+
+function trackLead(packageName, value) {
+  if (typeof fbq !== 'undefined') fbq('track', 'Lead', {content_name: packageName, value: value, currency: 'THB'});
+  if (typeof gtag !== 'undefined') gtag('event', 'generate_lead', {event_category: 'Booking', event_label: packageName, value: value, currency: 'THB'});
+}
+function trackContact(method) {
+  if (typeof fbq !== 'undefined') fbq('track', 'Contact', {content_category: method});
+  if (typeof gtag !== 'undefined') gtag('event', 'contact', {event_category: 'Contact', event_label: method});
+}
+function trackViewContent(packageName) {
+  if (typeof fbq !== 'undefined') fbq('track', 'ViewContent', {content_name: packageName});
+  if (typeof gtag !== 'undefined') gtag('event', 'view_item', {event_category: 'Package', event_label: packageName});
+}
 </script>
+
 </body>
 </html>
