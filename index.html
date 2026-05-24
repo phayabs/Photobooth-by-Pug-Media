@@ -352,12 +352,21 @@ footer {
 <nav class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md shadow-sm">
   <div class="max-w-7xl mx-auto px-3 py-2 md:px-4 md:py-3 flex items-center justify-between flex-nowrap gap-2">
     
+    <!-- Logo & Name Section -->
     <a href="/" class="flex items-center gap-2 shrink-0">
       <img src="images/logo.png" alt="PUG MEDIA Logo" class="h-8 w-auto md:h-10">
-      <span class="font-bold text-[11px] leading-tight md:hidden">PhotoBooth by<br><span class="text-gold-dark text-sm">PUG MEDIA</span></span>
-      <span class="font-bold text-lg hidden md:block">PhotoBooth by <span class="text-gold-dark">PUG MEDIA</span></span>
+      
+      <!-- Mobile View: 2 บรรทัด ตัวเล็ก เพื่อให้พอช่องว่าง -->
+      <div class="flex flex-col leading-none md:hidden">
+        <span class="font-bold text-[10px] text-gray-800">PhotoBooth by</span>
+        <span class="font-bold text-sm text-gold-dark">PUG MEDIA</span>
+      </div>
+      
+      <!-- Desktop View: บรรทัดเดียว -->
+      <span class="hidden md:block font-bold text-lg text-gray-800">PhotoBooth by <span class="text-gold-dark">PUG MEDIA</span></span>
     </a>
     
+    <!-- Desktop Menu (ซ่อนบนมือถือ) -->
     <div class="hidden md:flex gap-6 text-sm font-medium items-center">
       <a href="#features" class="hover:text-gold-dark transition">จุดเด่น</a>
       <a href="#packages" class="hover:text-gold-dark transition">แพ็กเกจ</a>
@@ -367,8 +376,8 @@ footer {
       <a href="#contact" class="hover:text-gold-dark transition">ติดต่อ</a>
     </div>
 
+    <!-- Right Side: Button + Hamburger -->
     <div class="flex items-center gap-2 shrink-0">
-      <!-- ✅ แสดงปุ่มทั้งมือถือและ Desktop แต่ย่อขนาดอัตโนมัติบนมือถือ -->
       <a href="#contact" class="btn-gold px-2 py-1 text-xs font-semibold rounded-full md:px-5 md:py-2 md:text-sm whitespace-nowrap" onclick="trackContact('booking_button')">สอบถามคิว</a>
       
       <button id="mobileMenuBtn" class="md:hidden text-gold-dark text-xl focus:outline-none p-1" aria-label="เปิดเมนู">
@@ -377,7 +386,7 @@ footer {
     </div>
   </div>
 
-  <!-- เมนู Dropdown สำหรับมือถือ -->
+  <!-- Mobile Dropdown Menu -->
   <div id="mobileMenu" class="hidden md:hidden bg-white border-t border-gray-100 shadow-lg absolute w-full left-0 top-full z-40">
     <div class="px-4 py-3 space-y-1">
       <a href="#features" class="block py-3 px-2 rounded-lg text-gray-700 hover:bg-rose-light hover:text-gold-dark font-medium transition">จุดเด่น</a>
@@ -907,21 +916,26 @@ footer {
 </main>
 
 <!-- ========== FOOTER ========== -->
+<!-- ========== FOOTER ========== -->
 <footer class="bg-gray-900 text-gray-400 py-10">
   <div class="max-w-7xl mx-auto px-4">
     <div class="grid md:grid-cols-3 gap-8 mb-8">
+      
       <div>
         <div class="flex items-center gap-2 mb-3">
           <img src="images/logo.png" alt="PUG MEDIA Logo" class="h-10 w-auto">
-          <span class="font-bold text-lg text-white hidden md:inline">PhotoBooth by <span class="text-gold">PUG MEDIA</span></span>
+          <!-- แก้ไข: แสดงชื่อเว็บครบทั้งมือถือและคอม -->
+          <span class="font-bold text-sm md:text-lg text-white">PhotoBooth by <span class="text-gold">PUG MEDIA</span></span>
         </div>
-        <p class="text-sm">บริการ Photo Booth คุณภาพสูง สำหรับงานแต่งและอีเวนต์</p>
+        <p class="text-xs md:text-sm">บริการ Photo Booth คุณภาพสูง สำหรับงานแต่งและอีเวนต์</p>
       </div>
+
       <div>
         <h4 class="font-bold text-white mb-3">ติดต่อ</h4>
         <p class="text-sm mb-1">📞 092-259-0736, 083-741-5338</p>
         <p class="text-sm">💬 LINE: @PUGMEDIA</p>
       </div>
+
       <div>
         <h4 class="font-bold text-white mb-3">ติดตามผลงาน</h4>
         <div class="flex gap-3">
@@ -931,6 +945,7 @@ footer {
           <a href="https://line.me/R/ti/p/@PUGMEDIA" target="_blank" rel="noopener" class="social-icon social-line !w-10 !h-10 !text-lg"><i class="fab fa-line"></i></a>
         </div>
       </div>
+      
     </div>
     <div class="border-t border-gray-800 pt-6 text-center">
       <p class="text-xs">© 2026 PUG MEDIA. All rights reserved.</p>
