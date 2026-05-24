@@ -881,6 +881,7 @@ tailwind.config = {
 </a>
 
 <script>
+// ฟังก์ชันสร้างข้อความสำหรับ LINE
 function buildMessage() {
   const name = document.getElementById('f_name')?.value || '';
   const phone = document.getElementById('f_phone')?.value || '';
@@ -909,7 +910,8 @@ function buildMessage() {
 จากเว็บไซต์ PUG MEDIA`;
 }
 
-document.getElementById('bookingForm')?.addEventListener('submit', async function(e) {
+// จัดการการส่งฟอร์ม
+document.getElementById('bookingForm')?.addEventListener('submit', function(e) {
   e.preventDefault();
   const msg = buildMessage();
   
@@ -918,46 +920,27 @@ document.getElementById('bookingForm')?.addEventListener('submit', async functio
     return;
   }
 
-  const submitBtn = document.getElementById('submitBtn');
+  const encoded = encodeURIComponent(msg);
+  // URL Scheme ทางการสำหรับเปิดแชท OA และวางข้อความอัตโนมัติ
+  const lineURL = `https://line.me/R/msg/text/?@PUGMEDIA%20${encoded}`;
+  
+  // เปิดแอป LINE
+  window.location.href = lineURL;
+
+  // แสดงสถานะบนเว็บ
   const formMessage = document.getElementById('formMessage');
-  
-  // แสดงสถานะกำลังดำเนินการ
-  submitBtn.disabled = true;
-  submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> กำลังเปิด LINE...';
-  
-  try {
-    // คัดลอกข้อความเข้า clipboard ก่อน
-    await navigator.clipboard.writeText(msg);
-    
-    // รอเล็กน้อยแล้วเปิด LINE OA
-    setTimeout(() => {
-      // เปิด LINE OA
-      window.location.href = 'https://line.me/R/ti/p/@PUGMEDIA';
-      
-      // แสดงข้อความแจ้งเตือน
-      formMessage.className = 'text-center p-3 rounded-xl bg-blue-100 text-blue-800 text-sm';
-      formMessage.innerHTML = '✅ <strong>คัดลอกข้อความเรียบร้อยแล้ว!</strong><br>ระบบกำลังเปิด LINE OA<br>กรุณาวาง (Paste) ข้อความในช่องแชทแล้วส่ง';
-      formMessage.classList.remove('hidden');
-      
-      // Reset form และปุ่ม
-      setTimeout(() => {
-        submitBtn.disabled = false;
-        submitBtn.innerHTML = '<i class="fab fa-line text-xl"></i><span>ส่งข้อมูลผ่าน LINE</span>';
-      }, 2000);
-    }, 500);
-    
-  } catch (err) {
-    console.error('Failed to copy: ', err);
-    alert('เกิดข้อผิดพลาด กรุณาลองใหม่อีกครั้ง');
-    submitBtn.disabled = false;
-    submitBtn.innerHTML = '<i class="fab fa-line text-xl"></i><span>ส่งข้อมูลผ่าน LINE</span>';
+  if(formMessage) {
+    formMessage.className = 'text-center p-3 rounded-xl bg-green-100 text-green-800 text-sm';
+    formMessage.innerHTML = '✅ เปิด LINE และวางข้อความให้แล้ว<br>กรุณากดปุ่ม <strong>"ส่ง"</strong> ในแอป LINE';
+    formMessage.classList.remove('hidden');
   }
-  
-  // Track event
+
+  // Tracking (Facebook Pixel & GA4)
   if (typeof fbq !== 'undefined') fbq('track', 'Contact', { content_category: 'line_form' });
   if (typeof gtag !== 'undefined') gtag('event', 'contact', { event_category: 'Contact', event_label: 'line_form' });
 });
 
+// Tab เปลี่ยนแพ็กเกจ
 function showPkg(n) {
   document.querySelectorAll('.pkg-content').forEach(el => el.classList.add('hidden'));
   document.querySelectorAll('.pkg-tab').forEach(el => {
@@ -972,6 +955,7 @@ function showPkg(n) {
   }
 }
 
+// Tracking Functions
 function trackLead(packageName, value) {
   if (typeof fbq !== 'undefined') fbq('track', 'Lead', {content_name: packageName, value: value, currency: 'THB'});
   if (typeof gtag !== 'undefined') gtag('event', 'generate_lead', {event_category: 'Booking', event_label: packageName, value: value, currency: 'THB'});
