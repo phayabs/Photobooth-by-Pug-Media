@@ -675,7 +675,6 @@ footer {
 </section>
   
 <!-- ========== ADD-ON ========== -->
-<!-- ========== ADD-ON ========== -->
 <section id="addon" class="py-24 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white">
   <div class="max-w-7xl mx-auto px-4">
     <div class="text-center mb-16">
@@ -690,9 +689,12 @@ footer {
         <!-- รูปด้านซ้าย -->
         <div class="order-2 md:order-1">
           <div class="relative rounded-3xl overflow-hidden shadow-2xl">
-            <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=800" 
+            <!-- ✅ ใช้รูปจากโฟลเดอร์ images/ ในเว็บคุณ -->
+            <img src="images/video-guestbook.jpg" 
+                 onerror="this.src='https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=800'"
                  alt="Video Guestbook" 
-                 class="w-full h-full object-cover">
+                 class="w-full h-full object-cover"
+                 loading="lazy">
             <div class="absolute inset-0 bg-gradient-to-r from-gold/20 to-transparent"></div>
           </div>
         </div>
@@ -761,9 +763,12 @@ footer {
         
         <!-- รูปด้านขวา -->
         <div class="relative rounded-3xl overflow-hidden shadow-2xl">
-          <img src="https://images.unsplash.com/photo-1522673607200-1645062cd495?w=800" 
+          <!-- ✅ ใช้รูปจากโฟลเดอร์ images/ ในเว็บคุณ -->
+          <img src="images/greeting-card.jpg" 
+               onerror="this.src='https://images.unsplash.com/photo-1522673607200-1645062cd495?w=800'"
                alt="การ์ดเชิญอวยพร" 
-               class="w-full h-full object-cover">
+               class="w-full h-full object-cover"
+               loading="lazy">
           <div class="absolute inset-0 bg-gradient-to-l from-gold/20 to-transparent"></div>
         </div>
       </div>
