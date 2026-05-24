@@ -237,290 +237,61 @@ tailwind.config = {
     color: white; opacity: 0; transition: opacity 0.3s;
   }
   .ig-item:hover .ig-overlay { opacity: 1; }
+
   /* ========== BUTTON EFFECTS ========== */
-
-/* Base Button Styles */
-.btn-gold {
-  position: relative;
-  overflow: hidden;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
-}
-
-/* Shimmer Effect */
-.btn-gold::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.3),
-    transparent
-  );
-  transition: left 0.5s;
-}
-
-.btn-gold:hover::before {
-  left: 100%;
-}
-
-/* Hover Scale & Glow */
-.btn-gold:hover {
-  transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.5), 
-              0 0 20px rgba(212, 175, 55, 0.3);
-}
-
-.btn-gold:active {
-  transform: translateY(-1px) scale(0.98);
-}
-
-/* Ripple Effect */
-.btn-gold {
-  position: relative;
-}
-
-.ripple {
-  position: absolute;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.6);
-  transform: scale(0);
-  animation: ripple-animation 0.6s ease-out;
-  pointer-events: none;
-}
-
-@keyframes ripple-animation {
-  to {
-    transform: scale(4);
-    opacity: 0;
-  }
-}
-
-/* Social Icons Buttons */
-.social-icon {
-  position: relative;
-  overflow: hidden;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
-
-.social-icon::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 0;
-  height: 0;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.3);
-  transform: translate(-50%, -50%);
-  transition: width 0.3s, height 0.3s;
-}
-
-.social-icon:hover::after {
-  width: 100%;
-  height: 100%;
-}
-
-.social-icon:hover {
-  transform: translateY(-5px) scale(1.15) rotate(5deg);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-}
-
-/* Floating Button (LINE) */
-a[href*="line.me"] {
-  position: relative;
-  animation: floating-btn 3s ease-in-out infinite;
-}
-
-@keyframes floating-btn {
-  0%, 100% {
-    transform: translateY(0);
-    box-shadow: 0 4px 15px rgba(6, 199, 85, 0.4);
-  }
-  50% {
-    transform: translateY(-8px);
-    box-shadow: 0 8px 25px rgba(6, 199, 85, 0.6), 
-                0 0 20px rgba(6, 199, 85, 0.4);
-  }
-}
-
-a[href*="line.me"]:hover {
-  animation: none;
-  transform: scale(1.15);
-  box-shadow: 0 10px 30px rgba(6, 199, 85, 0.6), 
-              0 0 30px rgba(6, 199, 85, 0.4);
-}
-
-/* Package Buttons */
-#packages a[href="#contact"] {
-  position: relative;
-  overflow: hidden;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-#packages a[href="#contact"]::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 0;
-  height: 0;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.3);
-  transform: translate(-50%, -50%);
-  transition: width 0.5s, height 0.5s;
-}
-
-#packages a[href="#contact"]:hover::before {
-  width: 300px;
-  height: 300px;
-}
-
-#packages a[href="#contact"]:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
-}
-
-/* Add-on Buttons */
-#addon a[href="#contact"] {
-  position: relative;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-#addon a[href="#contact"]:hover {
-  transform: translateY(-3px) scale(1.03);
-  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
-}
-
-/* Form Submit Button */
-#submitBtn {
-  position: relative;
-  overflow: hidden;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-#submitBtn::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.4),
-    transparent
-  );
-  transition: left 0.6s;
-}
-
-#submitBtn:hover::before {
-  left: 100%;
-}
-
-#submitBtn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.5), 
-              0 0 20px rgba(212, 175, 55, 0.3);
-}
-
-#submitBtn:active {
-  transform: translateY(0);
-}
-
-/* Loading State */
-#submitBtn:disabled {
-  opacity: 0.7;
-  cursor: not-allowed;
-  transform: none !important;
-}
-
-/* Mobile Menu Buttons */
-#mobileMenuBtn {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-#mobileMenuBtn:hover {
-  transform: scale(1.1);
-  color: #D4AF37;
-}
-
-#mobileMenuBtn:active {
-  transform: scale(0.95);
-}
-
-/* Fallback Button */
-#fallbackBtn {
-  position: relative;
-  overflow: hidden;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-#fallbackBtn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-}
-
-#fallbackBtn:active {
-  transform: translateY(0);
-}
-
-/* Icon Animations */
-.btn-gold i,
-#submitBtn i,
-#fallbackBtn i {
-  transition: transform 0.3s;
-}
-
-.btn-gold:hover i,
-#submitBtn:hover i,
-#fallbackBtn:hover i {
-  transform: scale(1.2) rotate(5deg);
-}
-
-/* Pulse Effect for Important Buttons */
-@keyframes pulse-gold {
-  0%, 100% {
+  .btn-gold {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
   }
-  50% {
-    box-shadow: 0 4px 25px rgba(212, 175, 55, 0.6), 
-                0 0 15px rgba(212, 175, 55, 0.4);
+  .btn-gold::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s;
   }
-}
-
-.btn-gold {
-  animation: pulse-gold 2s ease-in-out infinite;
-}
-
-.btn-gold:hover {
-  animation: none;
-}
-
-/* Gradient Shift Effect */
-@keyframes gradient-shift {
-  0% {
-    background-position: 0% 50%;
+  .btn-gold:hover::before { left: 100%; }
+  .btn-gold:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.5), 0 0 20px rgba(212, 175, 55, 0.3);
   }
-  50% {
-    background-position: 100% 50%;
+  .btn-gold:active { transform: translateY(-1px) scale(0.98); }
+  .ripple {
+    position: absolute; border-radius: 50%;
+    background: rgba(255, 255, 255, 0.6);
+    transform: scale(0); animation: ripple-animation 0.6s ease-out;
+    pointer-events: none;
   }
-  100% {
-    background-position: 0% 50%;
-  }
-}
+  @keyframes ripple-animation { to { transform: scale(4); opacity: 0; } }
 
-/* Apply to social icons */
-.social-ig {
-  background-size: 200% 200%;
-  animation: gradient-shift 3s ease infinite;
-}
+  .social-icon {
+    position: relative; overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+  .social-icon::after {
+    content: ''; position: absolute; top: 50%; left: 50%;
+    width: 0; height: 0; border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%); transition: width 0.3s, height 0.3s;
+  }
+  .social-icon:hover::after { width: 100%; height: 100%; }
+  .social-icon:hover { transform: translateY(-5px) scale(1.15) rotate(5deg); box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3); }
+
+  a[href*="line.me"] {
+    position: relative;
+    animation: floating-btn 3s ease-in-out infinite;
+  }
+  @keyframes floating-btn {
+    0%, 100% { transform: translateY(0); box-shadow: 0 4px 15px rgba(6, 199, 85, 0.4); }
+    50% { transform: translateY(-8px); box-shadow: 0 8px 25px rgba(6, 199, 85, 0.6), 0 0 20px rgba(6, 199, 85, 0.4); }
+  }
+  a[href*="line.me"]:hover { animation: none; transform: scale(1.15); box-shadow: 0 10px 30px rgba(6, 199, 85, 0.6), 0 0 30px rgba(6, 199, 85, 0.4); }
 </style>
 </head>
 
@@ -530,15 +301,13 @@ a[href*="line.me"]:hover {
 <nav class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md shadow-sm">
   <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between flex-nowrap">
     
-    <!-- โลโก้ -->
     <a href="/" class="flex items-center gap-2 shrink-0">
       <img src="images/logo.png" alt="PUG MEDIA Logo" class="h-8 w-auto md:h-10">
       <span class="font-bold text-xs leading-tight md:hidden">PhotoBooth by<br><span class="text-gold-dark text-sm">PUG MEDIA</span></span>
       <span class="font-bold text-lg hidden md:block">PhotoBooth by <span class="text-gold-dark">PUG MEDIA</span></span>
     </a>
-
-    <!-- เมนู Desktop (ซ่อนบนมือถือ) -->
-    <div class="hidden md:flex gap-6 text-sm font-medium items-center">
+    
+    <div class="hidden md:flex gap-6 text-sm font-medium">
       <a href="#features" class="hover:text-gold-dark transition">จุดเด่น</a>
       <a href="#packages" class="hover:text-gold-dark transition">แพ็กเกจ</a>
       <a href="#addon" class="hover:text-gold-dark transition">Add-on</a>
@@ -547,18 +316,14 @@ a[href*="line.me"]:hover {
       <a href="#contact" class="hover:text-gold-dark transition">ติดต่อ</a>
     </div>
 
-    <!-- ด้านขวา: ปุ่ม CTA + ปุ่มเมนูมือถือ -->
     <div class="flex items-center gap-3 shrink-0">
-      <a href="#contact" class="btn-gold px-3 py-1.5 text-xs font-semibold rounded-full md:px-5 md:py-2 md:text-sm whitespace-nowrap" onclick="trackContact('booking_button')">สอบถามคิว</a>
-      
-      <!-- ปุ่ม Hamburger (แสดงเฉพาะมือถือ) -->
+      <a href="#contact" class="btn-gold px-3 py-1.5 text-xs font-semibold rounded-full md:px-5 md:py-2 md:text-sm whitespace-nowrap hidden md:inline-block" onclick="trackContact('booking_button')">สอบถามคิว</a>
       <button id="mobileMenuBtn" class="md:hidden text-gold-dark text-2xl focus:outline-none p-1" aria-label="เปิดเมนู">
         <i class="fas fa-bars"></i>
       </button>
     </div>
   </div>
 
-  <!-- เมนู Dropdown สำหรับมือถือ -->
   <div id="mobileMenu" class="hidden md:hidden bg-white border-t border-gray-100 shadow-lg absolute w-full left-0 top-full z-40">
     <div class="px-4 py-3 space-y-1">
       <a href="#features" class="block py-3 px-2 rounded-lg text-gray-700 hover:bg-rose-light hover:text-gold-dark font-medium transition">จุดเด่น</a>
@@ -570,6 +335,7 @@ a[href*="line.me"]:hover {
     </div>
   </div>
 </nav>
+
 <main>
 
 <!-- ========== HERO ========== -->
@@ -770,72 +536,65 @@ a[href*="line.me"]:hover {
       </div>
     </div>
 
-<!-- 4 ชั่วโมง -->
-<div id="pkg4" class="pkg-content hidden grid md:grid-cols-3 gap-6">
-  
-  <!-- แพ็กเกจที่ 1 (BEST SELLER) -->
-  <div class="card-hover bg-white p-8 rounded-3xl shadow-lg border-4 border-gold relative">
-    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-red-500 text-white text-xs px-4 py-1 rounded-full font-bold whitespace-nowrap z-10">
-      ⭐ BEST SELLER
+    <!-- 4 ชั่วโมง -->
+    <div id="pkg4" class="pkg-content hidden grid md:grid-cols-3 gap-6">
+      
+      <!-- แพ็กเกจที่ 1 (BEST SELLER) -->
+      <div class="card-hover bg-white p-8 rounded-3xl shadow-lg border-4 border-gold relative">
+        <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-red-500 text-white text-xs px-4 py-1 rounded-full font-bold whitespace-nowrap z-10">
+          ⭐ BEST SELLER
+        </div>
+        <div class="text-sm text-gray-500 mb-2 mt-2">Size</div>
+        <div class="text-2xl font-bold mb-4">2×6 นิ้ว</div>
+        <div class="text-5xl font-bold text-gold-dark mb-2">9,900<span class="text-lg">฿</span></div>
+        <div class="bg-gradient-to-r from-gold-light via-yellow-200 to-gold-light text-gold-dark font-bold text-sm px-4 py-2 rounded-full inline-block mb-4 shadow-md border border-gold">
+          🎁 แถมฟรี! การ์ดเขียนอวยพรให้แขกทุกคน
+        </div>
+        <ul class="text-sm text-gray-600 space-y-2 my-6">
+          <li><i class="fas fa-check text-green-500 mr-2"></i>ถ่ายสนุก ได้รูปทันที</li>
+          <li><i class="fas fa-check text-green-500 mr-2"></i>อุปกรณ์สตูดิโอครบ</li>
+          <li><i class="fas fa-check text-green-500 mr-2"></i>ทีมงานมืออาชีพ</li>
+          <li><i class="fas fa-check text-green-500 mr-2"></i>ออกแบบกรอบฟรี</li>
+        </ul>
+        <a href="#contact" class="block text-center btn-gold py-3 rounded-full text-white font-semibold" onclick="trackViewContent('4hr_2x6_9900')">สอบถามแพ็กเกจ</a>
+      </div>
+
+      <!-- แพ็กเกจที่ 2 -->
+      <div class="card-hover bg-white p-8 rounded-3xl shadow-lg">
+        <div class="text-sm text-gray-500 mb-2">Size</div>
+        <div class="text-2xl font-bold mb-4">3×4 นิ้ว</div>
+        <div class="text-5xl font-bold text-gold-dark mb-2">10,900<span class="text-lg">฿</span></div>
+        <div class="bg-gradient-to-r from-gold-light via-yellow-200 to-gold-light text-gold-dark font-bold text-sm px-4 py-2 rounded-full inline-block mb-4 shadow-md border border-gold">
+          🎁 แถมฟรี! การ์ดเขียนอวยพรให้แขกทุกคน
+        </div>
+        <ul class="text-sm text-gray-600 space-y-2 my-6">
+          <li><i class="fas fa-check text-green-500 mr-2"></i>ถ่ายสนุก ได้รูปทันที</li>
+          <li><i class="fas fa-check text-green-500 mr-2"></i>อุปกรณ์สตูดิโอครบ</li>
+          <li><i class="fas fa-check text-green-500 mr-2"></i>ทีมงานมืออาชีพ</li>
+          <li><i class="fas fa-check text-green-500 mr-2"></i>ออกแบบกรอบฟรี</li>
+        </ul>
+        <a href="#contact" class="block text-center btn-gold py-3 rounded-full text-white font-semibold" onclick="trackViewContent('4hr_3x4_10900')">สอบถามแพ็กเกจ</a>
+      </div>
+
+      <!-- แพ็กเกจที่ 3 -->
+      <div class="card-hover bg-white p-8 rounded-3xl shadow-lg">
+        <div class="text-sm text-gray-500 mb-2">Size</div>
+        <div class="text-2xl font-bold mb-4">2×6 และ 4×6</div>
+        <div class="text-5xl font-bold text-gold-dark mb-2">12,900<span class="text-lg">฿</span></div>
+        <div class="bg-gradient-to-r from-gold-light via-yellow-200 to-gold-light text-gold-dark font-bold text-sm px-4 py-2 rounded-full inline-block mb-4 shadow-md border border-gold">
+          🎁 แถมฟรี! การ์ดเขียนอวยพรให้แขกทุกคน
+        </div>
+        <ul class="text-sm text-gray-600 space-y-2 my-6">
+          <li><i class="fas fa-check text-green-500 mr-2"></i>ถ่ายสนุก ได้รูปทันที</li>
+          <li><i class="fas fa-check text-green-500 mr-2"></i>อุปกรณ์สตูดิโอครบ</li>
+          <li><i class="fas fa-check text-green-500 mr-2"></i>ทีมงานมืออาชีพ</li>
+          <li><i class="fas fa-check text-green-500 mr-2"></i>ออกแบบกรอบฟรี</li>
+        </ul>
+        <a href="#contact" class="block text-center btn-gold py-3 rounded-full text-white font-semibold" onclick="trackViewContent('4hr_2x6_4x6_12900')">สอบถามแพ็กเกจ</a>
+      </div>
+
     </div>
-    <div class="text-sm text-gray-500 mb-2 mt-2">Size</div>
-    <div class="text-2xl font-bold mb-4">2×6 นิ้ว</div>
-    <div class="text-5xl font-bold text-gold-dark mb-2">9,900<span class="text-lg">฿</span></div>
-    
-    <!-- Badge เด่นๆ ตามที่ขอ -->
-    <div class="bg-gradient-to-r from-gold-light via-yellow-200 to-gold-light text-gold-dark font-bold text-sm px-4 py-2 rounded-full inline-block mb-4 shadow-md border border-gold">
-      🎁 แถมฟรี! การ์ดเขียนอวยพรให้แขกทุกคน
-    </div>
 
-    <ul class="text-sm text-gray-600 space-y-2 my-6">
-      <li><i class="fas fa-check text-green-500 mr-2"></i>ถ่ายสนุก ได้รูปทันที</li>
-      <li><i class="fas fa-check text-green-500 mr-2"></i>อุปกรณ์สตูดิโอครบ</li>
-      <li><i class="fas fa-check text-green-500 mr-2"></i>ทีมงานมืออาชีพ</li>
-      <li><i class="fas fa-check text-green-500 mr-2"></i>ออกแบบกรอบฟรี</li>
-    </ul>
-    <a href="#contact" class="block text-center btn-gold py-3 rounded-full text-white font-semibold" onclick="trackViewContent('4hr_2x6_9900')">สอบถามแพ็กเกจ</a>
-  </div>
-
-  <!-- แพ็กเกจที่ 2 -->
-  <div class="card-hover bg-white p-8 rounded-3xl shadow-lg">
-    <div class="text-sm text-gray-500 mb-2">Size</div>
-    <div class="text-2xl font-bold mb-4">3×4 นิ้ว</div>
-    <div class="text-5xl font-bold text-gold-dark mb-2">10,900<span class="text-lg">฿</span></div>
-    
-    <div class="bg-gradient-to-r from-gold-light via-yellow-200 to-gold-light text-gold-dark font-bold text-sm px-4 py-2 rounded-full inline-block mb-4 shadow-md border border-gold">
-      🎁 แถมฟรี! การ์ดเขียนอวยพรให้แขกทุกคน
-    </div>
-
-    <ul class="text-sm text-gray-600 space-y-2 my-6">
-      <li><i class="fas fa-check text-green-500 mr-2"></i>ถ่ายสนุก ได้รูปทันที</li>
-      <li><i class="fas fa-check text-green-500 mr-2"></i>อุปกรณ์สตูดิโอครบ</li>
-      <li><i class="fas fa-check text-green-500 mr-2"></i>ทีมงานมืออาชีพ</li>
-      <li><i class="fas fa-check text-green-500 mr-2"></i>ออกแบบกรอบฟรี</li>
-    </ul>
-    <a href="#contact" class="block text-center btn-gold py-3 rounded-full text-white font-semibold" onclick="trackViewContent('4hr_3x4_10900')">สอบถามแพ็กเกจ</a>
-  </div>
-
-  <!-- แพ็กเกจที่ 3 -->
-  <div class="card-hover bg-white p-8 rounded-3xl shadow-lg">
-    <div class="text-sm text-gray-500 mb-2">Size</div>
-    <div class="text-2xl font-bold mb-4">2×6 และ 4×6</div>
-    <div class="text-5xl font-bold text-gold-dark mb-2">12,900<span class="text-lg">฿</span></div>
-    
-    <div class="bg-gradient-to-r from-gold-light via-yellow-200 to-gold-light text-gold-dark font-bold text-sm px-4 py-2 rounded-full inline-block mb-4 shadow-md border border-gold">
-      🎁 แถมฟรี! การ์ดเขียนอวยพรให้แขกทุกคน
-    </div>
-
-    <ul class="text-sm text-gray-600 space-y-2 my-6">
-      <li><i class="fas fa-check text-green-500 mr-2"></i>ถ่ายสนุก ได้รูปทันที</li>
-      <li><i class="fas fa-check text-green-500 mr-2"></i>อุปกรณ์สตูดิโอครบ</li>
-      <li><i class="fas fa-check text-green-500 mr-2"></i>ทีมงานมืออาชีพ</li>
-      <li><i class="fas fa-check text-green-500 mr-2"></i>ออกแบบกรอบฟรี</li>
-    </ul>
-    <a href="#contact" class="block text-center btn-gold py-3 rounded-full text-white font-semibold" onclick="trackViewContent('4hr_2x6_4x6_12900')">สอบถามแพ็กเกจ</a>
-  </div>
-
-</div>
-</div>
     <div class="mt-12 bg-white p-6 rounded-2xl shadow-md max-w-3xl mx-auto text-center">
       <p class="text-sm text-gray-600"><i class="fas fa-info-circle text-gold-dark mr-2"></i><strong>บริการฟรีในกรุงเทพฯ และปริมณฑล</strong> | ต่างจังหวัดคิดค่าเดินทางตามระยะทาง | มัดจำเพียง <strong class="text-gold-dark">2,000 บาท</strong></p>
     </div>
@@ -890,32 +649,14 @@ a[href*="line.me"]:hover {
       <p class="text-gray-600">ความประทับใจจากลูกค้ากว่า 500+ งาน</p>
     </div>
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-      
-      <div class="gallery-item rounded-2xl aspect-square">
-        <img src="images/ig-1.jpg" class="w-full h-full object-cover" alt="บรรยากาศงานแต่ง Photo Booth" loading="lazy">
-      </div>
-      <div class="gallery-item rounded-2xl aspect-square">
-        <img src="images/ig-2.jpg" class="w-full h-full object-cover" alt="อุปกรณ์ Photo Booth" loading="lazy">
-      </div>
-      <div class="gallery-item rounded-2xl aspect-square">
-        <img src="images/ig-3.jpg" class="w-full h-full object-cover" alt="พร็อพ Photo Booth" loading="lazy">
-      </div>
-      <div class="gallery-item rounded-2xl aspect-square">
-        <img src="images/ig-4.jpg" class="w-full h-full object-cover" alt="บรรยากาศงานแต่งงาน" loading="lazy">
-      </div>
-      <div class="gallery-item rounded-2xl aspect-square">
-        <img src="images/ig-5.jpg" class="w-full h-full object-cover" alt="บรรยากาศงานปาร์ตี้" loading="lazy">
-      </div>
-      <div class="gallery-item rounded-2xl aspect-square">
-        <img src="images/ig-6.jpg" class="w-full h-full object-cover" alt="งานอีเวนต์" loading="lazy">
-      </div>
-      <div class="gallery-item rounded-2xl aspect-square">
-        <img src="images/ig-7.jpg" class="w-full h-full object-cover" alt="ทีมช่างภาพ" loading="lazy">
-      </div>
-      <div class="gallery-item rounded-2xl aspect-square">
-        <img src="images/ig-8.jpg" class="w-full h-full object-cover" alt="บริการคุณภาพ" loading="lazy">
-      </div>
-
+      <div class="gallery-item rounded-2xl aspect-square"><img src="images/ig-1.jpg" class="w-full h-full object-cover" alt="บรรยากาศงานแต่ง Photo Booth" loading="lazy"></div>
+      <div class="gallery-item rounded-2xl aspect-square"><img src="images/ig-2.jpg" class="w-full h-full object-cover" alt="อุปกรณ์ Photo Booth" loading="lazy"></div>
+      <div class="gallery-item rounded-2xl aspect-square"><img src="images/ig-3.jpg" class="w-full h-full object-cover" alt="พร็อพ Photo Booth" loading="lazy"></div>
+      <div class="gallery-item rounded-2xl aspect-square"><img src="images/ig-4.jpg" class="w-full h-full object-cover" alt="บรรยากาศงานแต่งงาน" loading="lazy"></div>
+      <div class="gallery-item rounded-2xl aspect-square"><img src="images/ig-5.jpg" class="w-full h-full object-cover" alt="บรรยากาศงานปาร์ตี้" loading="lazy"></div>
+      <div class="gallery-item rounded-2xl aspect-square"><img src="images/ig-6.jpg" class="w-full h-full object-cover" alt="งานอีเวนต์" loading="lazy"></div>
+      <div class="gallery-item rounded-2xl aspect-square"><img src="images/ig-7.jpg" class="w-full h-full object-cover" alt="ทีมช่างภาพ" loading="lazy"></div>
+      <div class="gallery-item rounded-2xl aspect-square"><img src="images/ig-8.jpg" class="w-full h-full object-cover" alt="บริการคุณภาพ" loading="lazy"></div>
     </div>
   </div>
 </section>
@@ -1044,6 +785,7 @@ a[href*="line.me"]:hover {
   </div>
 
 </div>
+  </div>
 </section>
 
 <!-- TikTok Embed Script -->
@@ -1141,11 +883,60 @@ a[href*="line.me"]:hover {
   </div>
 </footer>
 
-<a href="https://line.me/R/ti/p/@PUGMEDIA" target="_blank" rel="noopener" class="fixed bottom-6 right-6 w-16 h-16 bg-green-500 rounded-full flex items-center justify-center text-white text-3xl shadow-2xl hover:scale-110 transition z-50" onclick="trackContact('floating_line')">
+<!-- Floating LINE Button (ตำแหน่งแก้แล้ว: ลอยสูงขึ้นบนมือถือ) -->
+<a href="https://line.me/R/ti/p/@PUGMEDIA" target="_blank" rel="noopener" class="fixed bottom-24 md:bottom-8 right-4 md:right-8 z-50 w-14 h-14 md:w-16 md:h-16 bg-green-500 rounded-full flex items-center justify-center text-white text-2xl md:text-3xl shadow-2xl hover:scale-110 transition" onclick="trackContact('floating_line')">
   <i class="fab fa-line"></i>
 </a>
 
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/th_TH/sdk.js#xfbml=1&version=v18.0"></script>
+
 <script>
+// Ripple Effect สำหรับปุ่มทั้งหมด
+document.querySelectorAll('.btn-gold, #submitBtn, #fallbackBtn').forEach(button => {
+  button.addEventListener('click', function(e) {
+    const rect = this.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const ripple = document.createElement('span');
+    ripple.classList.add('ripple');
+    ripple.style.left = x + 'px';
+    ripple.style.top = y + 'px';
+    ripple.style.width = '20px';
+    ripple.style.height = '20px';
+    ripple.style.marginLeft = '-10px';
+    ripple.style.marginTop = '-10px';
+    this.appendChild(ripple);
+    setTimeout(() => { ripple.remove(); }, 600);
+  });
+});
+
+// จัดการเมนูมือถือ
+const menuBtn = document.getElementById('mobileMenuBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+
+if (menuBtn && mobileMenu) {
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+    const icon = menuBtn.querySelector('i');
+    if (mobileMenu.classList.contains('hidden')) {
+      icon.classList.remove('fa-times');
+      icon.classList.add('fa-bars');
+    } else {
+      icon.classList.remove('fa-bars');
+      icon.classList.add('fa-times');
+    }
+  });
+
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
+      menuBtn.querySelector('i').classList.remove('fa-times');
+      menuBtn.querySelector('i').classList.add('fa-bars');
+    });
+  });
+}
+
 // เก็บข้อความล่าสุดไว้ใช้ร่วมกัน
 let currentMessage = '';
 
@@ -1180,7 +971,6 @@ document.getElementById('bookingForm')?.addEventListener('submit', function(e) {
   const encoded = encodeURIComponent(msg);
   const lineURL = `https://line.me/R/msg/text/?@PUGMEDIA%20${encoded}`;
   
-  // พยายามเปิดแอป
   window.location.href = lineURL;
   
   msgBox.className = 'text-center p-3 rounded-xl bg-blue-100 text-blue-800 text-sm mt-3';
@@ -1190,7 +980,7 @@ document.getElementById('bookingForm')?.addEventListener('submit', function(e) {
   setTimeout(() => { btn.disabled = false; btn.innerHTML = '<i class="fab fa-line text-xl"></i><span>ส่งข้อมูลผ่าน LINE</span>'; }, 2500);
 });
 
-// 2. ปุ่มสำรอง: คัดลอกข้อความ + เปิดแชท OA (ทำงาน 100% ทุกเครื่อง)
+// 2. ปุ่มสำรอง: คัดลอกข้อความ + เปิดแชท OA
 function fallbackSend() {
   const msg = buildMessage();
   if (!msg) { alert('กรุณากรอกข้อมูลให้ครบถ้วนครับ'); return; }
@@ -1212,7 +1002,6 @@ function fallbackSend() {
   });
 }
 
-// Tab แพ็กเกจ & Tracking (คงไว้เหมือนเดิม)
 function showPkg(n) {
   document.querySelectorAll('.pkg-content').forEach(el => el.classList.add('hidden'));
   document.querySelectorAll('.pkg-tab').forEach(el => { el.classList.remove('bg-gold','text-white'); el.classList.add('text-gray-600'); });
@@ -1224,57 +1013,6 @@ function trackLead(n,v){if(typeof fbq!=='undefined')fbq('track','Lead',{content_
 function trackContact(m){if(typeof fbq!=='undefined')fbq('track','Contact',{content_category:m});if(typeof gtag!=='undefined')gtag('event','contact',{event_category:'Contact',event_label:m});}
 function trackViewContent(n){if(typeof fbq!=='undefined')fbq('track','ViewContent',{content_name:n});if(typeof gtag!=='undefined')gtag('event','view_item',{event_category:'Package',event_label:n});}
 </script>
-<script>
-// จัดการเมนูมือถือ
-const menuBtn = document.getElementById('mobileMenuBtn');
-const mobileMenu = document.getElementById('mobileMenu');
 
-if (menuBtn && mobileMenu) {
-  menuBtn.addEventListener('click', () => {
-    mobileMenu.classList.toggle('hidden');
-    const icon = menuBtn.querySelector('i');
-    if (mobileMenu.classList.contains('hidden')) {
-      icon.classList.remove('fa-times');
-      icon.classList.add('fa-bars');
-    } else {
-      icon.classList.remove('fa-bars');
-      icon.classList.add('fa-times');
-    }
-  });
-
-  // ปิดเมนูเมื่อกดลิงก์
-  mobileMenu.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      mobileMenu.classList.add('hidden');
-      menuBtn.querySelector('i').classList.remove('fa-times');
-      menuBtn.querySelector('i').classList.add('fa-bars');
-    });
-  });
-}
-  // Ripple Effect สำหรับปุ่มทั้งหมด
-document.querySelectorAll('.btn-gold, #submitBtn, #fallbackBtn').forEach(button => {
-  button.addEventListener('click', function(e) {
-    const rect = this.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    
-    const ripple = document.createElement('span');
-    ripple.classList.add('ripple');
-    ripple.style.left = x + 'px';
-    ripple.style.top = y + 'px';
-    ripple.style.width = '20px';
-    ripple.style.height = '20px';
-    ripple.style.margin-left = '-10px';
-    ripple.style.margin-top = '-10px';
-    
-    this.appendChild(ripple);
-    
-    setTimeout(() => {
-      ripple.remove();
-    }, 600);
-  });
-});
-</script>
-  
 </body>
 </html>
