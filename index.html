@@ -376,10 +376,19 @@ footer {
       <a href="#contact" class="hover:text-gold-dark transition">ติดต่อ</a>
     </div>
 
-    <!-- Right Side: Button + Hamburger -->
+    <!-- Right Side: Buttons + Hamburger -->
     <div class="flex items-center gap-2 shrink-0">
+      <!-- ปุ่ม LINE (แสดงทุกหน้าจอ) -->
       <a href="#contact" class="btn-gold px-2 py-1 text-xs font-semibold rounded-full md:px-5 md:py-2 md:text-sm whitespace-nowrap" onclick="trackContact('booking_button')">สอบถามคิว</a>
       
+      <!-- ปุ่ม Messenger (แสดงเฉพาะมือถือ) -->
+      <a href="https://m.me/PhotoboothbyPugMedia" target="_blank" rel="noopener" 
+         class="md:hidden flex items-center justify-center w-9 h-9 rounded-full bg-blue-600 text-white hover:bg-blue-700 transition shadow-lg"
+         aria-label="Chat on Messenger">
+        <i class="fab fa-facebook-messenger text-lg"></i>
+      </a>
+      
+      <!-- Hamburger Menu (แสดงเฉพาะมือถือ) -->
       <button id="mobileMenuBtn" class="md:hidden text-gold-dark text-xl focus:outline-none p-1" aria-label="เปิดเมนู">
         <i class="fas fa-bars"></i>
       </button>
