@@ -1365,19 +1365,82 @@ document.addEventListener("DOMContentLoaded", function() {
 // ตั้งค่า URL ของ Worker ที่สร้างขึ้น
 const WORKER_URL = 'https://pug-line-bot.phayabs.workers.dev';
 
+// ส่งฟอร์มสอบถาม
+async function submitForm(formData) {
+  const submitBtn = document.querySelector('button[type="submit"]');
+  const originalBtnText = submitBtn.innerHTML;
+  
+  try {
+    // แสดงสถานะกำลังส่ง
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>กำลังส่งข้อมูล...';
+    
+    // ส่งข้อมูลไป Cloudflare Worker
+    const response = await fetch(WORKER_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(formData)
+    });
+    
+    const result = await response.json();
+    
+    if (result.success) {
+      // ✅ ส่งสำเร็จ - แสดง Popup ขอบคุณ (ไม่เปิด LINE)
+      showSuccessPopup();
+      document.getElementById('bookingForm').reset();
+    } else {
+      throw new Error('ส่งข้อมูลไม่สำเร็จ');
+    }
+    
+  } catch (error) {
+    console.error('Error:', error);
+    alert('เกิดข้อผิดพลาดในการส่งข้อมูล กรุณาลองใหม่อีกครั้ง');
+  } finally {
+    submitBtn.disabled = false;
+    submitBtn.innerHTML = originalBtnText;
+  }
+}
+
+// แสดง Popup ขอบคุณ
+function showSuccessPopup() {
+  const popupHTML = `
+    <div id="successPopup" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 animate-fade-in">
+      <div class="bg-white rounded-3xl p-8 max-w-md w-full text-center shadow-2xl transform animate-scale-up">
+        <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+          <i class="fas fa-check text-4xl text-green-500"></i>
+        </div>
+        <h3 class="text-2xl font-bold text-gray-800 mb-2">ส่งข้อมูลสำเร็จแล้ว! ✅</h3>
+        <p class="text-gray-600 mb-6">
+          ขอบคุณที่สนใจบริการ Photo Booth by PUG MEDIA<br>
+          ทีมงานจะติดต่อกลับภายใน 24 ชั่วโมง
+        </p>
+        <div class="space-y-3">
+          <button onclick="closeSuccessPopup()" class="w-full bg-gold hover:bg-gold-dark text-white font-bold py-3 rounded-full transition">
+            ตกลง
+          </button>
+          <a href="https://line.me/R/ti/p/@PUGMEDIA" target="_blank" class="block w-full bg-green-500 hover:bg-green-600 text-white font-bold py-3 rounded-full transition">
+            <i class="fab fa-line mr-2"></i>แอด LINE OA @PUGMEDIA
+          </a>
+        </div>
+      </div>
+    </div>
+  `;
+  
+  document.body.insertAdjacentHTML('beforeend', popupHTML);
+}
+
+// ปิด Popup
+function closeSuccessPopup() {
+  const popup = document.getElementById('successPopup');
+  if (popup) {
+    popup.remove();
+  }
+}
+
+// Event Listener สำหรับฟอร์ม
 document.getElementById('bookingForm')?.addEventListener('submit', async function(e) {
   e.preventDefault();
   
-  const btn = document.getElementById('submitBtn');
-  const msgBox = document.getElementById('formMessage');
-  
-  // แสดงสถานะกำลังโหลด
-  const originalBtnText = btn.innerHTML;
-  btn.disabled = true;
-  btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> กำลังส่งข้อมูล...';
-  btn.classList.add('opacity-75', 'cursor-not-allowed');
-  msgBox.classList.add('hidden');
-
   // รวบรวมข้อมูลจากฟอร์ม
   const formData = {
     name: document.getElementById('f_name').value.trim(),
@@ -1388,37 +1451,83 @@ document.getElementById('bookingForm')?.addEventListener('submit', async functio
     addon: document.getElementById('f_addon').value,
     detail: document.getElementById('f_detail').value.trim()
   };
+  
+  // เรียกฟังก์ชันส่งฟอร์ม
+  await submitForm(formData);
+});
 
-  try {
-    // ส่งข้อมูลไปยัง Cloudflare Worker
-    const res = await fetch(WORKER_URL, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(formData)
-    });
-    const result = await res.json();
+// ฟังก์ชันอื่นๆ (คงไว้เหมือนเดิม)
+function showPkg(n) {
+  document.querySelectorAll('.pkg-content').forEach(el => el.classList.add('hidden'));
+  document.querySelectorAll('.pkg-tab').forEach(el => { el.classList.remove('bg-gold','text-white'); el.classList.add('text-gray-600'); });
+  document.getElementById('pkg'+n)?.classList.remove('hidden');
+  const tab = document.getElementById('tab'+n);
+  if(tab) { tab.classList.add('bg-gold','text-white'); tab.classList.remove('text-gray-600'); }
+}
+function trackLead(n,v){if(typeof fbq!=='undefined')fbq('track','Lead',{content_name:n,value:v,currency:'THB'});if(typeof gtag!=='undefined')gtag('event','generate_lead',{event_category:'Booking',event_label:n,value:v,currency:'THB'});}
+function trackContact(m){if(typeof fbq!=='undefined')fbq('track','Contact',{content_category:m});if(typeof gtag!=='undefined')gtag('event','contact',{event_category:'Contact',event_label:m});}
+function trackViewContent(n){if(typeof fbq!=='undefined')fbq('track','ViewContent',{content_name:n});if(typeof gtag!=='undefined')gtag('event','view_item',{event_category:'Package',event_label:n});}
 
-    if (result.success) {
-      // แสดงผลสำเร็จ
-      msgBox.className = 'text-center p-4 rounded-xl bg-green-100 text-green-800 text-sm mt-4 border border-green-200 block';
-      msgBox.innerHTML = `
-        <div class="font-bold text-lg mb-1">✅ ส่งข้อมูลสำเร็จ!</div>
-        <div>ทีมงานจะตรวจสอบและติดต่อกลับทาง LINE หรือโทรศัพท์โดยเร็วที่สุดครับ</div>
-      `;
-      this.reset(); // ล้างฟอร์ม
+// Ripple Effect สำหรับปุ่มทั้งหมด
+document.querySelectorAll('.btn-gold, #submitBtn').forEach(button => {
+  button.addEventListener('click', function(e) {
+    const rect = this.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const ripple = document.createElement('span');
+    ripple.classList.add('ripple');
+    ripple.style.left = x + 'px';
+    ripple.style.top = y + 'px';
+    ripple.style.width = '20px';
+    ripple.style.height = '20px';
+    ripple.style.marginLeft = '-10px';
+    ripple.style.marginTop = '-10px';
+    this.appendChild(ripple);
+    setTimeout(() => { ripple.remove(); }, 600);
+  });
+});
+
+// จัดการเมนูมือถือ
+const menuBtn = document.getElementById('mobileMenuBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+if (menuBtn && mobileMenu) {
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+    const icon = menuBtn.querySelector('i');
+    if (mobileMenu.classList.contains('hidden')) {
+      icon.classList.remove('fa-times');
+      icon.classList.add('fa-bars');
     } else {
-      throw new Error('ส่งข้อมูลไม่สำเร็จ');
+      icon.classList.remove('fa-bars');
+      icon.classList.add('fa-times');
     }
-  } catch (err) {
-    // แสดงผลผิดพลาด
-    msgBox.className = 'text-center p-4 rounded-xl bg-red-100 text-red-800 text-sm mt-4 border border-red-200 block';
-    msgBox.innerHTML = '❌ <strong>เกิดข้อผิดพลาด</strong><br>กรุณาลองใหม่อีกครั้ง หรือติดต่อเราผ่าน LINE @PUGMEDIA';
-  } finally {
-    // คืนค่าปุ่ม
-    btn.disabled = false;
-    btn.innerHTML = originalBtnText;
-    btn.classList.remove('opacity-75', 'cursor-not-allowed');
-  }
+  });
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
+      menuBtn.querySelector('i').classList.remove('fa-times');
+      menuBtn.querySelector('i').classList.add('fa-bars');
+    });
+  });
+}
+
+// Scroll Reveal Animation สำหรับ Features
+document.addEventListener("DOMContentLoaded", function() {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.remove('opacity-0', 'translate-y-8');
+          entry.target.classList.add('opacity-100', 'translate-y-0');
+        }, index * 100);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.feature-card').forEach((card, index) => {
+    card.classList.add('opacity-0', 'translate-y-8', 'transition-all', 'duration-700', 'ease-out');
+    observer.observe(card);
+  });
 });
 </script>
   
