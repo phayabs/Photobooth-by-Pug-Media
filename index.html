@@ -1247,15 +1247,17 @@ document.addEventListener("DOMContentLoaded", function() {
 </script>
 <!-- ========== JAVASCRIPT ========== -->
 <script>
-// ⚠️ เปลี่ยน URL นี้เป็น Cloudflare Worker URL ของคุณ
+<!-- ========== JAVASCRIPT ========== -->
+<script>
+// ⚠️ Worker URL - ต้องแก้เป็นของจริง
 const WORKER_URL = 'https://pug-line-bot.phayabs.workers.dev';
 
+// ========== Form Submission to LINE OA ==========
 document.getElementById('bookingForm')?.addEventListener('submit', async function(e) {
   e.preventDefault();
   const btn = document.getElementById('submitBtn');
   const msgBox = document.getElementById('formMessage');
   
-  // รวบรวมข้อมูล
   const formData = {
     name: document.getElementById('f_name').value.trim(),
     phone: document.getElementById('f_phone').value.trim(),
@@ -1266,7 +1268,6 @@ document.getElementById('bookingForm')?.addEventListener('submit', async functio
     detail: document.getElementById('f_detail').value.trim()
   };
 
-  // แสดงสถานะกำลังส่ง
   btn.disabled = true;
   btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> กำลังส่งข้อมูล...';
   msgBox.className = 'hidden';
@@ -1281,7 +1282,7 @@ document.getElementById('bookingForm')?.addEventListener('submit', async functio
 
     if (result.success) {
       msgBox.className = 'text-center p-3 rounded-xl bg-green-100 text-green-800 text-sm mt-3';
-      msgBox.innerHTML = '✅ <strong>ส่งข้อมูลสำเร็จ!</strong><br>ทีมงานจะติดต่อกลับทาง LINE หรือโทรศัพท์โดยเร็วที่สุด';
+      msgBox.innerHTML = '✅ <strong>ส่งข้อมูลสำเร็จ!</strong><br>ทีมงานจะติดต่อกลับโดยเร็วที่สุด';
       msgBox.classList.remove('hidden');
       this.reset();
     } else {
@@ -1297,16 +1298,84 @@ document.getElementById('bookingForm')?.addEventListener('submit', async functio
   }
 });
 
-// (คงฟังก์ชันอื่นๆ ไว้เหมือนเดิม: showPkg, trackContact, trackViewContent, etc.)
+// ========== Utility Functions ==========
 function showPkg(n) {
   document.querySelectorAll('.pkg-content').forEach(el => el.classList.add('hidden'));
-  document.querySelectorAll('.pkg-tab').forEach(el => { el.classList.remove('bg-gold','text-white'); el.classList.add('text-gray-600'); });
+  document.querySelectorAll('.pkg-tab').forEach(el => { 
+    el.classList.remove('bg-gold','text-white'); 
+    el.classList.add('text-gray-600'); 
+  });
   document.getElementById('pkg'+n)?.classList.remove('hidden');
   const tab = document.getElementById('tab'+n);
-  if(tab) { tab.classList.add('bg-gold','text-white'); tab.classList.remove('text-gray-600'); }
+  if(tab) { 
+    tab.classList.add('bg-gold','text-white'); 
+    tab.classList.remove('text-gray-600'); 
+  }
 }
-function trackContact(m){if(typeof fbq!=='undefined')fbq('track','Contact',{content_category:m});if(typeof gtag!=='undefined')gtag('event','contact',{event_category:'Contact',event_label:m});}
-function trackViewContent(n){if(typeof fbq!=='undefined')fbq('track','ViewContent',{content_name:n});if(typeof gtag!=='undefined')gtag('event','view_item',{event_category:'Package',event_label:n});}
+
+function trackContact(m){
+  if(typeof fbq!=='undefined') fbq('track','Contact',{content_category:m});
+  if(typeof gtag!=='undefined') gtag('event','contact',{event_category:'Contact',event_label:m});
+}
+
+function trackViewContent(n){
+  if(typeof fbq!=='undefined') fbq('track','ViewContent',{content_name:n});
+  if(typeof gtag!=='undefined') gtag('event','view_item',{event_category:'Package',event_label:n});
+}
+
+// ========== UI Effects ==========
+// Ripple Effect
+document.querySelectorAll('.btn-gold').forEach(button => {
+  button.addEventListener('click', function(e) {
+    const rect = this.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const ripple = document.createElement('span');
+    ripple.classList.add('ripple');
+    ripple.style.cssText = `left:${x}px;top:${y}px;width:20px;height:20px;margin-left:-10px;margin-top:-10px;`;
+    this.appendChild(ripple);
+    setTimeout(() => ripple.remove(), 600);
+  });
+});
+
+// Mobile Menu
+const menuBtn = document.getElementById('mobileMenuBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+if (menuBtn && mobileMenu) {
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+    const icon = menuBtn.querySelector('i');
+    icon.classList.toggle('fa-bars');
+    icon.classList.toggle('fa-times');
+  });
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
+      menuBtn.querySelector('i').classList.remove('fa-times');
+      menuBtn.querySelector('i').classList.add('fa-bars');
+    });
+  });
+}
+
+// Scroll Reveal Animation for Features
+document.addEventListener("DOMContentLoaded", function() {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.remove('opacity-0', 'translate-y-8');
+          entry.target.classList.add('opacity-100', 'translate-y-0');
+        }, index * 100);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.feature-card').forEach(card => {
+    card.classList.add('opacity-0', 'translate-y-8', 'transition-all', 'duration-700', 'ease-out');
+    observer.observe(card);
+  });
+});
 </script>
   
 </body>
