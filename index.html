@@ -1028,6 +1028,7 @@ tailwind.config = {
         <form id="bookingForm" class="space-y-4">
           <div><label class="text-sm text-gray-600 font-medium">ชื่อ-นามสกุล *</label><input type="text" id="f_name" required placeholder="เช่น สมชาย ใจดี" class="w-full p-3 border border-gray-200 rounded-xl focus:border-gold focus:outline-none mt-1"></div>
           <div><label class="text-sm text-gray-600 font-medium">เบอร์โทรศัพท์ *</label><input type="tel" id="f_phone" required placeholder="09x-xxx-xxxx" class="w-full p-3 border border-gray-200 rounded-xl focus:border-gold focus:outline-none mt-1"></div>
+          <div><label class="text-sm text-gray-600 font-medium">LINE ID / ช่องทางติดต่อกลับ</label><input type="text" id="f_line" placeholder="@yourlineid หรือเบอร์โทร (ร้านจะทักไปหาคุณ)" class="w-full p-3 border border-gray-200 rounded-xl focus:border-gold focus:outline-none mt-1"></div>
           <div><label class="text-sm text-gray-600 font-medium">วันและเวลางาน *</label><input type="datetime-local" id="f_date" required class="w-full p-3 border border-gray-200 rounded-xl focus:border-gold focus:outline-none mt-1"></div>
           <div><label class="text-sm text-gray-600 font-medium">แพ็กเกจ *</label>
             <select id="f_package" required class="w-full p-3 border border-gray-200 rounded-xl focus:border-gold focus:outline-none mt-1 bg-white">
@@ -1044,15 +1045,13 @@ tailwind.config = {
           </div>
           <div><label class="text-sm text-gray-600 font-medium">สถานที่จัดงาน / รายละเอียด</label><textarea id="f_detail" rows="2" placeholder="เช่น โรงแรมxxx ย่านสุขุมวิท" class="w-full p-3 border border-gray-200 rounded-xl focus:border-gold focus:outline-none mt-1"></textarea></div>
           
-          <div class="pt-2 space-y-3">
+          <div class="pt-2">
             <button type="submit" id="submitBtn" class="w-full btn-gold py-4 rounded-xl text-white font-bold shadow-md hover:shadow-lg transition flex items-center justify-center gap-2">
-              <i class="fab fa-line text-xl"></i><span>ส่งข้อมูลผ่าน LINE</span>
-            </button>
-            <button type="button" id="fallbackBtn" onclick="fallbackSend()" class="w-full bg-gray-100 hover:bg-gray-200 text-gray-700 py-3 rounded-xl font-medium transition flex items-center justify-center gap-2 border border-gray-200">
-              <i class="fas fa-copy"></i><span>คัดลอก & เปิดแชทสำรอง</span>
+              <i class="fab fa-line text-xl"></i><span>ส่งข้อมูลสอบถาม</span>
             </button>
           </div>
-          <div id="formMessage" class="hidden text-center p-3 rounded-xl text-sm"></div>
+          <div id="formMessage" class="hidden text-center p-3 rounded-xl text-sm mt-3"></div>
+          <p class="text-xs text-gray-400 text-center mt-2">🔒 ข้อมูลจะถูกส่งเข้า LINE OA ของทางร้านโดยตรง ทีมงานจะติดต่อกลับภายใน 24 ชม.</p>
         </form>
       </div>
     </div>
@@ -1061,7 +1060,6 @@ tailwind.config = {
 
 </main>
 
-<!-- ========== FOOTER ========== -->
 <!-- ========== FOOTER ========== -->
 <footer class="bg-gray-900 text-gray-400 py-10">
   <div class="max-w-7xl mx-auto px-4">
@@ -1247,5 +1245,69 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 });
 </script>
+<!-- ========== JAVASCRIPT ========== -->
+<script>
+// ⚠️ เปลี่ยน URL นี้เป็น Cloudflare Worker URL ของคุณ
+const WORKER_URL = 'https://pug-line-bot.phayabs.workers.dev';
+
+document.getElementById('bookingForm')?.addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const btn = document.getElementById('submitBtn');
+  const msgBox = document.getElementById('formMessage');
+  
+  // รวบรวมข้อมูล
+  const formData = {
+    name: document.getElementById('f_name').value.trim(),
+    phone: document.getElementById('f_phone').value.trim(),
+    lineId: document.getElementById('f_line').value.trim(),
+    date: document.getElementById('f_date').value,
+    package: document.getElementById('f_package').value,
+    addon: document.getElementById('f_addon').value,
+    detail: document.getElementById('f_detail').value.trim()
+  };
+
+  // แสดงสถานะกำลังส่ง
+  btn.disabled = true;
+  btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> กำลังส่งข้อมูล...';
+  msgBox.className = 'hidden';
+
+  try {
+    const res = await fetch(WORKER_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(formData)
+    });
+    const result = await res.json();
+
+    if (result.success) {
+      msgBox.className = 'text-center p-3 rounded-xl bg-green-100 text-green-800 text-sm mt-3';
+      msgBox.innerHTML = '✅ <strong>ส่งข้อมูลสำเร็จ!</strong><br>ทีมงานจะติดต่อกลับทาง LINE หรือโทรศัพท์โดยเร็วที่สุด';
+      msgBox.classList.remove('hidden');
+      this.reset();
+    } else {
+      throw new Error('ส่งข้อมูลไม่สำเร็จ');
+    }
+  } catch (err) {
+    msgBox.className = 'text-center p-3 rounded-xl bg-red-100 text-red-800 text-sm mt-3';
+    msgBox.innerHTML = '❌ <strong>เกิดข้อผิดพลาด</strong><br>กรุณาลองใหม่ หรือติดต่อผ่าน LINE @PUGMEDIA';
+    msgBox.classList.remove('hidden');
+  } finally {
+    btn.disabled = false;
+    btn.innerHTML = '<i class="fab fa-line text-xl"></i><span>ส่งข้อมูลสอบถาม</span>';
+  }
+});
+
+// (คงฟังก์ชันอื่นๆ ไว้เหมือนเดิม: showPkg, trackContact, trackViewContent, etc.)
+function showPkg(n) {
+  document.querySelectorAll('.pkg-content').forEach(el => el.classList.add('hidden'));
+  document.querySelectorAll('.pkg-tab').forEach(el => { el.classList.remove('bg-gold','text-white'); el.classList.add('text-gray-600'); });
+  document.getElementById('pkg'+n)?.classList.remove('hidden');
+  const tab = document.getElementById('tab'+n);
+  if(tab) { tab.classList.add('bg-gold','text-white'); tab.classList.remove('text-gray-600'); }
+}
+function trackContact(m){if(typeof fbq!=='undefined')fbq('track','Contact',{content_category:m});if(typeof gtag!=='undefined')gtag('event','contact',{event_category:'Contact',event_label:m});}
+function trackViewContent(n){if(typeof fbq!=='undefined')fbq('track','ViewContent',{content_name:n});if(typeof gtag!=='undefined')gtag('event','view_item',{event_category:'Package',event_label:n});}
+</script>
+  
 </body>
 </html>
