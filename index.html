@@ -284,93 +284,96 @@ tailwind.config = {
   </div>
 </section>
 
-<!-- ========== FEATURES ========== -->
-<section id="features" class="py-24 bg-gradient-to-br from-rose-50 via-white to-gold-50 relative overflow-hidden">
-  <!-- Decorative Background Blobs -->
-  <div class="absolute top-0 left-0 w-96 h-96 bg-gold/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
-  <div class="absolute bottom-0 right-0 w-96 h-96 bg-rose/10 rounded-full blur-3xl translate-x-1/2 translate-y-1/2 pointer-events-none"></div>
-
-  <div class="max-w-7xl mx-auto px-4 relative z-10">
-    <div class="text-center mb-16">
-      <span class="inline-block px-4 py-2 rounded-full bg-gold/20 border border-gold text-gold-dark text-sm font-semibold mb-4">
+<!-- ========== FEATURES ( redesigned ) ========== -->
+<section id="features" class="py-20 bg-gradient-to-b from-white via-gray-50 to-white overflow-hidden">
+  <div class="max-w-7xl mx-auto px-4">
+    
+    <!-- Header Section -->
+    <div class="text-center mb-12 relative">
+      <span class="inline-block px-4 py-1.5 rounded-full bg-gold/10 border border-gold/30 text-gold-dark text-xs font-bold tracking-wider mb-3 animate-pulse">
         ✨ WHY CHOOSE US
       </span>
-      <h2 class="font-display text-4xl md:text-5xl font-bold mt-3 mb-4 text-gray-900">ทำไมต้องเลือกเรา?</h2>
-      <p class="text-gray-600 max-w-2xl mx-auto text-lg">บริการ Photo Booth ครบวงจร คุณภาพระดับมืออาชีพ พร้อมทีมงานดูแลตลอดงาน</p>
+      <h2 class="font-display text-3xl md:text-5xl font-bold text-gray-900 mb-4">
+        ทำไมต้องเลือก <span class="text-gold-gradient">PUG MEDIA?</span>
+      </h2>
+      <p class="text-gray-500 max-w-xl mx-auto text-sm md:text-base">
+        เราไม่ได้แค่ถ่ายรูป แต่เราสร้างประสบการณ์สุดพรีเมียมให้งานของคุณ
+      </p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-      
-      <!-- Feature 1 -->
-      <div class="group bg-white/70 backdrop-blur-sm p-8 rounded-3xl border border-gray-100 shadow-lg hover:shadow-2xl hover:-translate-y-2 hover:border-gold/30 transition-all duration-500">
-        <div class="w-16 h-16 bg-gradient-to-br from-gold to-gold-dark rounded-2xl flex items-center justify-center text-white text-3xl mb-6 shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500">
+    <!-- Features Grid (Mobile 2 cols / Desktop 4 cols) -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+
+      <!-- Feature 1: Camera -->
+      <div class="feature-card group bg-white p-5 md:p-6 rounded-2xl shadow-sm border border-gray-100 hover:border-gold/50 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+        <div class="w-12 h-12 md:w-14 md:h-14 bg-gold/10 rounded-xl flex items-center justify-center text-gold-dark text-2xl md:text-3xl mb-4 group-hover:bg-gold group-hover:text-white group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
           <i class="fas fa-camera"></i>
         </div>
-        <h3 class="font-bold text-xl text-gray-900 mb-3">กล้อง DSLR คุณภาพสูง</h3>
-        <p class="text-gray-600 leading-relaxed">ภาพคมชัด สีสวย สมจริง ด้วยอุปกรณ์ระดับมืออาชีพ</p>
+        <h3 class="font-bold text-sm md:text-lg mb-2 text-gray-800">กล้อง DSLR คุณภาพสูง</h3>
+        <p class="text-xs md:text-sm text-gray-500 leading-relaxed">ภาพคมชัด สีสวยสมจริง ระดับมืออาชีพ</p>
       </div>
 
-      <!-- Feature 2 -->
-      <div class="group bg-white/70 backdrop-blur-sm p-8 rounded-3xl border border-gray-100 shadow-lg hover:shadow-2xl hover:-translate-y-2 hover:border-gold/30 transition-all duration-500">
-        <div class="w-16 h-16 bg-gradient-to-br from-gold to-gold-dark rounded-2xl flex items-center justify-center text-white text-3xl mb-6 shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500">
+      <!-- Feature 2: Studio Light -->
+      <div class="feature-card group bg-white p-5 md:p-6 rounded-2xl shadow-sm border border-gray-100 hover:border-gold/50 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+        <div class="w-12 h-12 md:w-14 md:h-14 bg-gold/10 rounded-xl flex items-center justify-center text-gold-dark text-2xl md:text-3xl mb-4 group-hover:bg-gold group-hover:text-white group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
           <i class="fas fa-lightbulb"></i>
         </div>
-        <h3 class="font-bold text-xl text-gray-900 mb-3">ไฟสตูดิโอ + แฟลช</h3>
-        <p class="text-gray-600 leading-relaxed">ระบบไฟต่อเนื่องพร้อมแฟลช ภาพสวยทุกมุม ไม่มืดไม่เบลอ</p>
+        <h3 class="font-bold text-sm md:text-lg mb-2 text-gray-800">ไฟสตูดิโอ + แฟลช</h3>
+        <p class="text-xs md:text-sm text-gray-500 leading-relaxed">แสงนุ่มนวล ถ่ายสวยทุกมุม ไม่มืดทึบ</p>
       </div>
 
-      <!-- Feature 3 -->
-      <div class="group bg-white/70 backdrop-blur-sm p-8 rounded-3xl border border-gray-100 shadow-lg hover:shadow-2xl hover:-translate-y-2 hover:border-gold/30 transition-all duration-500">
-        <div class="w-16 h-16 bg-gradient-to-br from-gold to-gold-dark rounded-2xl flex items-center justify-center text-white text-3xl mb-6 shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500">
-          <i class="fas fa-water"></i>
+      <!-- Feature 3: Waterproof -->
+      <div class="feature-card group bg-white p-5 md:p-6 rounded-2xl shadow-sm border border-gray-100 hover:border-gold/50 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+        <div class="w-12 h-12 md:w-14 md:h-14 bg-gold/10 rounded-xl flex items-center justify-center text-gold-dark text-2xl md:text-3xl mb-4 group-hover:bg-gold group-hover:text-white group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
+          <i class="fas fa-droplet"></i>
         </div>
-        <h3 class="font-bold text-xl text-gray-900 mb-3">รูปกันน้ำ + ซองฟรี</h3>
-        <p class="text-gray-600 leading-relaxed">พิมพ์คุณภาพสูง สีสวย คมชัด พร้อมซองกันน้ำทุกใบ</p>
+        <h3 class="font-bold text-sm md:text-lg mb-2 text-gray-800">รูปกันน้ำ + ซองฟรี</h3>
+        <p class="text-xs md:text-sm text-gray-500 leading-relaxed">ทนทาน สีสวย พร้อมซองกันน้ำทุกใบ</p>
       </div>
 
-      <!-- Feature 4 -->
-      <div class="group bg-white/70 backdrop-blur-sm p-8 rounded-3xl border border-gray-100 shadow-lg hover:shadow-2xl hover:-translate-y-2 hover:border-gold/30 transition-all duration-500">
-        <div class="w-16 h-16 bg-gradient-to-br from-gold to-gold-dark rounded-2xl flex items-center justify-center text-white text-3xl mb-6 shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500">
-          <i class="fas fa-hat-wizard"></i>
+      <!-- Feature 4: Props -->
+      <div class="feature-card group bg-white p-5 md:p-6 rounded-2xl shadow-sm border border-gray-100 hover:border-gold/50 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+        <div class="w-12 h-12 md:w-14 md:h-14 bg-gold/10 rounded-xl flex items-center justify-center text-gold-dark text-2xl md:text-3xl mb-4 group-hover:bg-gold group-hover:text-white group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
+          <i class="fas fa-masks-theater"></i>
         </div>
-        <h3 class="font-bold text-xl text-gray-900 mb-3">พร็อพจัดเต็ม</h3>
-        <p class="text-gray-600 leading-relaxed">อุปกรณ์ประกอบฉากหลากหลาย ให้แขกเล่นสนุกได้เต็มที่</p>
+        <h3 class="font-bold text-sm md:text-lg mb-2 text-gray-800">พร็อพจัดเต็ม</h3>
+        <p class="text-xs md:text-sm text-gray-500 leading-relaxed">อุปกรณ์ประกอบฉากหลากหลาย เล่นสนุกได้เต็มที่</p>
       </div>
 
-      <!-- Feature 5 -->
-      <div class="group bg-white/70 backdrop-blur-sm p-8 rounded-3xl border border-gray-100 shadow-lg hover:shadow-2xl hover:-translate-y-2 hover:border-gold/30 transition-all duration-500">
-        <div class="w-16 h-16 bg-gradient-to-br from-gold to-gold-dark rounded-2xl flex items-center justify-center text-white text-3xl mb-6 shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500">
+      <!-- Feature 5: iPad Share -->
+      <div class="feature-card group bg-white p-5 md:p-6 rounded-2xl shadow-sm border border-gray-100 hover:border-gold/50 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+        <div class="w-12 h-12 md:w-14 md:h-14 bg-gold/10 rounded-xl flex items-center justify-center text-gold-dark text-2xl md:text-3xl mb-4 group-hover:bg-gold group-hover:text-white group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
           <i class="fas fa-tablet-screen-button"></i>
         </div>
-        <h3 class="font-bold text-xl text-gray-900 mb-3">แชร์ผ่าน iPad ทันที</h3>
-        <p class="text-gray-600 leading-relaxed">รองรับ AirDrop, Email, QR Code และไฟล์ GIF ได้เลย</p>
+        <h3 class="font-bold text-sm md:text-lg mb-2 text-gray-800">แชร์ผ่าน iPad ทันที</h3>
+        <p class="text-xs md:text-sm text-gray-500 leading-relaxed">AirDrop, Email, QR Code ส่งได้ทุกรูปแบบ</p>
       </div>
 
-      <!-- Feature 6 -->
-      <div class="group bg-white/70 backdrop-blur-sm p-8 rounded-3xl border border-gray-100 shadow-lg hover:shadow-2xl hover:-translate-y-2 hover:border-gold/30 transition-all duration-500">
-        <div class="w-16 h-16 bg-gradient-to-br from-gold to-gold-dark rounded-2xl flex items-center justify-center text-white text-3xl mb-6 shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500">
-          <i class="fas fa-paint-brush"></i>
+      <!-- Feature 6: Free Design -->
+      <div class="feature-card group bg-white p-5 md:p-6 rounded-2xl shadow-sm border border-gray-100 hover:border-gold/50 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+        <div class="w-12 h-12 md:w-14 md:h-14 bg-gold/10 rounded-xl flex items-center justify-center text-gold-dark text-2xl md:text-3xl mb-4 group-hover:bg-gold group-hover:text-white group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
+          <i class="fas fa-pen-nib"></i>
         </div>
-        <h3 class="font-bold text-xl text-gray-900 mb-3">ออกแบบกรอบฟรี</h3>
-        <p class="text-gray-600 leading-relaxed">ดีไซน์กรอบรูปตามธีมงานของคุณ ไม่ซ้ำใคร สวยเป๊ะ</p>
+        <h3 class="font-bold text-sm md:text-lg mb-2 text-gray-800">ออกแบบกรอบฟรี</h3>
+        <p class="text-xs md:text-sm text-gray-500 leading-relaxed">ดีไซน์กรอบรูปตามธีมงานของคุณ ไม่ซ้ำใคร</p>
       </div>
 
-      <!-- Feature 7 -->
-      <div class="group bg-white/70 backdrop-blur-sm p-8 rounded-3xl border border-gray-100 shadow-lg hover:shadow-2xl hover:-translate-y-2 hover:border-gold/30 transition-all duration-500">
-        <div class="w-16 h-16 bg-gradient-to-br from-gold to-gold-dark rounded-2xl flex items-center justify-center text-white text-3xl mb-6 shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500">
+      <!-- Feature 7: Google Drive -->
+      <div class="feature-card group bg-white p-5 md:p-6 rounded-2xl shadow-sm border border-gray-100 hover:border-gold/50 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+        <div class="w-12 h-12 md:w-14 md:h-14 bg-gold/10 rounded-xl flex items-center justify-center text-gold-dark text-2xl md:text-3xl mb-4 group-hover:bg-gold group-hover:text-white group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
           <i class="fas fa-cloud-arrow-down"></i>
         </div>
-        <h3 class="font-bold text-xl text-gray-900 mb-3">รับไฟล์ครบทาง Drive</h3>
-        <p class="text-gray-600 leading-relaxed">ส่งไฟล์ทั้งหมดความละเอียดสูงทาง Google Drive หลังงาน</p>
+        <h3 class="font-bold text-sm md:text-lg mb-2 text-gray-800">ไฟล์ครบทาง Drive</h3>
+        <p class="text-xs md:text-sm text-gray-500 leading-relaxed">ส่งไฟล์ทั้งหมดความละเอียดสูงหลังจบงาน</p>
       </div>
 
-      <!-- Feature 8 -->
-      <div class="group bg-white/70 backdrop-blur-sm p-8 rounded-3xl border border-gray-100 shadow-lg hover:shadow-2xl hover:-translate-y-2 hover:border-gold/30 transition-all duration-500">
-        <div class="w-16 h-16 bg-gradient-to-br from-gold to-gold-dark rounded-2xl flex items-center justify-center text-white text-3xl mb-6 shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500">
-          <i class="fas fa-users"></i>
+      <!-- Feature 8: Staff -->
+      <div class="feature-card group bg-white p-5 md:p-6 rounded-2xl shadow-sm border border-gray-100 hover:border-gold/50 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+        <div class="w-12 h-12 md:w-14 md:h-14 bg-gold/10 rounded-xl flex items-center justify-center text-gold-dark text-2xl md:text-3xl mb-4 group-hover:bg-gold group-hover:text-white group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
+          <i class="fas fa-user-tie"></i>
         </div>
-        <h3 class="font-bold text-xl text-gray-900 mb-3">ทีมงานดูแลตลอดงาน</h3>
-        <p class="text-gray-600 leading-relaxed">เจ้าหน้าที่มืออาชีพ คอยดูแลและ Entertain แขกตลอดงาน</p>
+        <h3 class="font-bold text-sm md:text-lg mb-2 text-gray-800">ทีมงานดูแลตลอดงาน</h3>
+        <p class="text-xs md:text-sm text-gray-500 leading-relaxed">เจ้าหน้าที่มืออาชีพ Entertain แขกทั้งงาน</p>
       </div>
 
     </div>
@@ -1220,6 +1223,28 @@ function trackLead(n,v){if(typeof fbq!=='undefined')fbq('track','Lead',{content_
 function trackContact(m){if(typeof fbq!=='undefined')fbq('track','Contact',{content_category:m});if(typeof gtag!=='undefined')gtag('event','contact',{event_category:'Contact',event_label:m});}
 function trackViewContent(n){if(typeof fbq!=='undefined')fbq('track','ViewContent',{content_name:n});if(typeof gtag!=='undefined')gtag('event','view_item',{event_category:'Package',event_label:n});}
 </script>
+<!-- Script สำหรับ Animation เมื่อเลื่อนมาถึง (Scroll Reveal) -->
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+        // เพิ่ม class แสดงผลพร้อม delay ทีละใบ
+        setTimeout(() => {
+          entry.target.classList.remove('opacity-0', 'translate-y-8');
+          entry.target.classList.add('opacity-100', 'translate-y-0');
+        }, index * 100); // Delay 100ms ต่อ 1 การ์ด
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
 
+  // เลือกการ์ดทั้งหมดแล้วตั้งค่าเริ่มต้นให้ซ่อนไว้
+  document.querySelectorAll('.feature-card').forEach((card, index) => {
+    card.classList.add('opacity-0', 'translate-y-8', 'transition-all', 'duration-700', 'ease-out');
+    observer.observe(card);
+  });
+});
+</script>
 </body>
 </html>
