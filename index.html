@@ -1001,59 +1001,173 @@ tailwind.config = {
 <!-- TikTok Embed Script -->
 <script async src="https://www.tiktok.com/embed.js"></script>
 
-<!-- ========== CONTACT ========== -->
+<!-- ========== CONTACT SECTION ========== -->
 <section id="contact" class="py-24 bg-gradient-to-br from-rose-light via-white to-gold-light">
-  <div class="max-w-6xl mx-auto px-4">
+  <div class="max-w-7xl mx-auto px-4">
+    
+    <!-- Section Header -->
     <div class="text-center mb-16">
-      <span class="text-gold-dark font-semibold tracking-widest text-sm">CONTACT</span>
-      <h2 class="font-display text-4xl md:text-5xl font-bold mt-3 mb-4">ติดต่อ / สอบถามคิวงาน</h2>
+      <span class="inline-block px-4 py-1.5 rounded-full bg-gold/10 border border-gold/30 text-gold-dark text-xs font-bold tracking-wider mb-3">
+        CONTACT US
+      </span>
+      <h2 class="font-display text-3xl md:text-5xl font-bold text-gray-900 mb-4">ติดต่อสอบถาม / จองคิวงาน</h2>
+      <p class="text-gray-500 max-w-xl mx-auto">ทีมงานพร้อมดูแลและตอบทุกคำถาม เพื่อให้วันสำคัญของคุณสมบูรณ์แบบที่สุด</p>
     </div>
-    <div class="grid md:grid-cols-2 gap-10">
+
+    <div class="grid lg:grid-cols-5 gap-12 items-start">
       
-      <div class="space-y-5">
-        <div class="bg-gold-dark text-white p-6 rounded-2xl shadow-lg">
-           <h3 class="font-bold text-xl mb-4"><i class="fas fa-map-marker-alt mr-2"></i>พื้นที่ให้บริการ</h3>
-           <div class="space-y-3 text-sm md:text-base">
-             <div class="flex items-start gap-2"><i class="fas fa-check-circle text-green-300 mt-1"></i><span>กรุงเทพฯ และปริมณฑล (ฟรีค่าเดินทาง)</span></div>
-             <div class="flex items-start gap-2"><i class="fas fa-car text-yellow-300 mt-1"></i><span>ต่างจังหวัด: คิดค่าเดินทางตามระยะทาง</span></div>
-           </div>
+      <!-- Left Column: Contact Info (2 cols on desktop) -->
+      <div class="lg:col-span-2 space-y-8">
+        
+        <!-- Map / Location Box -->
+        <div class="bg-white p-6 rounded-3xl shadow-lg border border-gray-100">
+          <h3 class="font-bold text-xl text-gray-800 mb-4 flex items-center gap-2">
+            <i class="fas fa-map-marker-alt text-gold-dark"></i> พื้นที่ให้บริการ
+          </h3>
+          <div class="space-y-3 text-sm text-gray-600">
+            <div class="flex items-start gap-3">
+              <i class="fas fa-check-circle text-green-500 mt-1"></i>
+              <span><strong>กรุงเทพฯ และปริมณฑล</strong><br>ฟรีค่าเดินทาง</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <i class="fas fa-truck text-orange-500 mt-1"></i>
+              <span><strong>ต่างจังหวัด</strong><br>คิดค่าเดินทางตามระยะทางจริง</span>
+            </div>
+          </div>
         </div>
-        <a href="tel:0922590736" class="flex items-center gap-4 bg-white p-5 rounded-2xl shadow-md card-hover"><div class="w-14 h-14 bg-gold rounded-2xl flex items-center justify-center text-white text-2xl"><i class="fas fa-phone"></i></div><div><div class="text-sm text-gray-500">โทร (สาย 1)</div><div class="text-lg font-bold">092-259-0736</div></div></a>
-        <a href="tel:0837415338" class="flex items-center gap-4 bg-white p-5 rounded-2xl shadow-md card-hover"><div class="w-14 h-14 bg-gold rounded-2xl flex items-center justify-center text-white text-2xl"><i class="fas fa-phone"></i></div><div><div class="text-sm text-gray-500">โทร (สาย 2)</div><div class="text-lg font-bold">083-741-5338</div></div></a>
-        <a href="https://line.me/R/ti/p/@PUGMEDIA" target="_blank" rel="noopener" class="flex items-center gap-4 bg-white p-5 rounded-2xl shadow-md card-hover"><div class="w-14 h-14 bg-green-500 rounded-2xl flex items-center justify-center text-white text-2xl"><i class="fab fa-line"></i></div><div><div class="text-sm text-gray-500">LINE Official</div><div class="text-lg font-bold">@PUGMEDIA</div></div></a>
+
+        <!-- Contact Buttons -->
+        <div class="space-y-4">
+          <a href="tel:0922590736" class="flex items-center gap-4 bg-white p-5 rounded-2xl shadow-md card-hover group border border-transparent hover:border-gold/30 transition-all duration-300">
+            <div class="w-14 h-14 bg-gold/10 rounded-2xl flex items-center justify-center text-gold-dark text-2xl group-hover:bg-gold group-hover:text-white transition-colors">
+              <i class="fas fa-phone-alt"></i>
+            </div>
+            <div>
+              <div class="text-xs text-gray-500 uppercase tracking-wide font-semibold">ติดต่อสอบถาม</div>
+              <div class="text-lg font-bold text-gray-800">092-259-0736</div>
+            </div>
+          </a>
+
+          <a href="tel:0837415338" class="flex items-center gap-4 bg-white p-5 rounded-2xl shadow-md card-hover group border border-transparent hover:border-gold/30 transition-all duration-300">
+            <div class="w-14 h-14 bg-gold/10 rounded-2xl flex items-center justify-center text-gold-dark text-2xl group-hover:bg-gold group-hover:text-white transition-colors">
+              <i class="fas fa-phone-alt"></i>
+            </div>
+            <div>
+              <div class="text-xs text-gray-500 uppercase tracking-wide font-semibold">สำรองคิว (สาย 2)</div>
+              <div class="text-lg font-bold text-gray-800">083-741-5338</div>
+            </div>
+          </a>
+
+          <a href="https://line.me/R/ti/p/@PUGMEDIA" target="_blank" rel="noopener" class="flex items-center gap-4 bg-[#06C755] p-5 rounded-2xl shadow-lg card-hover text-white hover:bg-[#05a546] transition-all duration-300">
+            <div class="w-14 h-14 bg-white/20 rounded-2xl flex items-center justify-center text-2xl">
+              <i class="fab fa-line"></i>
+            </div>
+            <div>
+              <div class="text-xs text-white/80 uppercase tracking-wide font-semibold">แชทกับเรา</div>
+              <div class="text-lg font-bold">Line: @PUGMEDIA</div>
+            </div>
+          </a>
+        </div>
       </div>
 
-      <div class="bg-white p-6 md:p-8 rounded-3xl shadow-xl border border-gray-100">
-        <h3 class="font-bold text-xl mb-6 text-gray-800">ฟอร์มสอบถามคิวงาน</h3>
-        <form id="bookingForm" class="space-y-4">
-          <div><label class="text-sm text-gray-600 font-medium">ชื่อ-นามสกุล *</label><input type="text" id="f_name" required placeholder="เช่น สมชาย ใจดี" class="w-full p-3 border border-gray-200 rounded-xl focus:border-gold focus:outline-none mt-1"></div>
-          <div><label class="text-sm text-gray-600 font-medium">เบอร์โทรศัพท์ *</label><input type="tel" id="f_phone" required placeholder="09x-xxx-xxxx" class="w-full p-3 border border-gray-200 rounded-xl focus:border-gold focus:outline-none mt-1"></div>
-          <div><label class="text-sm text-gray-600 font-medium">LINE ID / ช่องทางติดต่อกลับ</label><input type="text" id="f_line" placeholder="@yourlineid หรือเบอร์โทร (ร้านจะทักไปหาคุณ)" class="w-full p-3 border border-gray-200 rounded-xl focus:border-gold focus:outline-none mt-1"></div>
-          <div><label class="text-sm text-gray-600 font-medium">วันและเวลางาน *</label><input type="datetime-local" id="f_date" required class="w-full p-3 border border-gray-200 rounded-xl focus:border-gold focus:outline-none mt-1"></div>
-          <div><label class="text-sm text-gray-600 font-medium">แพ็กเกจ *</label>
-            <select id="f_package" required class="w-full p-3 border border-gray-200 rounded-xl focus:border-gold focus:outline-none mt-1 bg-white">
-              <option value="">-- เลือกแพ็กเกจ --</option>
-              <option>2 ชั่วโมง - Size 2x6 (6,900฿)</option><option>2 ชั่วโมง - Size 3x4 (7,900฿)</option><option>2 ชั่วโมง - Size 2x6,4x6 (8,900฿)</option>
-              <option>3 ชั่วโมง - Size 2x6 (8,900฿)</option><option>3 ชั่วโมง - Size 3x4 (9,900฿)</option><option>3 ชั่วโมง - Size 2x6,4x6 (10,900฿)</option>
-              <option>4 ชั่วโมง - Size 2x6 (9,900฿) ⭐</option><option>4 ชั่วโมง - Size 3x4 (10,900฿) ⭐</option><option>4 ชั่วโมง - Size 2x6,4x6 (12,900฿) ⭐</option>
-            </select>
-          </div>
-          <div><label class="text-sm text-gray-600 font-medium">Add-on (ถ้ามี)</label>
-            <select id="f_addon" class="w-full p-3 border border-gray-200 rounded-xl focus:border-gold focus:outline-none mt-1 bg-white">
-              <option value="-">ไม่ต้องการ</option><option>Video Guestbook 3 ชม. (+2,500฿)</option><option>Video Guestbook 4 ชม. (+3,500฿)</option><option>การ์ดเชิญอวยพร (+1,500฿)</option>
-            </select>
-          </div>
-          <div><label class="text-sm text-gray-600 font-medium">สถานที่จัดงาน / รายละเอียด</label><textarea id="f_detail" rows="2" placeholder="เช่น โรงแรมxxx ย่านสุขุมวิท" class="w-full p-3 border border-gray-200 rounded-xl focus:border-gold focus:outline-none mt-1"></textarea></div>
+      <!-- Right Column: Booking Form (3 cols on desktop) -->
+      <div class="lg:col-span-3 bg-white p-8 md:p-10 rounded-3xl shadow-xl border border-gray-100 relative overflow-hidden">
+        <!-- Decorative Corner -->
+        <div class="absolute top-0 right-0 w-32 h-32 bg-gold/5 rounded-bl-full pointer-events-none"></div>
+
+        <h3 class="font-bold text-2xl text-gray-800 mb-6 flex items-center gap-2">
+          <i class="fas fa-calendar-check text-gold-dark"></i> แบบฟอร์มสอบถามคิว
+        </h3>
+        
+        <form id="bookingForm" class="space-y-5">
           
-          <div class="pt-2">
-            <button type="submit" id="submitBtn" class="w-full btn-gold py-4 rounded-xl text-white font-bold shadow-md hover:shadow-lg transition flex items-center justify-center gap-2">
-              <i class="fab fa-line text-xl"></i><span>ส่งข้อมูลสอบถาม</span>
-            </button>
+          <!-- Row 1: Name & Phone -->
+          <div class="grid md:grid-cols-2 gap-5">
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">ชื่อ-นามสกุล <span class="text-red-500">*</span></label>
+              <input type="text" id="f_name" required placeholder="เช่น สมชาย ใจดี" 
+                     class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-gold focus:ring-2 focus:ring-gold/20 outline-none transition-all">
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">เบอร์โทรศัพท์ <span class="text-red-500">*</span></label>
+              <input type="tel" id="f_phone" required placeholder="08x-xxx-xxxx" 
+                     class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-gold focus:ring-2 focus:ring-gold/20 outline-none transition-all">
+            </div>
           </div>
-          <div id="formMessage" class="hidden text-center p-3 rounded-xl text-sm mt-3"></div>
-          <p class="text-xs text-gray-400 text-center mt-2">🔒 ข้อมูลจะถูกส่งเข้า LINE OA ของทางร้านโดยตรง ทีมงานจะติดต่อกลับภายใน 24 ชม.</p>
+
+          <!-- Row 2: LINE ID & Date -->
+          <div class="grid md:grid-cols-2 gap-5">
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">LINE ID (สำหรับติดต่อกลับ)</label>
+              <input type="text" id="f_line" placeholder="หรือ Facebook Name" 
+                     class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-gold focus:ring-2 focus:ring-gold/20 outline-none transition-all">
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">วันจัดงาน <span class="text-red-500">*</span></label>
+              <input type="date" id="f_date" required 
+                     class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-gold focus:ring-2 focus:ring-gold/20 outline-none transition-all text-gray-600">
+            </div>
+          </div>
+
+          <!-- Row 3: Package Selection -->
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">แพ็กเกจที่สนใจ <span class="text-red-500">*</span></label>
+            <select id="f_package" required 
+                    class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-gold focus:ring-2 focus:ring-gold/20 outline-none transition-all bg-white">
+              <option value="">-- เลือกแพ็กเกจ --</option>
+              <optgroup label="แพ็กเกจ 2 ชั่วโมง">
+                <option value="2 ชม. - Size 2x6 (6,900฿)">2 ชม. - Size 2x6 (6,900฿)</option>
+                <option value="2 ชม. - Size 3x4 (7,900฿)">2 ชม. - Size 3x4 (7,900฿)</option>
+                <option value="2 ชม. - Size 2x6, 4x6 (8,900฿)">2 ชม. - Size 2x6, 4x6 (8,900฿)</option>
+              </optgroup>
+              <optgroup label="แพ็กเกจ 3 ชั่วโมง">
+                <option value="3 ชม. - Size 2x6 (8,900฿)">3 ชม. - Size 2x6 (8,900฿)</option>
+                <option value="3 ชม. - Size 3x4 (9,900฿)">3 ชม. - Size 3x4 (9,900฿)</option>
+                <option value="3 ชม. - Size 2x6, 4x6 (10,900฿)">3 ชม. - Size 2x6, 4x6 (10,900฿)</option>
+              </optgroup>
+              <optgroup label="แพ็กเกจ 4 ชั่วโมง (แถมฟรีการ์ดอวยพร)">
+                <option value="4 ชม. - Size 2x6 (9,900฿) ⭐BEST SELLER">4 ชม. - Size 2x6 (9,900฿) ⭐BEST SELLER</option>
+                <option value="4 ชม. - Size 3x4 (10,900฿) ⭐BEST SELLER">4 ชม. - Size 3x4 (10,900฿) ⭐BEST SELLER</option>
+                <option value="4 ชม. - Size 2x6, 4x6 (12,900฿) ⭐BEST SELLER">4 ชม. - Size 2x6, 4x6 (12,900฿) ⭐BEST SELLER</option>
+              </optgroup>
+            </select>
+          </div>
+
+          <!-- Row 4: Add-ons -->
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">บริการเสริม (Add-on)</label>
+            <select id="f_addon" 
+                    class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-gold focus:ring-2 focus:ring-gold/20 outline-none transition-all bg-white">
+              <option value="-">ไม่ต้องการบริการเสริม</option>
+              <option value="Video Guestbook 3 ชม. (+2,500฿)">Video Guestbook 3 ชม. (+2,500฿)</option>
+              <option value="Video Guestbook 4 ชม. (+3,500฿)">Video Guestbook 4 ชม. (+3,500฿)</option>
+              <option value="การ์ดเขียนอวยพร (+1,500฿)">การ์ดเขียนอวยพร (+1,500฿)</option>
+            </select>
+          </div>
+
+          <!-- Row 5: Location & Details -->
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">สถานที่จัดงาน / รายละเอียดเพิ่มเติม</label>
+            <textarea id="f_detail" rows="3" placeholder="เช่น โรงแรม XYZ สุขุมวิท, หรือสอบถามข้อมูลเพิ่มเติม..." 
+                      class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-gold focus:ring-2 focus:ring-gold/20 outline-none transition-all resize-none"></textarea>
+          </div>
+
+          <!-- Submit Button -->
+          <div class="pt-2">
+            <button type="submit" id="submitBtn" 
+                    class="w-full bg-gradient-to-r from-gold-dark to-gold hover:from-gold hover:to-gold-light text-white font-bold py-4 rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-2">
+              <i class="fab fa-line text-2xl"></i> ส่งข้อมูลสอบถามคิว
+            </button>
+            <p class="text-center text-xs text-gray-400 mt-3">
+              🔒 ข้อมูลของคุณจะถูกเก็บเป็นความลับ และส่งไปยังทีมงานโดยตรง
+            </p>
+          </div>
+
+          <!-- Status Message Area -->
+          <div id="formMessage" class="hidden text-center p-4 rounded-xl text-sm mt-4 font-medium"></div>
         </form>
       </div>
+
     </div>
   </div>
 </section>
