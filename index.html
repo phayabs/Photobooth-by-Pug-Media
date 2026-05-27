@@ -392,20 +392,27 @@ tailwind.config = {
       <p class="text-gray-600">เริ่มต้นเพียง 6,900 บาท <span class="text-gold-dark font-semibold">| มัดจำเพียง 2,000 บาท</span></p>
     </div>
 
-    <!-- Tab Switcher -->
+    <!-- Tab Switcher - เลือกตามขนาดรูป -->
     <div class="flex justify-center mb-10">
       <div class="bg-white p-2 rounded-full shadow-lg inline-flex flex-wrap justify-center gap-1 border border-gray-100">
-        <button onclick="showPkg(2)" id="tab2" class="pkg-tab px-6 py-2 rounded-full text-sm font-semibold text-gray-600 hover:bg-rose-light transition">2 ชั่วโมง</button>
-        <button onclick="showPkg(3)" id="tab3" class="pkg-tab px-6 py-2 rounded-full text-sm font-semibold text-gray-600 hover:bg-rose-light transition">3 ชั่วโมง</button>
-        <button onclick="showPkg(4)" id="tab4" class="pkg-tab px-6 py-2 rounded-full text-sm font-semibold bg-gold text-white shadow-md">4 ชั่วโมง <span class="bg-red-500 text-white text-xs px-2 py-0.5 rounded-full ml-1 animate-pulse">Best Seller</span></button>
+        <button onclick="showPkgSize('2x6')" id="tab-2x6" class="pkg-tab px-6 py-2 rounded-full text-sm font-semibold bg-gold text-white shadow-md">
+          ขนาด 2×6 นิ้ว
+        </button>
+        <button onclick="showPkgSize('3x4')" id="tab-3x4" class="pkg-tab px-6 py-2 rounded-full text-sm font-semibold text-gray-600 hover:bg-rose-light transition">
+          ขนาด 3×4 นิ้ว
+        </button>
+        <button onclick="showPkgSize('2x6-4x6')" id="tab-2x6-4x6" class="pkg-tab px-6 py-2 rounded-full text-sm font-semibold text-gray-600 hover:bg-rose-light transition">
+          ขนาด 2×6 และ 4×6
+        </button>
       </div>
     </div>
 
-    <!-- 2 ชั่วโมง -->
-    <div id="pkg2" class="pkg-content hidden grid md:grid-cols-3 gap-6">
+    <!-- ขนาด 2x6 -->
+    <div id="pkg-2x6" class="pkg-content grid md:grid-cols-3 gap-6">
+      <!-- 2 ชั่วโมง -->
       <div class="card-hover bg-white p-8 rounded-3xl shadow-lg border border-gray-100">
-        <div class="text-sm text-gray-500 mb-2">Size</div>
-        <div class="text-2xl font-bold mb-4">2×6 นิ้ว</div>
+        <div class="text-sm text-gray-500 mb-2">ระยะเวลา</div>
+        <div class="text-2xl font-bold mb-4">2 ชั่วโมง</div>
         <div class="flex items-center gap-3 mb-2">
           <span class="line-through text-gray-400 text-lg">8,900฿</span>
           <span class="text-gold-dark text-4xl font-bold">6,900<span class="text-lg">฿</span></span>
@@ -419,45 +426,11 @@ tailwind.config = {
         </ul>
         <a href="#contact" class="block text-center btn-gold py-3 rounded-full text-white font-semibold" onclick="trackViewContent('2hr_2x6_6900')">สอบถามแพ็กเกจ</a>
       </div>
-      <div class="card-hover bg-white p-8 rounded-3xl shadow-lg border border-gray-100">
-        <div class="text-sm text-gray-500 mb-2">Size</div>
-        <div class="text-2xl font-bold mb-4">3×4 นิ้ว</div>
-        <div class="flex items-center gap-3 mb-2">
-          <span class="line-through text-gray-400 text-lg">10,900฿</span>
-          <span class="text-gold-dark text-4xl font-bold">7,900<span class="text-lg">฿</span></span>
-        </div>
-        <div class="inline-block bg-green-100 text-green-700 text-xs px-3 py-1 rounded-full mb-6 font-semibold">ประหยัด 3,000฿</div>
-        <ul class="text-sm text-gray-600 space-y-2 mb-8">
-          <li><i class="fas fa-check text-green-500 mr-2"></i>ถ่ายสนุก ได้รูปทันที</li>
-          <li><i class="fas fa-check text-green-500 mr-2"></i>อุปกรณ์สตูดิโอครบ</li>
-          <li><i class="fas fa-check text-green-500 mr-2"></i>ทีมงานมืออาชีพ</li>
-          <li><i class="fas fa-check text-green-500 mr-2"></i>ออกแบบกรอบฟรี</li>
-        </ul>
-        <a href="#contact" class="block text-center btn-gold py-3 rounded-full text-white font-semibold" onclick="trackViewContent('2hr_3x4_7900')">สอบถามแพ็กเกจ</a>
-      </div>
-      <div class="card-hover bg-white p-8 rounded-3xl shadow-lg border border-gray-100">
-        <div class="text-sm text-gray-500 mb-2">Size</div>
-        <div class="text-2xl font-bold mb-4">2×6 และ 4×6</div>
-        <div class="flex items-center gap-3 mb-2">
-          <span class="line-through text-gray-400 text-lg">12,900฿</span>
-          <span class="text-gold-dark text-4xl font-bold">8,900<span class="text-lg">฿</span></span>
-        </div>
-        <div class="inline-block bg-green-100 text-green-700 text-xs px-3 py-1 rounded-full mb-6 font-semibold">ประหยัด 4,000฿</div>
-        <ul class="text-sm text-gray-600 space-y-2 mb-8">
-          <li><i class="fas fa-check text-green-500 mr-2"></i>ได้รูป 2 ขนาด</li>
-          <li><i class="fas fa-check text-green-500 mr-2"></i>อุปกรณ์สตูดิโอครบ</li>
-          <li><i class="fas fa-check text-green-500 mr-2"></i>ทีมงานมืออาชีพ</li>
-          <li><i class="fas fa-check text-green-500 mr-2"></i>ออกแบบกรอบฟรี</li>
-        </ul>
-        <a href="#contact" class="block text-center btn-gold py-3 rounded-full text-white font-semibold" onclick="trackViewContent('2hr_2x6_4x6_8900')">สอบถามแพ็กเกจ</a>
-      </div>
-    </div>
 
-    <!-- 3 ชั่วโมง -->
-    <div id="pkg3" class="pkg-content hidden grid md:grid-cols-3 gap-6">
+      <!-- 3 ชั่วโมง -->
       <div class="card-hover bg-white p-8 rounded-3xl shadow-lg border border-gray-100">
-        <div class="text-sm text-gray-500 mb-2">Size</div>
-        <div class="text-2xl font-bold mb-4">2×6 นิ้ว</div>
+        <div class="text-sm text-gray-500 mb-2">ระยะเวลา</div>
+        <div class="text-2xl font-bold mb-4">3 ชั่วโมง</div>
         <div class="flex items-center gap-3 mb-2">
           <span class="line-through text-gray-400 text-lg">9,900฿</span>
           <span class="text-gold-dark text-4xl font-bold">8,900<span class="text-lg">฿</span></span>
@@ -471,48 +444,14 @@ tailwind.config = {
         </ul>
         <a href="#contact" class="block text-center btn-gold py-3 rounded-full text-white font-semibold" onclick="trackViewContent('3hr_2x6_8900')">สอบถามแพ็กเกจ</a>
       </div>
-      <div class="card-hover bg-white p-8 rounded-3xl shadow-lg border border-gray-100">
-        <div class="text-sm text-gray-500 mb-2">Size</div>
-        <div class="text-2xl font-bold mb-4">3×4 นิ้ว</div>
-        <div class="flex items-center gap-3 mb-2">
-          <span class="line-through text-gray-400 text-lg">11,900฿</span>
-          <span class="text-gold-dark text-4xl font-bold">9,900<span class="text-lg">฿</span></span>
-        </div>
-        <div class="inline-block bg-green-100 text-green-700 text-xs px-3 py-1 rounded-full mb-6 font-semibold">ประหยัด 2,000฿</div>
-        <ul class="text-sm text-gray-600 space-y-2 mb-8">
-          <li><i class="fas fa-check text-green-500 mr-2"></i>ถ่ายสนุก ได้รูปทันที</li>
-          <li><i class="fas fa-check text-green-500 mr-2"></i>อุปกรณ์สตูดิโอครบ</li>
-          <li><i class="fas fa-check text-green-500 mr-2"></i>ทีมงานมืออาชีพ</li>
-          <li><i class="fas fa-check text-green-500 mr-2"></i>ออกแบบกรอบฟรี</li>
-        </ul>
-        <a href="#contact" class="block text-center btn-gold py-3 rounded-full text-white font-semibold" onclick="trackViewContent('3hr_3x4_9900')">สอบถามแพ็กเกจ</a>
-      </div>
-      <div class="card-hover bg-white p-8 rounded-3xl shadow-lg border border-gray-100">
-        <div class="text-sm text-gray-500 mb-2">Size</div>
-        <div class="text-2xl font-bold mb-4">2×6 และ 4×6</div>
-        <div class="flex items-center gap-3 mb-2">
-          <span class="line-through text-gray-400 text-lg">13,900฿</span>
-          <span class="text-gold-dark text-4xl font-bold">10,900<span class="text-lg">฿</span></span>
-        </div>
-        <div class="inline-block bg-green-100 text-green-700 text-xs px-3 py-1 rounded-full mb-6 font-semibold">ประหยัด 3,000฿</div>
-        <ul class="text-sm text-gray-600 space-y-2 mb-8">
-          <li><i class="fas fa-check text-green-500 mr-2"></i>ได้รูป 2 ขนาด</li>
-          <li><i class="fas fa-check text-green-500 mr-2"></i>อุปกรณ์สตูดิโอครบ</li>
-          <li><i class="fas fa-check text-green-500 mr-2"></i>ทีมงานมืออาชีพ</li>
-          <li><i class="fas fa-check text-green-500 mr-2"></i>ออกแบบกรอบฟรี</li>
-        </ul>
-        <a href="#contact" class="block text-center btn-gold py-3 rounded-full text-white font-semibold" onclick="trackViewContent('3hr_2x6_4x6_10900')">สอบถามแพ็กเกจ</a>
-      </div>
-    </div>
 
-    <!-- 4 ชั่วโมง -->
-    <div id="pkg4" class="pkg-content grid md:grid-cols-3 gap-6">
+      <!-- 4 ชั่วโมง -->
       <div class="card-hover bg-white p-8 rounded-3xl shadow-lg border-4 border-gold relative">
         <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-red-500 text-white text-xs px-4 py-1 rounded-full font-bold whitespace-nowrap z-10 shadow-lg">
           ⭐ BEST SELLER
         </div>
-        <div class="text-sm text-gray-500 mb-2 mt-2">Size</div>
-        <div class="text-2xl font-bold mb-4">2×6 นิ้ว</div>
+        <div class="text-sm text-gray-500 mb-2 mt-2">ระยะเวลา</div>
+        <div class="text-2xl font-bold mb-4">4 ชั่วโมง</div>
         <div class="flex items-center gap-3 mb-2">
           <span class="line-through text-gray-400 text-lg">10,900฿</span>
           <span class="text-gold-dark text-4xl font-bold">9,900<span class="text-lg">฿</span></span>
@@ -529,15 +468,58 @@ tailwind.config = {
         </ul>
         <a href="#contact" class="block text-center btn-gold py-3 rounded-full text-white font-semibold" onclick="trackViewContent('4hr_2x6_9900')">สอบถามแพ็กเกจ</a>
       </div>
+    </div>
 
+    <!-- ขนาด 3x4 -->
+    <div id="pkg-3x4" class="pkg-content hidden grid md:grid-cols-3 gap-6">
+      <!-- 2 ชั่วโมง -->
       <div class="card-hover bg-white p-8 rounded-3xl shadow-lg border border-gray-100">
-        <div class="text-sm text-gray-500 mb-2">Size</div>
-        <div class="text-2xl font-bold mb-4">3×4 นิ้ว</div>
+        <div class="text-sm text-gray-500 mb-2">ระยะเวลา</div>
+        <div class="text-2xl font-bold mb-4">2 ชั่วโมง</div>
+        <div class="flex items-center gap-3 mb-2">
+          <span class="line-through text-gray-400 text-lg">10,900฿</span>
+          <span class="text-gold-dark text-4xl font-bold">7,900<span class="text-lg">฿</span></span>
+        </div>
+        <div class="inline-block bg-green-100 text-green-700 text-xs px-3 py-1 rounded-full mb-6 font-semibold">ประหยัด 3,000฿</div>
+        <ul class="text-sm text-gray-600 space-y-2 mb-8">
+          <li><i class="fas fa-check text-green-500 mr-2"></i>ถ่ายสนุก ได้รูปทันที</li>
+          <li><i class="fas fa-check text-green-500 mr-2"></i>อุปกรณ์สตูดิโอครบ</li>
+          <li><i class="fas fa-check text-green-500 mr-2"></i>ทีมงานมืออาชีพ</li>
+          <li><i class="fas fa-check text-green-500 mr-2"></i>ออกแบบกรอบฟรี</li>
+        </ul>
+        <a href="#contact" class="block text-center btn-gold py-3 rounded-full text-white font-semibold" onclick="trackViewContent('2hr_3x4_7900')">สอบถามแพ็กเกจ</a>
+      </div>
+
+      <!-- 3 ชั่วโมง -->
+      <div class="card-hover bg-white p-8 rounded-3xl shadow-lg border border-gray-100">
+        <div class="text-sm text-gray-500 mb-2">ระยะเวลา</div>
+        <div class="text-2xl font-bold mb-4">3 ชั่วโมง</div>
+        <div class="flex items-center gap-3 mb-2">
+          <span class="line-through text-gray-400 text-lg">11,900฿</span>
+          <span class="text-gold-dark text-4xl font-bold">9,900<span class="text-lg">฿</span></span>
+        </div>
+        <div class="inline-block bg-green-100 text-green-700 text-xs px-3 py-1 rounded-full mb-6 font-semibold">ประหยัด 2,000฿</div>
+        <ul class="text-sm text-gray-600 space-y-2 mb-8">
+          <li><i class="fas fa-check text-green-500 mr-2"></i>ถ่ายสนุก ได้รูปทันที</li>
+          <li><i class="fas fa-check text-green-500 mr-2"></i>อุปกรณ์สตูดิโอครบ</li>
+          <li><i class="fas fa-check text-green-500 mr-2"></i>ทีมงานมืออาชีพ</li>
+          <li><i class="fas fa-check text-green-500 mr-2"></i>ออกแบบกรอบฟรี</li>
+        </ul>
+        <a href="#contact" class="block text-center btn-gold py-3 rounded-full text-white font-semibold" onclick="trackViewContent('3hr_3x4_9900')">สอบถามแพ็กเกจ</a>
+      </div>
+
+      <!-- 4 ชั่วโมง -->
+      <div class="card-hover bg-white p-8 rounded-3xl shadow-lg border-4 border-gold relative">
+        <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-red-500 text-white text-xs px-4 py-1 rounded-full font-bold whitespace-nowrap z-10 shadow-lg">
+          ⭐ BEST SELLER
+        </div>
+        <div class="text-sm text-gray-500 mb-2 mt-2">ระยะเวลา</div>
+        <div class="text-2xl font-bold mb-4">4 ชั่วโมง</div>
         <div class="flex items-center gap-3 mb-2">
           <span class="line-through text-gray-400 text-lg">12,900฿</span>
           <span class="text-gold-dark text-4xl font-bold">10,900<span class="text-lg">฿</span></span>
         </div>
-        <div class="inline-block bg-green-100 text-green-700 text-xs px-3 py-1 rounded-full mb-6 font-semibold">ประหยัด 2,000฿</div>
+        <div class="inline-block bg-green-100 text-green-700 text-xs px-3 py-1 rounded-full mb-4 font-semibold">ประหยัด 2,000฿</div>
         <div class="bg-gradient-to-r from-gold-light via-yellow-200 to-gold-light text-gold-dark font-bold text-sm px-4 py-2 rounded-full inline-block mb-6 shadow-md border border-gold w-full text-center">
           🎁 แถมฟรี! การ์ดเขียนอวยพรให้แขกทุกคน
         </div>
@@ -549,15 +531,58 @@ tailwind.config = {
         </ul>
         <a href="#contact" class="block text-center btn-gold py-3 rounded-full text-white font-semibold" onclick="trackViewContent('4hr_3x4_10900')">สอบถามแพ็กเกจ</a>
       </div>
+    </div>
 
+    <!-- ขนาด 2x6 และ 4x6 -->
+    <div id="pkg-2x6-4x6" class="pkg-content hidden grid md:grid-cols-3 gap-6">
+      <!-- 2 ชั่วโมง -->
       <div class="card-hover bg-white p-8 rounded-3xl shadow-lg border border-gray-100">
-        <div class="text-sm text-gray-500 mb-2">Size</div>
-        <div class="text-2xl font-bold mb-4">2×6 และ 4×6</div>
+        <div class="text-sm text-gray-500 mb-2">ระยะเวลา</div>
+        <div class="text-2xl font-bold mb-4">2 ชั่วโมง</div>
+        <div class="flex items-center gap-3 mb-2">
+          <span class="line-through text-gray-400 text-lg">12,900฿</span>
+          <span class="text-gold-dark text-4xl font-bold">8,900<span class="text-lg">฿</span></span>
+        </div>
+        <div class="inline-block bg-green-100 text-green-700 text-xs px-3 py-1 rounded-full mb-6 font-semibold">ประหยัด 4,000฿</div>
+        <ul class="text-sm text-gray-600 space-y-2 mb-8">
+          <li><i class="fas fa-check text-green-500 mr-2"></i>ได้รูป 2 ขนาด</li>
+          <li><i class="fas fa-check text-green-500 mr-2"></i>อุปกรณ์สตูดิโอครบ</li>
+          <li><i class="fas fa-check text-green-500 mr-2"></i>ทีมงานมืออาชีพ</li>
+          <li><i class="fas fa-check text-green-500 mr-2"></i>ออกแบบกรอบฟรี</li>
+        </ul>
+        <a href="#contact" class="block text-center btn-gold py-3 rounded-full text-white font-semibold" onclick="trackViewContent('2hr_2x6_4x6_8900')">สอบถามแพ็กเกจ</a>
+      </div>
+
+      <!-- 3 ชั่วโมง -->
+      <div class="card-hover bg-white p-8 rounded-3xl shadow-lg border border-gray-100">
+        <div class="text-sm text-gray-500 mb-2">ระยะเวลา</div>
+        <div class="text-2xl font-bold mb-4">3 ชั่วโมง</div>
+        <div class="flex items-center gap-3 mb-2">
+          <span class="line-through text-gray-400 text-lg">13,900฿</span>
+          <span class="text-gold-dark text-4xl font-bold">10,900<span class="text-lg">฿</span></span>
+        </div>
+        <div class="inline-block bg-green-100 text-green-700 text-xs px-3 py-1 rounded-full mb-6 font-semibold">ประหยัด 3,000฿</div>
+        <ul class="text-sm text-gray-600 space-y-2 mb-8">
+          <li><i class="fas fa-check text-green-500 mr-2"></i>ได้รูป 2 ขนาด</li>
+          <li><i class="fas fa-check text-green-500 mr-2"></i>อุปกรณ์สตูดิโอครบ</li>
+          <li><i class="fas fa-check text-green-500 mr-2"></i>ทีมงานมืออาชีพ</li>
+          <li><i class="fas fa-check text-green-500 mr-2"></i>ออกแบบกรอบฟรี</li>
+        </ul>
+        <a href="#contact" class="block text-center btn-gold py-3 rounded-full text-white font-semibold" onclick="trackViewContent('3hr_2x6_4x6_10900')">สอบถามแพ็กเกจ</a>
+      </div>
+
+      <!-- 4 ชั่วโมง -->
+      <div class="card-hover bg-white p-8 rounded-3xl shadow-lg border-4 border-gold relative">
+        <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-red-500 text-white text-xs px-4 py-1 rounded-full font-bold whitespace-nowrap z-10 shadow-lg">
+          ⭐ BEST SELLER
+        </div>
+        <div class="text-sm text-gray-500 mb-2 mt-2">ระยะเวลา</div>
+        <div class="text-2xl font-bold mb-4">4 ชั่วโมง</div>
         <div class="flex items-center gap-3 mb-2">
           <span class="line-through text-gray-400 text-lg">14,900฿</span>
           <span class="text-gold-dark text-4xl font-bold">12,900<span class="text-lg">฿</span></span>
         </div>
-        <div class="inline-block bg-green-100 text-green-700 text-xs px-3 py-1 rounded-full mb-6 font-semibold">ประหยัด 2,000฿</div>
+        <div class="inline-block bg-green-100 text-green-700 text-xs px-3 py-1 rounded-full mb-4 font-semibold">ประหยัด 2,000฿</div>
         <div class="bg-gradient-to-r from-gold-light via-yellow-200 to-gold-light text-gold-dark font-bold text-sm px-4 py-2 rounded-full inline-block mb-6 shadow-md border border-gold w-full text-center">
           🎁 แถมฟรี! การ์ดเขียนอวยพรให้แขกทุกคน
         </div>
@@ -1411,6 +1436,27 @@ document.addEventListener("DOMContentLoaded", function() {
 function trackContact(m){if(typeof fbq!=='undefined')fbq('track','Contact',{content_category:m});if(typeof gtag!=='undefined')gtag('event','contact',{event_category:'Contact',event_label:m});}
 function trackViewContent(n){if(typeof fbq!=='undefined')fbq('track','ViewContent',{content_name:n});if(typeof gtag!=='undefined')gtag('event','view_item',{event_category:'Package',event_label:n});}
 </script>
+<script>
+  function showPkgSize(size) {
+  // ซ่อนทุกแพ็กเกจ
+  document.querySelectorAll('.pkg-content').forEach(el => el.classList.add('hidden'));
   
+  // รีเซ็ตทุก tab
+  document.querySelectorAll('.pkg-tab').forEach(el => { 
+    el.classList.remove('bg-gold','text-white','shadow-md'); 
+    el.classList.add('text-gray-600'); 
+  });
+  
+  // แสดงแพ็กเกจที่เลือก
+  document.getElementById('pkg-' + size)?.classList.remove('hidden');
+  
+  // เปิดใช้งาน tab ที่เลือก
+  const tab = document.getElementById('tab-' + size);
+  if(tab) { 
+    tab.classList.add('bg-gold','text-white','shadow-md'); 
+    tab.classList.remove('text-gray-600'); 
+  }
+}
+</script>
 </body>
 </html>
