@@ -134,6 +134,25 @@ body { font-family: 'Prompt', sans-serif; }
 }
 .ig-item:hover .ig-overlay { opacity: 1; }
 
+/* ปรับ TikTok Embed ให้เต็มพื้นที่ */
+.tiktok-embed {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+.tiktok-embed iframe {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* ปรับ Facebook Embed */
+.fb-page, .fb-page > span {
+  width: 100% !important;
+  height: 100% !important;
+}
+.fb-page iframe {
+  width: 100% !important;
+}
+
 /* ---------- FLOATING LINE BUTTON ---------- */
 a[href*="line.me"].fixed {
   position: relative;
