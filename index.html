@@ -969,21 +969,21 @@ tailwind.config = {
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-12">
   
   <!-- TikTok Card -->
-  <div class="bg-white rounded-3xl shadow-lg overflow-hidden">
+  <div class="bg-white rounded-3xl shadow-lg overflow-hidden flex flex-col">
     <div class="p-5 border-b border-gray-100">
       <div class="flex items-center justify-between flex-wrap gap-2">
         <h3 class="font-bold text-lg flex items-center gap-2">
-          <i class="fab fa-tiktok"></i>TikTok
+          <i class="fab fa-tiktok text-black"></i>TikTok
           <span class="text-xs font-normal text-gray-500">@photoboothbypugmedia</span>
         </h3>
         <a href="https://www.tiktok.com/@photoboothbypugmedia" target="_blank" rel="noopener" 
-           class="px-3 py-1 rounded-full font-semibold bg-black text-white text-xs hover:bg-gray-800 transition">
+           class="px-4 py-1.5 rounded-full font-semibold bg-black text-white text-xs hover:bg-gray-800 transition">
           <i class="fab fa-tiktok mr-1"></i>Follow
         </a>
       </div>
     </div>
-    <div class="p-5" style="height: 650px;">
-      <blockquote class="tiktok-embed" 
+    <div class="flex-1 p-5" style="min-height: 680px;">
+      <blockquote class="tiktok-embed w-full" 
                   cite="https://www.tiktok.com/@photoboothbypugmedia" 
                   data-unique-id="photoboothbypugmedia" 
                   data-embed-type="creator" 
@@ -994,7 +994,7 @@ tailwind.config = {
   </div>
 
   <!-- Facebook Card -->
-  <div class="bg-white rounded-3xl shadow-lg overflow-hidden">
+  <div class="bg-white rounded-3xl shadow-lg overflow-hidden flex flex-col">
     <div class="p-5 border-b border-gray-100">
       <div class="flex items-center justify-between flex-wrap gap-2">
         <h3 class="font-bold text-lg flex items-center gap-2">
@@ -1002,17 +1002,17 @@ tailwind.config = {
           <span class="text-xs font-normal text-gray-500">Photobooth by Pug Media</span>
         </h3>
         <a href="https://www.facebook.com/PhotoboothbyPugMedia" target="_blank" rel="noopener" 
-           class="px-3 py-1 rounded-full font-semibold bg-blue-600 text-white text-xs hover:bg-blue-700 transition">
+           class="px-4 py-1.5 rounded-full font-semibold bg-blue-600 text-white text-xs hover:bg-blue-700 transition">
           <i class="fab fa-facebook mr-1"></i>ติดตามเพจ
         </a>
       </div>
     </div>
-    <div style="height: 650px;">
+    <div class="flex-1" style="min-height: 680px;">
       <div class="fb-page" 
            data-href="https://www.facebook.com/PhotoboothbyPugMedia" 
            data-tabs="timeline" 
            data-width="500"
-           data-height="650"
+           data-height="680"
            data-adapt-container-width="true" 
            data-small-header="false" 
            data-hide-cover="false" 
