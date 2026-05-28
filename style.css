@@ -235,6 +235,73 @@ body { font-family: 'Prompt', sans-serif; }
   border-radius: 18px;
 }
 
+/* ---------- PROFESSIONAL SOCIAL PROOF PREVIEWS ---------- */
+#social .grid.grid-cols-1.md\:grid-cols-2 > div > div:last-child {
+  min-height: 360px !important;
+  max-height: none;
+  padding: 22px !important;
+  isolation: isolate;
+}
+#social .grid.grid-cols-1.md\:grid-cols-2 > div > div:last-child .tiktok-embed,
+#social .grid.grid-cols-1.md\:grid-cols-2 > div > div:last-child #fb-container {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  min-height: 0 !important;
+  max-height: 0 !important;
+  opacity: 0 !important;
+  overflow: hidden !important;
+  pointer-events: none !important;
+}
+#social .grid.grid-cols-1.md\:grid-cols-2 > div > div:last-child::before {
+  content: '';
+  position: absolute;
+  inset: 22px;
+  border-radius: 24px;
+  border: 1px solid rgba(255,255,255,0.72);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.85), 0 18px 45px rgba(17,24,39,0.12);
+  background-color: #111827;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -1;
+}
+#social .grid.grid-cols-1.md\:grid-cols-2 > div > div:last-child::after {
+  left: 42px;
+  right: 42px;
+  bottom: 42px;
+  height: auto;
+  padding: 18px 20px;
+  border-radius: 18px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.45;
+  letter-spacing: 0;
+  background: linear-gradient(135deg, rgba(17,24,39,0.86), rgba(17,24,39,0.58));
+  box-shadow: 0 14px 34px rgba(0,0,0,0.22);
+  backdrop-filter: blur(12px);
+}
+#social .grid.grid-cols-1.md\:grid-cols-2 > div:nth-child(1) > div:last-child::before {
+  background-image:
+    linear-gradient(180deg, rgba(17,24,39,0.1), rgba(17,24,39,0.54)),
+    linear-gradient(90deg, rgba(0,0,0,0.18), transparent 40%),
+    url('images/ig-1.jpg');
+  background-position: center;
+}
+#social .grid.grid-cols-1.md\:grid-cols-2 > div:nth-child(1) > div:last-child::after {
+  content: 'ดูคลิปเบื้องหลังงานจริง รีวิวแขก และโมเมนต์สนุก ๆ จาก TikTok ของ PUG MEDIA';
+}
+#social .grid.grid-cols-1.md\:grid-cols-2 > div:nth-child(2) > div:last-child::before {
+  background-image:
+    linear-gradient(180deg, rgba(17,24,39,0.08), rgba(17,24,39,0.52)),
+    linear-gradient(90deg, rgba(24,119,242,0.22), transparent 46%),
+    url('images/ig-2.jpg');
+  background-position: center;
+}
+#social .grid.grid-cols-1.md\:grid-cols-2 > div:nth-child(2) > div:last-child::after {
+  content: 'รวมรีวิวจากลูกค้า ภาพงานแต่ง และอัปเดตผลงานล่าสุดบน Facebook Page';
+}
+
 /* ---------- FLOATING LINE BUTTON ---------- */
 a[href*="line.me"].fixed {
   position: relative;
@@ -265,14 +332,19 @@ a[href*="line.me"].fixed:hover {
     font-size: 11px;
   }
   #social .grid.grid-cols-1.md\:grid-cols-2 > div > div:last-child {
-    min-height: 430px !important;
-    max-height: 520px;
-    padding: 12px !important;
+    min-height: 300px !important;
+    max-height: none;
+    padding: 14px !important;
   }
-  #social .tiktok-embed,
-  #social #fb-container {
-    min-height: 400px;
-    max-height: 496px;
-    border-radius: 16px;
+  #social .grid.grid-cols-1.md\:grid-cols-2 > div > div:last-child::before {
+    inset: 14px;
+    border-radius: 18px;
+  }
+  #social .grid.grid-cols-1.md\:grid-cols-2 > div > div:last-child::after {
+    left: 26px;
+    right: 26px;
+    bottom: 26px;
+    padding: 14px 16px;
+    font-size: 13px;
   }
 }
