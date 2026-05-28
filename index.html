@@ -965,59 +965,63 @@ tailwind.config = {
       </div>
     </div>
 
-<!-- ========== TIKTOK & FACEBOOK (Side-by-Side on Desktop) ========== -->
+<!-- ========== TIKTOK & FACEBOOK ========== -->
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-12">
   
-  <!-- TikTok Card -->
-  <div class="bg-white rounded-3xl shadow-lg overflow-hidden flex flex-col">
-    <div class="p-5 border-b border-gray-100">
-      <div class="flex items-center justify-between flex-wrap gap-2">
-        <h3 class="font-bold text-lg flex items-center gap-2">
-          <i class="fab fa-tiktok text-black"></i>TikTok
-          <span class="text-xs font-normal text-gray-500">@photoboothbypugmedia</span>
-        </h3>
-        <a href="https://www.tiktok.com/@photoboothbypugmedia" target="_blank" rel="noopener" 
-           class="px-4 py-1.5 rounded-full font-semibold bg-black text-white text-xs hover:bg-gray-800 transition">
+  <!-- TikTok -->
+  <div class="bg-white rounded-3xl shadow-lg overflow-hidden">
+    <div class="p-5 border-b border-gray-100 bg-gradient-to-r from-gray-50 to-white">
+      <div class="flex items-center justify-between">
+        <div>
+          <h3 class="font-bold text-lg flex items-center gap-2">
+            <i class="fab fa-tiktok text-black"></i>TikTok
+          </h3>
+          <p class="text-xs text-gray-500 mt-1">@photoboothbypugmedia</p>
+        </div>
+        <a href="https://www.tiktok.com/@photoboothbypugmedia" target="_blank" 
+           class="px-4 py-2 rounded-full font-semibold bg-black text-white text-xs hover:bg-gray-800 transition">
           <i class="fab fa-tiktok mr-1"></i>Follow
         </a>
       </div>
     </div>
-    <div class="flex-1 p-5" style="min-height: 680px;">
+    <div class="p-5 bg-gray-50" style="height: 720px; overflow: hidden;">
       <blockquote class="tiktok-embed w-full" 
                   cite="https://www.tiktok.com/@photoboothbypugmedia" 
                   data-unique-id="photoboothbypugmedia" 
                   data-embed-type="creator" 
                   style="max-width: 100%; width: 100%;">
-        <section><a target="_blank" href="https://www.tiktok.com/@photoboothbypugmedia?refer=creator_embed">@photoboothbypugmedia</a></section>
+        <section><a target="_blank" href="https://www.tiktok.com/@photoboothbypugmedia">@photoboothbypugmedia</a></section>
       </blockquote>
     </div>
   </div>
 
-  <!-- Facebook Card -->
-  <div class="bg-white rounded-3xl shadow-lg overflow-hidden flex flex-col">
-    <div class="p-5 border-b border-gray-100">
-      <div class="flex items-center justify-between flex-wrap gap-2">
-        <h3 class="font-bold text-lg flex items-center gap-2">
-          <i class="fab fa-facebook text-blue-600"></i>Facebook
-          <span class="text-xs font-normal text-gray-500">Photobooth by Pug Media</span>
-        </h3>
-        <a href="https://www.facebook.com/PhotoboothbyPugMedia" target="_blank" rel="noopener" 
-           class="px-4 py-1.5 rounded-full font-semibold bg-blue-600 text-white text-xs hover:bg-blue-700 transition">
+  <!-- Facebook -->
+  <div class="bg-white rounded-3xl shadow-lg overflow-hidden">
+    <div class="p-5 border-b border-gray-100 bg-gradient-to-r from-blue-50 to-white">
+      <div class="flex items-center justify-between">
+        <div>
+          <h3 class="font-bold text-lg flex items-center gap-2">
+            <i class="fab fa-facebook text-blue-600"></i>Facebook
+          </h3>
+          <p class="text-xs text-gray-500 mt-1">Photobooth by Pug Media</p>
+        </div>
+        <a href="https://www.facebook.com/PhotoboothbyPugMedia" target="_blank" 
+           class="px-4 py-2 rounded-full font-semibold bg-blue-600 text-white text-xs hover:bg-blue-700 transition">
           <i class="fab fa-facebook mr-1"></i>ติดตามเพจ
         </a>
       </div>
     </div>
-    <div class="flex-1" style="min-height: 680px;">
+    <div class="bg-gray-50" style="height: 720px; overflow: hidden;">
       <div class="fb-page" 
            data-href="https://www.facebook.com/PhotoboothbyPugMedia" 
            data-tabs="timeline" 
            data-width="500"
-           data-height="680"
+           data-height="720"
            data-adapt-container-width="true" 
            data-small-header="false" 
            data-hide-cover="false" 
            data-show-facepile="true">
-        <blockquote cite="https://www.facebook.com/PhotoboothbyPugMedia" class="fb-xfbml-parse-ignore">
+        <blockquote cite="https://www.facebook.com/PhotoboothbyPugMedia">
           <a href="https://www.facebook.com/PhotoboothbyPugMedia">Photobooth by Pug Media</a>
         </blockquote>
       </div>
@@ -1462,6 +1466,12 @@ function trackViewContent(n){if(typeof fbq!=='undefined')fbq('track','ViewConten
     tab.classList.remove('text-gray-600'); 
   }
 }
+</script>
+  <!-- Scripts -->
+<script async src="https://www.tiktok.com/embed.js"></script>
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" 
+  src="https://connect.facebook.net/th_TH/sdk.js#xfbml=1&version=v18.0">
 </script>
 </body>
 </html>
