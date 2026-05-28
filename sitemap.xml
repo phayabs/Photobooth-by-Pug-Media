@@ -24,4 +24,22 @@
       <image:title>การ์ดเขียนอวยพร Photo Booth</image:title>
     </image:image>
   </url>
+  <url>
+    <loc>https://photoboothbypugmedia.com/wedding-photobooth.html</loc>
+    <lastmod>2026-05-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://photoboothbypugmedia.com/images/ig-1.jpg</image:loc>
+      <image:title>โฟโต้บูธงานแต่ง Photobooth by Pug Media</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://photoboothbypugmedia.com/images/ig-2.jpg</image:loc>
+      <image:title>photobooth งานแต่ง พร้อมพร็อพ</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://photoboothbypugmedia.com/images/ig-3.jpg</image:loc>
+      <image:title>เช่าโฟโต้บูธงานแต่ง กรุงเทพ</image:title>
+    </image:image>
+  </url>
 </urlset>
