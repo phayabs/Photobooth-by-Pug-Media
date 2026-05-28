@@ -183,12 +183,12 @@ body { font-family: 'Prompt', sans-serif; }
   box-shadow: 0 30px 86px rgba(31, 41, 55, 0.17);
 }
 #social .grid.grid-cols-1.md\:grid-cols-2 > div > div:first-child {
-  padding: 18px 20px;
-  border-bottom: 1px solid rgba(17, 24, 39, 0.08);
-  background: linear-gradient(135deg, rgba(255,255,255,0.96), rgba(248,250,252,0.92)) !important;
+  padding: 16px 20px;
+  border-bottom: 1px solid rgba(17, 24, 39, 0.06);
+  background: linear-gradient(135deg, rgba(255,255,255,0.96), rgba(248,250,252,0.9)) !important;
 }
 #social .grid.grid-cols-1.md\:grid-cols-2 > div:nth-child(2) > div:first-child {
-  background: linear-gradient(135deg, rgba(239,246,255,0.94), rgba(255,255,255,0.96)) !important;
+  background: linear-gradient(135deg, rgba(239,246,255,0.9), rgba(255,255,255,0.96)) !important;
 }
 #social .grid.grid-cols-1.md\:grid-cols-2 > div > div:first-child h3 {
   color: #111827;
@@ -201,24 +201,14 @@ body { font-family: 'Prompt', sans-serif; }
 #social .grid.grid-cols-1.md\:grid-cols-2 > div > div:last-child {
   position: relative;
   flex: 1;
-  min-height: 590px !important;
-  max-height: 660px;
-  padding: 18px !important;
+  min-height: 520px !important;
+  max-height: 540px;
+  padding: 12px !important;
   overflow: hidden;
-  background:
-    radial-gradient(circle at top left, rgba(212, 175, 55, 0.09), transparent 16rem),
-    linear-gradient(180deg, #fbfaf8, #ffffff) !important;
+  background: linear-gradient(180deg, #fbfaf8, #ffffff) !important;
 }
 #social .grid.grid-cols-1.md\:grid-cols-2 > div > div:last-child::after {
-  content: '';
-  position: absolute;
-  left: 18px;
-  right: 18px;
-  bottom: 18px;
-  height: 72px;
-  pointer-events: none;
-  border-radius: 0 0 18px 18px;
-  background: linear-gradient(180deg, rgba(255,255,255,0), rgba(255,255,255,0.97));
+  content: none !important;
 }
 #social .tiktok-embed,
 #social #fb-container,
@@ -230,20 +220,20 @@ body { font-family: 'Prompt', sans-serif; }
 }
 #social .tiktok-embed,
 #social #fb-container {
-  min-height: 548px;
-  max-height: 624px;
+  min-height: 496px;
+  max-height: 516px;
   overflow: hidden;
-  border: 1px solid rgba(17, 24, 39, 0.1);
-  border-radius: 20px;
+  border: 1px solid rgba(17, 24, 39, 0.09);
+  border-radius: 18px;
   background: #fff;
-  box-shadow: 0 12px 34px rgba(17, 24, 39, 0.08), inset 0 1px 0 rgba(255,255,255,0.85);
+  box-shadow: 0 10px 28px rgba(17, 24, 39, 0.07), inset 0 1px 0 rgba(255,255,255,0.85);
 }
 #social .tiktok-embed {
   margin: 0 auto !important;
 }
 #social .fb-page iframe {
-  height: 548px !important;
-  border-radius: 18px;
+  height: 496px !important;
+  border-radius: 16px;
 }
 #social #fb-container {
   display: flex;
@@ -270,7 +260,7 @@ a[href*="line.me"].fixed:hover {
     border-radius: 22px;
   }
   #social .grid.grid-cols-1.md\:grid-cols-2 > div > div:first-child {
-    padding: 16px;
+    padding: 14px 16px;
   }
   #social .grid.grid-cols-1.md\:grid-cols-2 > div > div:first-child .flex {
     align-items: flex-start;
@@ -281,17 +271,17 @@ a[href*="line.me"].fixed:hover {
     font-size: 11px;
   }
   #social .grid.grid-cols-1.md\:grid-cols-2 > div > div:last-child {
-    min-height: 480px !important;
-    max-height: 560px;
-    padding: 12px !important;
+    min-height: 432px !important;
+    max-height: 464px;
+    padding: 10px !important;
   }
   #social .tiktok-embed,
   #social #fb-container {
-    min-height: 448px;
-    max-height: 536px;
-    border-radius: 16px;
+    min-height: 408px;
+    max-height: 440px;
+    border-radius: 15px;
   }
   #social .fb-page iframe {
-    height: 448px !important;
+    height: 408px !important;
   }
 }
