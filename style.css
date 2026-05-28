@@ -222,6 +222,8 @@ body { font-family: 'Prompt', sans-serif; }
 #social .grid.grid-cols-1.md\:grid-cols-2 > div:nth-child(2) > div:last-child {
   min-height: 520px !important;
   max-height: 540px;
+  padding-left: 6px !important;
+  padding-right: 6px !important;
 }
 #social .tiktok-embed {
   width: 100% !important;
@@ -238,8 +240,8 @@ body { font-family: 'Prompt', sans-serif; }
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  width: min(500px, 100%) !important;
-  max-width: 500px !important;
+  width: min(560px, 100%) !important;
+  max-width: 560px !important;
   min-height: 496px;
   max-height: 516px;
   margin: 0 auto !important;
@@ -252,7 +254,7 @@ body { font-family: 'Prompt', sans-serif; }
 #social .fb-page,
 #social .fb-page > span,
 #social .fb-page iframe {
-  width: 500px !important;
+  width: 560px !important;
   max-width: 100% !important;
 }
 #social .fb-page iframe {
