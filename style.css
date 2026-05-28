@@ -143,6 +143,98 @@ body { font-family: 'Prompt', sans-serif; }
   max-width: 100% !important;
 }
 
+/* ---------- POLISHED SOCIAL EMBEDS ---------- */
+#social {
+  position: relative;
+  overflow: hidden;
+}
+#social::before {
+  content: '';
+  position: absolute;
+  inset: auto -10% 8rem -10%;
+  height: 22rem;
+  background: linear-gradient(90deg, rgba(212, 175, 55, 0.14), rgba(249, 197, 209, 0.22), rgba(24, 119, 242, 0.1));
+  filter: blur(70px);
+  pointer-events: none;
+}
+#social > .max-w-7xl {
+  position: relative;
+  z-index: 1;
+}
+#social .grid.grid-cols-1.md\:grid-cols-2 {
+  align-items: stretch;
+}
+#social .grid.grid-cols-1.md\:grid-cols-2 > div {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  border: 1px solid rgba(17, 24, 39, 0.08);
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 22px 60px rgba(31, 41, 55, 0.12);
+  backdrop-filter: blur(14px);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+#social .grid.grid-cols-1.md\:grid-cols-2 > div:hover {
+  transform: translateY(-4px);
+  border-color: rgba(212, 175, 55, 0.35);
+  box-shadow: 0 28px 76px rgba(31, 41, 55, 0.16);
+}
+#social .grid.grid-cols-1.md\:grid-cols-2 > div > div:first-child {
+  padding: 18px 20px;
+  border-bottom: 1px solid rgba(17, 24, 39, 0.08);
+}
+#social .grid.grid-cols-1.md\:grid-cols-2 > div > div:first-child h3 {
+  color: #111827;
+  letter-spacing: -0.01em;
+}
+#social .grid.grid-cols-1.md\:grid-cols-2 > div > div:first-child a {
+  box-shadow: 0 8px 22px rgba(17, 24, 39, 0.15);
+  white-space: nowrap;
+}
+#social .grid.grid-cols-1.md\:grid-cols-2 > div > div:last-child {
+  flex: 1;
+  min-height: 520px !important;
+  max-height: 620px;
+  padding: 18px !important;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at top left, rgba(212, 175, 55, 0.1), transparent 16rem),
+    linear-gradient(180deg, #f9fafb, #ffffff) !important;
+}
+#social .grid.grid-cols-1.md\:grid-cols-2 > div > div:last-child::after {
+  content: '';
+  position: absolute;
+  left: 18px;
+  right: 18px;
+  bottom: 0;
+  height: 72px;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(255,255,255,0), rgba(255,255,255,0.96));
+}
+#social .tiktok-embed,
+#social #fb-container,
+#social .fb-page,
+#social .fb-page > span,
+#social .fb-page iframe {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+#social .tiktok-embed,
+#social #fb-container {
+  min-height: 480px;
+  max-height: 584px;
+  overflow: hidden;
+  border: 1px solid rgba(17, 24, 39, 0.08);
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.8);
+}
+#social .fb-page iframe {
+  border-radius: 18px;
+}
+
 /* ---------- FLOATING LINE BUTTON ---------- */
 a[href*="line.me"].fixed {
   position: relative;
@@ -152,4 +244,35 @@ a[href*="line.me"].fixed:hover {
   animation: none;
   transform: scale(1.15);
   box-shadow: 0 10px 30px rgba(6, 199, 85, 0.6), 0 0 30px rgba(6, 199, 85, 0.4);
+}
+
+@media (max-width: 767px) {
+  #social .grid.grid-cols-1.md\:grid-cols-2 {
+    gap: 1.25rem;
+  }
+  #social .grid.grid-cols-1.md\:grid-cols-2 > div {
+    border-radius: 22px;
+  }
+  #social .grid.grid-cols-1.md\:grid-cols-2 > div > div:first-child {
+    padding: 16px;
+  }
+  #social .grid.grid-cols-1.md\:grid-cols-2 > div > div:first-child .flex {
+    align-items: flex-start;
+    gap: 12px;
+  }
+  #social .grid.grid-cols-1.md\:grid-cols-2 > div > div:first-child a {
+    padding: 8px 12px;
+    font-size: 11px;
+  }
+  #social .grid.grid-cols-1.md\:grid-cols-2 > div > div:last-child {
+    min-height: 430px !important;
+    max-height: 520px;
+    padding: 12px !important;
+  }
+  #social .tiktok-embed,
+  #social #fb-container {
+    min-height: 400px;
+    max-height: 496px;
+    border-radius: 16px;
+  }
 }
