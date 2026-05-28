@@ -1403,8 +1403,8 @@ function trackViewContent(n){if(typeof fbq!=='undefined')fbq('track','ViewConten
 <script async src="https://www.tiktok.com/embed.js"></script>
 
 <script>
-  window.fbAsyncInit = function() {
-    if (window.FB) {
+  window.fbAsyncInit = function () {
+    if (window.FB && document.getElementById('fb-container')) {
       FB.XFBML.parse(document.getElementById('fb-container'));
     }
   };
