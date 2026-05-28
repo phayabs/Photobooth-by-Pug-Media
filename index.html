@@ -1409,5 +1409,42 @@ function trackViewContent(n){if(typeof fbq!=='undefined')fbq('track','ViewConten
     }
   };
 </script>
+  <div id="galleryLightbox" class="fixed inset-0 z-[9999] hidden bg-black/90 p-4 items-center justify-center">
+  <button type="button" id="galleryLightboxClose" class="absolute top-4 right-4 w-11 h-11 rounded-full bg-white/15 text-white text-2xl hover:bg-white/25" aria-label="ปิดรูปภาพ">&times;</button>
+  <img id="galleryLightboxImg" src="" alt="" class="max-w-full max-h-[88vh] rounded-2xl shadow-2xl object-contain">
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const box = document.getElementById('galleryLightbox');
+  const img = document.getElementById('galleryLightboxImg');
+  const close = document.getElementById('galleryLightboxClose');
+
+  function closeLightbox() {
+    box.classList.add('hidden');
+    box.classList.remove('flex');
+    img.src = '';
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('#gallery .gallery-item img').forEach(function (image) {
+    image.addEventListener('click', function () {
+      img.src = image.currentSrc || image.src;
+      img.alt = image.alt || '';
+      box.classList.remove('hidden');
+      box.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
+  close.addEventListener('click', closeLightbox);
+  box.addEventListener('click', function (event) {
+    if (event.target === box) closeLightbox();
+  });
+  document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape') closeLightbox();
+  });
+});
+</script>
 </body>
 </html>
