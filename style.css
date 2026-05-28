@@ -104,7 +104,6 @@ nav.fixed.top-0::after { content: ''; position: absolute; left: 50%; bottom: -1p
 @media (min-width: 768px) {
   .hero-bg > .relative.max-w-7xl { transform: translateY(-1.8vh); }
   .hero-bg h1 { font-size: clamp(4.1rem, 6vw, 6.2rem) !important; }
-
   #addon .space-y-16 { display: grid !important; grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 1.25rem !important; align-items: stretch !important; }
   #addon .space-y-16 > :not([hidden]) ~ :not([hidden]) { margin-top: 0 !important; }
   #addon .space-y-16 > .grid { display: flex !important; flex-direction: column !important; align-items: stretch !important; gap: 0 !important; min-height: 0; overflow: hidden; border: 1px solid rgba(255,255,255,.11); border-radius: 1.25rem; background: rgba(255,255,255,.045); box-shadow: 0 22px 56px rgba(0,0,0,.18); }
@@ -148,8 +147,21 @@ nav.fixed.top-0::after { content: ''; position: absolute; left: 50%; bottom: -1p
   #social .fb-page iframe { height: 408px !important; }
 
   .hero-bg { min-height: auto !important; }
-  .hero-bg > .relative.max-w-7xl { padding-top: 5.5rem !important; padding-bottom: 3.6rem !important; }
-  .hero-bg h1 { font-size: clamp(3rem, 14vw, 4rem) !important; }
+  .hero-bg > .relative.max-w-7xl { display: block !important; padding: 4.6rem 1.15rem 2.6rem !important; }
+  .hero-bg > .relative.max-w-7xl > .relative.animate-fade-up { display: none !important; }
+  .hero-bg .text-white.animate-fade-up { max-width: 100%; }
+  .hero-bg .inline-block.px-4.py-1 { max-width: 100%; padding: .52rem .85rem !important; font-size: .9rem !important; line-height: 1.45 !important; white-space: normal; }
+  .hero-bg h1 { max-width: none; margin-top: 1.25rem !important; margin-bottom: 1.35rem !important; font-size: clamp(3.25rem, 12.8vw, 3.95rem) !important; line-height: 1.02 !important; letter-spacing: 0 !important; text-wrap: balance; }
+  .hero-bg h1 .text-gold-gradient { display: block; width: max-content; max-width: 100%; white-space: nowrap; }
+  .hero-bg p.text-lg { margin-bottom: 1.35rem !important; font-size: 1.08rem !important; line-height: 1.62 !important; }
+  .hero-bg p.text-lg br { display: none; }
+  .hero-bg .flex.flex-wrap.gap-4 { display: grid !important; grid-template-columns: 1fr !important; gap: .8rem !important; }
+  .hero-bg .flex.flex-wrap.gap-4 a { display: flex !important; width: 100% !important; min-height: 58px; align-items: center; justify-content: center; padding: 1rem 1.15rem !important; border-radius: 999px !important; font-size: 1.08rem !important; }
+  .hero-bg .flex.gap-6.mt-10 { display: grid !important; grid-template-columns: 1fr 1px 1fr 1px 1fr; gap: 0 !important; align-items: start; margin-top: 1.65rem !important; }
+  .hero-bg .flex.gap-6.mt-10 > div:not(.w-px) { min-width: 0; text-align: left; }
+  .hero-bg .flex.gap-6.mt-10 .w-px { width: 1px !important; height: 54px; justify-self: center; }
+  .hero-bg .flex.gap-6.mt-10 .text-3xl { font-size: clamp(2.05rem, 10vw, 2.85rem) !important; line-height: 1 !important; }
+  .hero-bg .flex.gap-6.mt-10 .text-gray-400 { margin-top: .35rem; font-size: .88rem !important; line-height: 1.35; }
   .hero-bg a[href="#contact"] { width: 100%; }
 
   #addon { padding-top: 3.25rem !important; padding-bottom: 3.35rem !important; }
