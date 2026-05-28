@@ -399,3 +399,91 @@ nav.fixed.top-0::after {
     width: 100%;
   }
 }
+
+/* ---------- COMPACT ADD-ON SECTION ---------- */
+#addon {
+  padding-top: 4.25rem !important;
+  padding-bottom: 4.5rem !important;
+}
+#addon .max-w-7xl {
+  max-width: 1080px !important;
+}
+#addon .text-center.mb-16 {
+  margin-bottom: 2.25rem !important;
+}
+#addon .text-center.mb-16 h2 {
+  margin-top: 0.5rem !important;
+  margin-bottom: 0.6rem !important;
+  font-size: clamp(2rem, 3.5vw, 3rem) !important;
+}
+#addon .text-center.mb-16 p {
+  max-width: 40rem;
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+#addon .inline-block.px-4.py-2 {
+  padding: 0.35rem 0.9rem !important;
+  font-size: 0.78rem !important;
+}
+#addon .grid,
+#addon .md\:grid-cols-2,
+#addon .lg\:grid-cols-3 {
+  gap: 1.15rem !important;
+}
+#addon .rounded-3xl {
+  border-radius: 1.15rem !important;
+}
+#addon .p-8,
+#addon .md\:p-10,
+#addon .lg\:p-12 {
+  padding: 1.35rem !important;
+}
+#addon h3,
+#addon h4 {
+  margin-bottom: 0.65rem !important;
+}
+#addon p,
+#addon li {
+  font-size: 0.9rem;
+  line-height: 1.58;
+}
+#addon .space-y-4 > :not([hidden]) ~ :not([hidden]) {
+  margin-top: 0.75rem !important;
+}
+#addon .space-y-6 > :not([hidden]) ~ :not([hidden]) {
+  margin-top: 0.95rem !important;
+}
+#addon .mt-16 {
+  margin-top: 2.5rem !important;
+}
+#addon .mt-16.p-8 {
+  padding: 1.5rem !important;
+}
+#addon .mt-16 h3 {
+  font-size: clamp(1.35rem, 2.6vw, 2rem) !important;
+  margin-bottom: 0.5rem !important;
+}
+#addon .mt-16 p {
+  margin-bottom: 1rem !important;
+}
+#addon .mt-16 a {
+  padding: 0.85rem 1.35rem !important;
+}
+
+@media (max-width: 767px) {
+  #addon {
+    padding-top: 3.25rem !important;
+    padding-bottom: 3.35rem !important;
+  }
+  #addon .text-center.mb-16 {
+    margin-bottom: 1.75rem !important;
+  }
+  #addon .p-8,
+  #addon .md\:p-10,
+  #addon .lg\:p-12 {
+    padding: 1.15rem !important;
+  }
+  #addon .mt-16 {
+    margin-top: 1.75rem !important;
+  }
+}
