@@ -199,3 +199,27 @@ nav.fixed.top-0::after { content: ''; position: absolute; left: 50%; bottom: -1p
 @media (prefers-reduced-motion: reduce) {
   .hero-bg .flex.gap-6.mt-10 .text-3xl::after { animation: none !important; }
 }
+
+@media (min-width: 768px) and (max-width: 1100px) {
+  nav .hidden.md\:flex {
+    display: none !important;
+  }
+
+  nav button#mobileMenuBtn {
+    display: inline-flex !important;
+  }
+
+  nav #mobileMenu {
+    display: none;
+  }
+
+  nav #mobileMenu:not(.hidden) {
+    display: block !important;
+  }
+
+  nav a.btn-gold {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    font-size: 0.85rem !important;
+  }
+}
