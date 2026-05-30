@@ -4,7 +4,7 @@
   xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://photoboothbypugmedia.com/</loc>
-    <lastmod>2026-05-29</lastmod>
+    <lastmod>2026-05-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -26,9 +26,9 @@
   </url>
   <url>
     <loc>https://photoboothbypugmedia.com/wedding-photobooth.html</loc>
-    <lastmod>2026-05-29</lastmod>
+    <lastmod>2026-05-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.95</priority>
     <image:image>
       <image:loc>https://photoboothbypugmedia.com/images/ig-1.jpg</image:loc>
       <image:title>โฟโต้บูธงานแต่ง Photobooth by Pug Media</image:title>
@@ -40,6 +40,36 @@
     <image:image>
       <image:loc>https://photoboothbypugmedia.com/images/ig-3.jpg</image:loc>
       <image:title>เช่าโฟโต้บูธงานแต่ง กรุงเทพ</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://photoboothbypugmedia.com/photobooth-bangkok.html</loc>
+    <lastmod>2026-05-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://photoboothbypugmedia.com/images/ig-1.jpg</image:loc>
+      <image:title>โฟโต้บูธ กรุงเทพ</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://photoboothbypugmedia.com/photo-booth-price.html</loc>
+    <lastmod>2026-05-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://photoboothbypugmedia.com/images/og-image.jpg</image:loc>
+      <image:title>โฟโต้บูธ ราคาเริ่มต้น 6,900 บาท</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://photoboothbypugmedia.com/event-photobooth.html</loc>
+    <lastmod>2026-05-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://photoboothbypugmedia.com/images/ig-5.jpg</image:loc>
+      <image:title>โฟโต้บูธงานอีเวนต์</image:title>
     </image:image>
   </url>
 </urlset>
